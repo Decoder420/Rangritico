@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <defs>
+    <!-- Metallic Brass/Gold Ferrule -->
+    <linearGradient id="ferruleGrad" x1="12" y1="16" x2="21" y2="19" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#997005"/>
+      <stop offset="45%" stop-color="#F7E4A1"/>
+      <stop offset="70%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#5E4301"/>
+    </linearGradient>
+    <!-- Varnished Mahogany Wood Handle -->
+    <linearGradient id="handleGrad" x1="17" y1="21" x2="35" y2="35" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4A2810"/>
+      <stop offset="40%" stop-color="#7B3F1D"/>
+      <stop offset="80%" stop-color="#3A1D0B"/>
+      <stop offset="100%" stop-color="#231005"/>
+    </linearGradient>
+    <filter id="brushShadow" x="-2" y="-2" width="40" height="40" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="2" stdDeviation="1" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#brushShadow)">
+    <!-- Varnished Mahogany Handle -->
+    <path d="M17 21 L31 35 C32 36 34 36 35 35 C36 34 36 32 35 31 L21 17 Z" fill="url(#handleGrad)"/>
+    <line x1="20" y1="22" x2="32" y2="34" stroke="#A85B28" stroke-width="0.6" opacity="0.6"/>
+
+    <!-- Brass Ferrule band -->
+    <path d="M13 17 L17 21 L21 17 L17 13 Z" fill="url(#ferruleGrad)"/>
+    <line x1="14" y1="18" x2="19" y2="13" stroke="#5E4301" stroke-width="0.8"/>
+    <line x1="15" y1="19" x2="20" y2="14" stroke="#F7E4A1" stroke-width="0.5"/>
+
+    <!-- Sable Bristles -->
+    <path d="M7 11 C8 13 11 15 13 17 L17 13 C15 11 13 8 11 7 Z" fill="#26160C"/>
+    <path d="M8 11 C10 13 12 14 14 15 L15 14 C13 12 12 10 10 8 Z" fill="#3D2415"/>
+
+    <!-- Gold Pigment on Brush Tip (Hotspot at 1, 1) -->
+    <path d="M1 1 C3 4 5 7 7 11 C9 12 11 10 11 7 C7 5 4 3 1 1 Z" fill="#D4AF37"/>
+    <circle cx="2" cy="2" r="1.8" fill="#FFF2B2"/>
+    <circle cx="1.5" cy="1.5" r="0.8" fill="#FFFFFF"/>
+  </g>
+</svg>

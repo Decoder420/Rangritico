@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANGRITICO | Art Atelier by Prachi Mandal</title>
+    <meta name="description" content="Rangritico is an organic curatorial design studio founded by UGC NET qualified artist and visual researcher Prachi Mandal. Rooted in the natural serenity of Rishikesh, specializing in fine miniature paintings on dried skeleton peepal leaves, hand-molded terracotta jewelry, and custom spiritual canvases.">
+    
+    <!-- Favicon & URL Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Open Graph / URL Sharing Meta Image -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RANGRITICO | Art Atelier by Prachi Mandal">
+    <meta property="og:description" content="Fine Art Canvases, Skeleton Leaf Miniatures & Handcrafted Clay Jewelry by Visual Researcher & Curator Prachi Mandal. Rooted in the serenity of Rishikesh.">
+    <meta property="og:image" content="assets/rangritico_og_image.jpg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    
+    <!-- Twitter Card URL Image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RANGRITICO | Art Atelier by Prachi Mandal">
+    <meta name="twitter:description" content="Fine Art Canvases, Skeleton Leaf Miniatures & Handcrafted Clay Jewelry by Visual Researcher & Curator Prachi Mandal. Rooted in the serenity of Rishikesh.">
+    <meta name="twitter:image" content="assets/rangritico_og_image.jpg">
+    
+    <!-- Google Fonts - Artistic & Fine-Art Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Global Decorative Royal Vine Frame -->
+    <div class="global-frame">
+        <div class="frame-corner top-left"></div>
+        <div class="frame-corner top-right"></div>
+        <div class="frame-corner bottom-left"></div>
+        <div class="frame-corner bottom-right"></div>
+    </div>
+
+    <!-- Sticky Royal Atelier Header -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link logo-center" aria-label="RANGRITICO by Prachi Mandal">
+                <img src="assets/rangritico_symmetric_brand_logo.png" alt="RANGRITICO | Art Atelier by Prachi Mandal" class="brand-logo-symmetric" onerror="this.onerror=null; this.src='assets/rangritico_brand_logo.png'">
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav">
+                <button class="nav-close-drawer" aria-label="Close navigation menu">&times;</button>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html">The Gallery (Portfolio)</a></li>
+                    <li><a href="#shop">The Atelier Shop</a></li>
+                    <li><a href="about.html#scholar">Research & Pedagogy</a></li>
+                    <li><a href="about.html">Our Story (About)</a></li>
+                    <li><a href="#contact" class="nav-cta-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION 1: ARTISTIC PRE-LOADER & POP-UP INTRO -->
+    <section id="intro" class="interactive-intro">
+        <!-- Ambient Rotating Mandala Watermark -->
+        <img src="assets/elements/lotus_mandala_medallion.png" class="mandala-watermark hero-mandala" alt="Sacred Lotus Mandala" loading="lazy">
+
+        <!-- Floating Interactive Jeweled Butterfly -->
+        <div class="jeweled-butterfly-badge" title="Fluttering Sacred Butterfly">
+            <img src="assets/elements/jeweled_butterfly.png" alt="Jeweled Indian Butterfly">
+        </div>
+
+        <div class="intro-canvas">
+            <div class="hero-layers-showcase">
+                <img src="assets/IMG_2143.PNG" class="hero-layer layer-3" alt="Yogi Chakra Meditation Artwork">
+                <img src="assets/IMG_9805.PNG" class="hero-layer layer-1" alt="Meditating Buddha Painting">
+                <img src="assets/IMG_1243.jpg" class="hero-layer layer-2" alt="Shiva-Parvati Sacred Fine Art">
+            </div>
+            <div class="intro-text">
+                <span class="intro-script">Art Atelier by Prachi Mandal</span>
+                <h1>RANGRITICO</h1>
+                <p class="intro-subtitle">Fine Art Canvases, Skeleton Leaf Miniatures & Handcrafted Clay Jewelry by Visual Researcher & Curator Prachi Mandal</p>
+                <div class="intro-ctas">
+                    <button class="btn btn-primary scroll-to-vine">Explore Sacred Gallery</button>
+                    <a href="portfolio.html" class="btn btn-secondary">Full Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sacred Lotus Talisman Divider -->
+    <div class="lotus-talisman-divider">
+        <img src="assets/elements/sacred_lotus_talisman.png" class="lotus-talisman-icon" alt="Sacred Lotus Talisman">
+    </div>
+
+    <!-- SECTION 2: THE SACRED ARTISAN ATELIER & OFFICIAL ETSY SPOTLIGHT -->
+    <section id="gallery" class="vine-section atelier-spotlight-section">
+        <!-- Floating Artistic Atmosphere Elements (From Art Pack) -->
+        <div class="artistic-atmosphere-layer" aria-hidden="true">
+            <!-- Animated Flying Monarch Butterfly -->
+            <div class="ambient-butterfly-flight" title="Handcrafted Monarch Butterfly">
+                <img src="assets/elements/flying_monarch_butterfly.png" alt="Monarch Butterfly" class="butterfly-flight-img">
+            </div>
+
+            <!-- Drifting Pink Lotus Petals -->
+            <img src="assets/elements/floating_lotus_petals.png" class="drifting-lotus-petal petal-1" alt="Floating Petal">
+            <img src="assets/elements/floating_lotus_petals.png" class="drifting-lotus-petal petal-2" alt="Floating Petal">
+
+            <!-- Side Botanical Vine Accents -->
+            <img src="assets/elements/corner_vine_branch.png" class="side-botanical-vine vine-left" alt="Botanical Vine">
+            <img src="assets/elements/corner_vine_branch.png" class="side-botanical-vine vine-right" alt="Botanical Vine">
+        </div>
+
+        <div class="container atelier-spotlight-container">
+            <!-- Section Header -->
+            <header class="section-header-banner text-center">
+                <div class="lotus-talisman-divider">
+                    <img src="assets/elements/golden_lotus_mandala_lineart.png" class="lotus-talisman-icon" alt="Golden Lotus Mandala">
+                </div>
+                <span class="section-script-badge">Sacred Himalayan Atelier &bull; Verified Etsy Star Seller</span>
+                <h2 class="section-title">The Artisan's Atelier: Earth, Pigment &amp; Soul</h2>
+                <p class="section-description">Handcrafted by visual researcher &amp; curator Prachi Mandal in Rishikesh, blending ancient Vedic iconography, natural botanical leaves, and organic Ganga river stones.</p>
+            </header>
+
+            <!-- ETSY VERIFIED STAR SELLER SPOTLIGHT BANNER -->
+            <div class="etsy-artisan-spotlight-card">
+                <div class="etsy-spotlight-glow"></div>
+                <!-- Ambient Golden Filigree Mandala Watermark -->
+                <img src="assets/elements/gold_filigree_mandala.png" class="etsy-card-mandala-watermark" alt="Gold Mandala">
+
+                <div class="etsy-card-header">
+                    <div class="etsy-seller-identity">
+                        <div class="etsy-seller-avatar-wrap">
+                            <img src="assets/IMG_6741.jpg" alt="Prachi Mandal - Atelier Founder &amp; Etsy Star Seller" class="etsy-seller-avatar">
+                            <div class="etsy-verified-check" title="Verified Artisan &amp; Star Seller">&#10003;</div>
+                        </div>
+                        <div class="etsy-seller-meta">
+                            <div class="etsy-badge-row">
+                                <span class="etsy-star-seller-badge">
+                                    <svg class="etsy-star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                    Star Seller on Etsy
+                                </span>
+                                <span class="etsy-origin-pill">📍 Rishikesh, Himalayas, India</span>
+                            </div>
+                            <h3 class="etsy-shop-title">RANGRITICO &bull; Official Etsy Atelier</h3>
+                            <p class="etsy-shop-curator">Curated &amp; Handcrafted by <strong>Prachi Mandal</strong> (B.F.A., M.A. History of Arts, UGC-NET Recognized Visual Arts Researcher &amp; Former Museum Curator)</p>
+                        </div>
+                    </div>
+                    <div class="etsy-shop-action">
+                        <a href="https://www.etsy.com/shop/Rangritico" target="_blank" rel="noopener noreferrer" class="etsy-official-btn" aria-label="Visit Rangritico on Etsy">
+                            <svg class="etsy-shop-bag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                            <span>Visit Official Etsy Shop</span>
+                            <span class="etsy-btn-arrow">&rarr;</span>
+                        </a>
+                        <span class="etsy-rating-tag">⭐ 5.0 Star Rating &bull; Worldwide Insured Delivery</span>
+                    </div>
+                </div>
+
+                <!-- 4 Trust & Heritage Pillars from Etsy -->
+                <div class="etsy-trust-pillars">
+                    <div class="trust-pillar-item">
+                        <div class="pillar-icon-box">🌿</div>
+                        <div class="pillar-text">
+                            <strong>100% Organic &amp; Sacred Sourced</strong>
+                            <span>Naturally shed Peepal skeleton leaves, river-smoothed Ganga stones, and kiln-baked terracotta clay.</span>
+                        </div>
+                    </div>
+                    <div class="trust-pillar-item">
+                        <div class="pillar-icon-box">📜</div>
+                        <div class="pillar-text">
+                            <strong>Academic Art Pedagogy</strong>
+                            <span>Museum-grade visual research rooted in classical Indian art history, traditional iconography, and sacred geometries.</span>
+                        </div>
+                    </div>
+                    <div class="trust-pillar-item">
+                        <div class="pillar-icon-box">✈️</div>
+                        <div class="pillar-text">
+                            <strong>Global Insured Dispatches</strong>
+                            <span>Secure, eco-friendly custom cushioning shipped worldwide via Etsy to collectors in the US, UK, Canada, Europe &amp; beyond.</span>
+                        </div>
+                    </div>
+                    <div class="trust-pillar-item">
+                        <div class="pillar-icon-box">⭐</div>
+                        <div class="pillar-text">
+                            <strong>Etsy Star Seller Assurance</strong>
+                            <span>Recognized for exceptional 5-star customer reviews, rapid communication, and authentic slow-craft integrity.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARTISAN'S WORKBENCH & CRAFT MEDIUMS (Using the uploaded art pack elements) -->
+            <div class="artisan-workbench-bar">
+                <div class="workbench-bar-header text-center">
+                    <span class="workbench-script-kicker">Organic Sourcing &bull; Rishikesh Studio</span>
+                    <h3 class="workbench-bar-title">The Sacred Craft Mediums</h3>
+                </div>
+                <div class="workbench-elements-grid">
+                    <!-- Tool 1: Wooden Palette & Mineral Colors -->
+                    <div class="workbench-element-card" title="Wooden Palette & Mineral Pigments">
+                        <div class="element-icon-wrap">
+                            <img src="assets/elements/wooden_paint_palette.png" alt="Artist Wooden Palette" class="workbench-art-img palette-float">
+                        </div>
+                        <h4>Natural Mineral Pigments</h4>
+                        <p>Raw earth powders, gold dust &amp; archival hues hand-mixed on wooden boards.</p>
+                        <span class="element-tag">Natural Pigments</span>
+                    </div>
+
+                    <!-- Tool 2: Fine Detail Brushes -->
+                    <div class="workbench-element-card" title="Fine Hair Artist Brushes">
+                        <div class="element-icon-wrap">
+                            <img src="assets/elements/artist_paintbrushes.png" alt="Fine Hair Artist Brushes" class="workbench-art-img brushes-tilt">
+                        </div>
+                        <h4>Microscopic Brushwork</h4>
+                        <p>Single-hair miniature brushes tailored for delicate skeleton peepal leaf veins.</p>
+                        <span class="element-tag">Single-Hair Detail</span>
+                    </div>
+
+                    <!-- Tool 3: Terracotta & Clay Jars -->
+                    <div class="workbench-element-card" title="Terracotta Brush Pot & Pigments">
+                        <div class="element-icon-wrap">
+                            <img src="assets/elements/terracotta_brush_pot.png" alt="Terracotta Pot" class="workbench-art-img pot-bob">
+                        </div>
+                        <h4>Himalayan Earthen Clay</h4>
+                        <p>Sun-cured and kiln-fired terracotta sculpted into sacred temple adornments.</p>
+                        <span class="element-tag">Kiln-Baked Clay</span>
+                    </div>
+
+                    <!-- Tool 4: Preserved Bodhi Leaf & Water Droplet -->
+                    <div class="workbench-element-card" title="Preserved Skeleton Leaf & River Water">
+                        <div class="element-icon-wrap">
+                            <img src="assets/elements/skeleton_leaf_gold.png" alt="Preserved Skeleton Leaf" class="workbench-art-img leaf-shimmer">
+                            <img src="assets/elements/water_drop_ripple.png" alt="Water Ripple" class="element-ripple-badge">
+                        </div>
+                        <h4>Ganga River Stones &amp; Leaves</h4>
+                        <p>Sacred fallen peepal leaves and stones gathered directly from Ganges ghats.</p>
+                        <span class="element-tag">Sacred Botanicals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sacred Lotus Talisman Divider -->
+    <div class="lotus-talisman-divider">
+        <img src="assets/elements/sacred_lotus_talisman.png" class="lotus-talisman-icon" alt="Sacred Lotus Talisman">
+    </div>
+
+    <!-- SECTION 3: SKELETON LEAF VEIN-BREATHE -->
+    <section id="leaf-art" class="breathe-section">
+        <span class="section-script-badge">Nature’s Divine Lacy Network</span>
+        <h2 class="section-title text-center" style="color: var(--clr-gallery-white);">The Skeleton Leaf Philosophy</h2>
+        <p class="section-description text-center" style="color: var(--clr-lotus-soft);">Peepal leaf miniature painting — where delicate organic leaf veins meet timeless sacred devotion.</p>
+        
+        <div class="skeleton-leaf-duo">
+            <div class="leaf-flank leaf-flank-jeweled">
+                <img src="assets/elements/skeleton_leaf_jeweled.png" alt="Jeweled Bodhi Leaf" class="skeleton-leaf-accent">
+                <span class="leaf-flank-caption">Jeweled Filigree Peepal Leaf</span>
+            </div>
+            <div class="breathe-card" title="Click to view Blue Buddha on Skeleton Peepal Leaf presentation">
+                <div class="vein-overlay"></div>
+                <img src="assets/elements/buddha_leaf_framed_clean.jpg" alt="Hand-Painted Blue Buddha on Skeleton Peepal Leaf by Prachi Mandal">
+            </div>
+            <div class="leaf-flank leaf-flank-gold">
+                <img src="assets/elements/skeleton_leaf_gold.png" alt="Gold Skeleton Leaf" class="skeleton-leaf-accent">
+                <span class="leaf-flank-caption">Pure Gold Lace Peepal Leaf</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sacred Lotus Talisman Divider -->
+    <div class="lotus-talisman-divider light-theme-divider">
+        <img src="assets/elements/sacred_lotus_talisman.png" class="lotus-talisman-icon" alt="Sacred Lotus Talisman">
+    </div>
+
+    <!-- SECTION 4: WATER-RIPPLE SCATTER GALLERY / ATELIER SHOP -->
+    <section id="shop" class="ripple-section">
+        <!-- Ambient Concentric Water Ripple Rings -->
+        <img src="assets/elements/water_ripple_rings.png" class="water-ripple-bg" alt="Sacred Water Ripple Rings">
+
+        <span class="section-script-badge" style="color: var(--clr-turquoise-light);">Sanctuary of the Ganges</span>
+        <h2 class="section-title text-center" style="color: #FFFFFF;">Rishikesh River Pebble Art</h2>
+        
+        <div class="pebbles-hero-wrap">
+            <img src="assets/elements/painted_river_pebbles.png" class="painted-pebbles-hero" alt="Hand-painted Sacred River Pebbles">
+            <p class="pebble-subtitle">Sacred Ganga River Stones &bull; Hand-Crafted Organic Pigments</p>
+        </div>
+
+        <!-- 6 Hand-Painted Sacred River Pebbles Garden -->
+        <div class="pebbles-garden-container">
+            <div class="pebbles-garden-grid">
+                <!-- Pebble 1: Lotus -->
+                <div class="pebble-item-card" title="Click to view Lotus Pebble in presentation">
+                    <div class="pebble-thumb-wrap">
+                        <div class="pebble-ripple-ring"></div>
+                        <img src="assets/elements/pebble_lotus_pink.png" class="pebble-thumb-img" alt="Sacred Lotus Pebble">
+                    </div>
+                    <h4 class="pebble-item-name">Padma Lotus</h4>
+                    <p class="pebble-item-desc">Blooming spiritual purity on river quartz.</p>
+                </div>
+
+                <!-- Pebble 2: Peacock -->
+                <div class="pebble-item-card" title="Click to view Peacock Pebble in presentation">
+                    <div class="pebble-thumb-wrap">
+                        <div class="pebble-ripple-ring"></div>
+                        <img src="assets/elements/pebble_peacock_feather.png" class="pebble-thumb-img" alt="Peacock Feather Pebble">
+                    </div>
+                    <h4 class="pebble-item-name">Mayura Feather</h4>
+                    <p class="pebble-item-desc">Iridescent eye motif on smooth grey stone.</p>
+                </div>
+
+                <!-- Pebble 3: Mandala -->
+                <div class="pebble-item-card" title="Click to view Dot Mandala Pebble in presentation">
+                    <div class="pebble-thumb-wrap">
+                        <div class="pebble-ripple-ring"></div>
+                        <img src="assets/elements/pebble_dot_mandala.png" class="pebble-thumb-img" alt="Dot Mandala Pebble">
+                    </div>
+                    <h4 class="pebble-item-name">Bindu Mandala</h4>
+                    <p class="pebble-item-desc">Sacred pointillism in radiant solar hues.</p>
+                </div>
+
+                <!-- Pebble 4: Penguin -->
+                <div class="pebble-item-card" title="Click to view Penguin Pebble in presentation">
+                    <div class="pebble-thumb-wrap">
+                        <div class="pebble-ripple-ring"></div>
+                        <img src="assets/elements/pebble_penguin.png" class="pebble-thumb-img" alt="Himalayan Penguin Pebble">
+                    </div>
+                    <h4 class="pebble-item-name">Gentle Heart</h4>
+                    <p class="pebble-item-desc">Playful Himalayan harmony & organic devotion.</p>
+                </div>
+
+                <!-- Pebble 5: Monarch Butterfly -->
+                <div class="pebble-item-card" title="Click to view Monarch Pebble in presentation">
+                    <div class="pebble-thumb-wrap">
+                        <div class="pebble-ripple-ring"></div>
+                        <img src="assets/elements/pebble_monarch_butterfly.png" class="pebble-thumb-img" alt="Monarch Butterfly Pebble">
+                    </div>
+                    <h4 class="pebble-item-name">Titli Metamorphosis</h4>
+                    <p class="pebble-item-desc">Amber-jeweled wings poised for spiritual flight.</p>
+                </div>
+
+                <!-- Pebble 6: Blue Buddha -->
+                <div class="pebble-item-card" title="Click to view Blue Buddha Pebble in presentation">
+                    <div class="pebble-thumb-wrap">
+                        <div class="pebble-ripple-ring"></div>
+                        <img src="assets/elements/pebble_blue_buddha.png" class="pebble-thumb-img" alt="Blue Buddha Pebble">
+                    </div>
+                    <h4 class="pebble-item-name">Dhyana Buddha</h4>
+                    <p class="pebble-item-desc">Meditative calm with 24k gold leaf accents.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="water-container" id="waterPebbleContainer">
+            <canvas class="water-ripple-canvas" id="waterRippleCanvas"></canvas>
+            <div class="scatter-item pebble-1 river-pebble-card" title="Lord Jagannath Hand-Painted Sacred River Stone (Rishikesh)">
+                <div class="ripple-effect"></div>
+                <img src="assets/stone1.jpeg" alt="Lord Jagannath Hand-Painted Sacred River Stone">
+                <div class="pebble-sheen-overlay"></div>
+            </div>
+            <div class="scatter-item pebble-2 river-pebble-card" title="Monarch Butterfly Hand-Painted Sacred River Stone (Artisan Atelier)">
+                <div class="ripple-effect"></div>
+                <img src="assets/elements/artisan_stone_butterfly.png" alt="Monarch Butterfly Hand-Painted Sacred River Stone">
+                <div class="pebble-sheen-overlay"></div>
+            </div>
+            <div class="scatter-item pebble-3 river-pebble-card" title="Gentle Heart Penguin Hand-Painted Sacred River Stone (Artisan Atelier)">
+                <div class="ripple-effect"></div>
+                <img src="assets/elements/artisan_stone_penguin.png" alt="Gentle Heart Penguin Hand-Painted Sacred River Stone">
+                <div class="pebble-sheen-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: THE ATELIER TOOLS & ORGANIC PIGMENTS -->
+    <section id="atelier-tools" class="atelier-tools-section">
+        <div class="container text-center">
+            <div class="lotus-talisman-divider">
+                <img src="assets/elements/golden_lotus_mandala_lineart.png" class="lotus-talisman-icon" alt="Gold Mandala Emblem" style="width: 44px;">
+            </div>
+            <span class="section-script-badge" style="color: var(--clr-terracotta);">Sacred Himalayan Craft</span>
+            <h2 class="section-title">The Atelier Tools & Organic Pigments</h2>
+            <p class="section-description" style="color: var(--clr-indigo-soft); margin-bottom: 2rem;">Every miniature begins with ancient techniques: river-washed quartz pebbles, dried peepal skeleton veins, hand-turned clay palettes, and organic mineral pigments.</p>
+
+            <div class="tools-showcase-grid">
+                <!-- Tool 1: Clay Palette & Fine Bristles -->
+                <div class="tool-card">
+                    <div class="tool-img-wrap">
+                        <img src="assets/elements/clay_color_palette.png" class="tool-img clay-palette-img" alt="Terracotta Clay Palette">
+                        <img src="assets/elements/artist_paintbrushes.png" class="tool-img-secondary brushes-img" alt="Artist Brushes">
+                    </div>
+                    <h3>Terracotta Palette & Fine Liners</h3>
+                    <p>Hand-molded earthen terracotta wells holding wet gouache and natural binders, applied with handcrafted animal-friendly fine bristle brushes.</p>
+                </div>
+
+                <!-- Tool 2: Wooden Palette & Brush Pot -->
+                <div class="tool-card">
+                    <div class="tool-img-wrap">
+                        <img src="assets/elements/wooden_paint_palette.png" class="tool-img wooden-palette-img" alt="Wooden Studio Palette">
+                        <img src="assets/elements/terracotta_brush_pot.png" class="tool-img-secondary pot-img" alt="Terracotta Brush Pot">
+                    </div>
+                    <h3>Atelier Palette & Sacred Water Pot</h3>
+                    <p>The working wooden easel palette bearing decades of sacred artwork, accompanied by traditional folk-painted terracotta water vessels.</p>
+                </div>
+
+                <!-- Tool 3: Earth Pigments & Color Harmony -->
+                <div class="tool-card">
+                    <div class="tool-img-wrap">
+                        <img src="assets/elements/pigment_glass_jars.png" class="tool-img pigment-jars-img" alt="Raw Earth Pigments">
+                        <img src="assets/elements/watercolor_rainbow_splash.png" class="tool-img-secondary splash-img" alt="Watercolor Rainbow Splash">
+                    </div>
+                    <h3>Natural Earth & Mineral Pigments</h3>
+                    <p>Sustainably sourced Himalayan ochre, temple vermilion, deep spiritual indigo, and crushed lapis lazuli for archival visual radiance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         PREMIUM ATELIER FOOTER SECTION
+         ========================================= -->
+    <footer id="contact" class="site-footer">
+        <!-- Ambient Sacred Watermark -->
+        <img src="assets/elements/lotus_mandala_medallion.png" class="mandala-watermark footer-mandala" alt="Sacred Lotus Mandala" loading="lazy">
+
+        <div class="container footer-container">
+            
+            <!-- PART 1: TOP NEWSLETTER BLOCK (The Atelier Circle) -->
+            <div class="atelier-circle-card">
+                <div class="circle-card-content">
+                    <div class="circle-badge">
+                        <img src="assets/elements/golden_lotus_mandala_lineart.png" alt="Golden Lotus" class="circle-badge-icon">
+                        <span>The Atelier Circle</span>
+                    </div>
+                    <h3 class="circle-heading">Join the Atelier Circle</h3>
+                    <p class="circle-subtext">Subscribe to receive exclusive previews of new skeleton leaf miniatures, clay collections, and curatorial art essays.</p>
+                </div>
+                <form class="circle-signup-form" id="newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+                    <div class="signup-input-wrap">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email address..." required aria-label="Email Address for Atelier Circle">
+                        <button type="submit" class="signup-btn" aria-label="Subscribe to Atelier Circle">
+                            <span>Join</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="signup-status" id="newsletter-status"></p>
+                </form>
+            </div>
+
+            <!-- PART 2: THE 4-COLUMN FOOTER NAVIGATION -->
+            <div class="footer-grid-4col">
+                
+                <!-- Column 1: Brand & Local SEO (About the Atelier) -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-brand-lockup" aria-label="RANGRITICO | Art Atelier by Prachi Mandal">
+                        <img src="assets/rangritico_brand_logo_light.png" alt="RANGRITICO | Art Atelier by Prachi Mandal" class="footer-logo-img" onerror="this.onerror=null; this.src='assets/rangritico_brand_logo_light.png'">
+                    </a>
+                    <p class="footer-brand-desc">
+                        Rangritico is an organic curatorial design studio founded by UGC NET qualified artist and visual researcher Prachi Mandal. Rooted in the natural serenity of Rishikesh, we specialize in the slow craft of fine miniature paintings on dried skeleton peepal leaves, hand-molded terracotta jewelry, and custom spiritual canvases.
+                    </p>
+                    <div class="atelier-certifications">
+                        <div class="cert-item">
+                            <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <span>UGC NET Qualified Visual Arts Researcher</span>
+                        </div>
+                        <div class="cert-item">
+                            <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            <span>Handcrafted with Love in Rishikesh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Shop & Direct Purchase Links (SEO-Optimized Anchor Texts) -->
+                <div class="footer-col">
+                    <h4 class="footer-col-header">SHOP THE COLLECTIONS</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#gallery">Original Canvas Paintings</a></li>
+                        <li><a href="#leaf-art">Hand-painted Peepal Leaf Art</a></li>
+                        <li><a href="portfolio.html">Terracotta & Clay Jewelry Sets</a></li>
+                        <li><a href="#shop">Painted Pebble & River Stone Art</a></li>
+                        <li><a href="#atelier-tools">Custom Mandala Home Decor</a></li>
+                        <li>
+                            <a href="https://www.etsy.com/shop/Rangritico" target="_blank" rel="noopener noreferrer" class="etsy-badge-link" aria-label="Buy on Etsy Rangritico India">
+                                <span>👉 Buy on Etsy (Rangritico India)</span>
+                                <span class="etsy-star-seller-badge">
+                                    <svg class="etsy-star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                    Star Seller
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: The Portfolio & Academy -->
+                <div class="footer-col">
+                    <h4 class="footer-col-header">RESEARCH & EDUCATION</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="portfolio.html">The Art Gallery (Exhibitions)</a></li>
+                        <li><a href="about.html#scholar">Curatorial & Art History Essays</a></li>
+                        <li><a href="about.html#pedagogy">Art Pedagogy & School Board Projects</a></li>
+                        <li><a href="about.html">The Story of the Craft (About)</a></li>
+                        <li><a href="#modal-resume" class="atelier-modal-trigger" data-modal="modal-resume">Curator's Resume & CV (PDF)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Customer Care & Trust Center (E-Commerce Logistics) -->
+                <div class="footer-col">
+                    <h4 class="footer-col-header">CUSTOMER SUPPORT</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#modal-shipping" class="atelier-modal-trigger" data-modal="modal-shipping">Shipping, Handling & Global Delivery</a></li>
+                        <li><a href="#modal-care" class="atelier-modal-trigger" data-modal="modal-care">Care Instructions for Handmade Art</a></li>
+                        <li><a href="#modal-commission" class="atelier-modal-trigger" data-modal="modal-commission">Commission custom murals & furniture</a></li>
+                        <li><a href="#modal-faq" class="atelier-modal-trigger" data-modal="modal-faq">Frequently Asked Questions (FAQ)</a></li>
+                        <li><a href="#modal-contact" class="atelier-modal-trigger" data-modal="modal-contact">Contact Prachi Mandal</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- PART 3: FOOTER BOTTOM BAR -->
+            <div class="footer-bottom-bar">
+                <div class="footer-copyright">
+                    &copy; 2026 RANGRITICO by Prachi Mandal. All rights reserved. Handcrafted in India.
+                </div>
+
+                <div class="footer-social-icons">
+                    <a href="https://instagram.com/pra_chi_1108" target="_blank" rel="noopener noreferrer" aria-label="Instagram @pra_chi_1108" title="Instagram @pra_chi_1108">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.etsy.com/shop/Rangritico" target="_blank" rel="noopener noreferrer" aria-label="Etsy Rangritico" title="Etsy (Rangritico India)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn Profile">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" title="Pinterest Inspiration">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.1-2.1.05-3l1.1-4.7s-.3-.6-.3-1.4c0-1.3.8-2.3 1.7-2.3.8 0 1.2.6 1.2 1.3 0 .8-.5 2-1 3.1-.3 1 .6 1.8 1.6 1.8 1.9 0 3.3-2 3.3-5 0-2.6-1.9-4.5-4.6-4.5-3.1 0-5 2.3-5 4.8 0 .9.3 1.9.8 2.4.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.3-.6-2.1-2.5-2.1-4.1 0-3.3 2.4-6.4 7-6.4 3.7 0 6.6 2.6 6.6 6.1 0 3.7-2.3 6.6-5.5 6.6-1.1 0-2.1-.6-2.4-1.2l-.7 2.6c-.3 1-1 2.3-1.5 3.1A10 10 0 1 0 12 2z"></path></svg>
+                    </a>
+                </div>
+
+                <div class="footer-trust-badges">
+                    <span class="trust-badge" title="Guaranteed Safe Checkout">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        Secure Checkout
+                    </span>
+                    <span class="trust-badge" title="Fragile Art Moisture-Proof Shipping">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        Global Delivery
+                    </span>
+                    <span class="trust-badge" title="100% Handcrafted Origin">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        100% Handcrafted
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Atelier Support Modals -->
+    <div id="modal-shipping" class="atelier-info-modal" role="dialog" aria-modal="true" aria-labelledby="shipping-title">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h3 id="shipping-title">Shipping, Handling & Global Delivery</h3>
+            <p>Every miniature painting on delicate dried skeleton peepal leaves and each hand-sculpted terracotta jewelry piece is prepared with museum-grade archival handling.</p>
+            <p><strong>Custom Rigid Packaging:</strong> Artworks are cushioned in shock-absorbent, moisture-proof, rigid custom boxes lined with acid-free velvet foam to ensure fragile leaf networks and organic clay arrive in flawless condition anywhere in India and across the globe.</p>
+            <ul>
+                <li><strong>Domestic Shipping (India):</strong> 3–6 business days via insured express couriers.</li>
+                <li><strong>Worldwide Delivery:</strong> 7–14 business days with full door-to-door tracking.</li>
+                <li><strong>Fragile Art Seal:</strong> Tamper-evident, weather-sealed moisture barrier on every shipment.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-care" class="atelier-info-modal" role="dialog" aria-modal="true" aria-labelledby="care-title">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h3 id="care-title">Care Instructions for Handmade Art</h3>
+            <p><strong>Dried Skeleton Peepal Leaf Miniatures:</strong></p>
+            <ul>
+                <li>Keep leaf artworks framed behind UV-protective glass or acrylic.</li>
+                <li>Avoid hanging in rooms with direct high humidity (such as near open baths) or prolonged harsh direct sunlight.</li>
+                <li>Dust the exterior glass frame with a dry, soft microfiber cloth.</li>
+            </ul>
+            <p><strong>Hand-Molded Terracotta Jewelry:</strong></p>
+            <ul>
+                <li>Store each set in its airtight cotton pouch when not worn.</li>
+                <li>Avoid getting clay beads wet or spraying perfumes/lotions directly onto the hand-painted surfaces.</li>
+                <li>Clean gently with a soft dry lint-free cloth.</li>
+            </ul>
+            <p><strong>Painted River Stones:</strong> Sealed with archival moisture-resistant varnish. Wipe gently with a dry or lightly dampened cloth.</p>
+        </div>
+    </div>
+
+    <div id="modal-commission" class="atelier-info-modal" role="dialog" aria-modal="true" aria-labelledby="commission-title">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h3 id="commission-title">Commission Custom Murals & Art</h3>
+            <p>Prachi Mandal accepts a limited number of bespoke private and institutional commissions each season:</p>
+            <ul>
+                <li><strong>Spiritual & Meditative Canvases:</strong> Large-format custom paintings (Buddha, Shiva-Shakti, Chakras, Mandalas).</li>
+                <li><strong>Bespoke Skeleton Leaf Artworks:</strong> Personalized sacred deities or heirloom symbols painted on rare dried peepal leaves.</li>
+                <li><strong>Hand-Painted Temple Furniture & Murals:</strong> Customized architectural and home temple decor.</li>
+            </ul>
+            <p>To request a consultation, please email <a href="mailto:atelier.prachicraft@gmail.com" style="color: var(--clr-gold); text-decoration: underline;">atelier.prachicraft@gmail.com</a> or message directly on Instagram <a href="https://instagram.com/pra_chi_1108" target="_blank" style="color: var(--clr-gold); text-decoration: underline;">@pra_chi_1108</a>.</p>
+        </div>
+    </div>
+
+    <div id="modal-faq" class="atelier-info-modal" role="dialog" aria-modal="true" aria-labelledby="faq-title">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h3 id="faq-title">Frequently Asked Questions (FAQ)</h3>
+            <p><strong>Q: Are the peepal leaves real?</strong><br>
+            A: Yes. Naturally shed leaves of the sacred Bodhi/Peepal tree are harvested along Himalayan riverbanks, submerged and cleaned through a delicate multi-week soaking process until only the translucent lacy skeleton remains.</p>
+            <p><strong>Q: Are the terracotta clay pieces durable?</strong><br>
+            A: Absolutely. They are hand-sculpted, baked for structural resilience, and finished with protective sealants and high-grade thread cords and cowrie shell accents.</p>
+            <p><strong>Q: Can I purchase directly through Etsy?</strong><br>
+            A: Yes! Visit our official verified Etsy shop: <a href="https://www.etsy.com/shop/Rangritico" target="_blank" rel="noopener noreferrer" style="color: var(--clr-gold); text-decoration: underline;">Rangritico India</a> for instant checkout and international shipping.</p>
+        </div>
+    </div>
+
+    <div id="modal-resume" class="atelier-info-modal" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h3 id="resume-title">Curator's Resume & Academic CV</h3>
+            <p><strong>Prachi Mandal</strong> — UGC NET Qualified Visual Arts Researcher, Curator & Educator.</p>
+            <ul>
+                <li><strong>UGC NET Qualified:</strong> National Eligibility Test in Visual Arts (Recognized by UGC, Dec 2025).</li>
+                <li><strong>M.A. in History of Arts:</strong> Panjab University, Chandigarh (2022–2024).</li>
+                <li><strong>Bachelor of Fine Arts (B.F.A.):</strong> Chandigarh University, Mohali (2018–2022).</li>
+                <li><strong>Museum Curation:</strong> Co-Curator of <em>"Herstory of Modern Art"</em> and <em>"Beyond Tradition: Pluralism in Modern Indian Art"</em> at Fine Arts Museum, Panjab University.</li>
+                <li><strong>Pedagogy:</strong> TGT Art & Craft Educator, Red Fort International Public School, Rishikesh.</li>
+            </ul>
+            <a href="RESUME_PRACHI_MANDAL.pdf" download class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Download Official Resume (PDF)</a>
+        </div>
+    </div>
+
+    <div id="modal-contact" class="atelier-info-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h3 id="contact-modal-title">Contact Prachi Mandal</h3>
+            <p>We welcome collectors, gallery curators, art enthusiasts, and workshop organizers.</p>
+            <ul>
+                <li><strong>Atelier Location:</strong> Rishikesh, Uttarakhand, India</li>
+                <li><strong>Direct Inquiries:</strong> <a href="mailto:atelier.prachicraft@gmail.com" style="color: var(--clr-gold); text-decoration: underline;">atelier.prachicraft@gmail.com</a></li>
+                <li><strong>Instagram:</strong> <a href="https://instagram.com/pra_chi_1108" target="_blank" style="color: var(--clr-gold); text-decoration: underline;">@pra_chi_1108</a></li>
+                <li><strong>Etsy Shop:</strong> <a href="https://www.etsy.com/shop/Rangritico" target="_blank" rel="noopener noreferrer" style="color: var(--clr-gold); text-decoration: underline;">Rangritico India</a></li>
+            </ul>
+            <a href="mailto:atelier.prachicraft@gmail.com" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Send Email Inquiry</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="gsap-animations.js"></script>
+
+    <!-- Presentation Modal -->
+    <div id="presentation-modal" class="presentation-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="falling-leaves-container" id="falling-leaves"></div>
+        <img id="presentation-image" src="" alt="Presentation View">
+    </div>
+
+</body>
+</html>

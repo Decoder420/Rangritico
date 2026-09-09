@@ -1,0 +1,4803 @@
+/* =========================================
+   Prachi Mandal | Curated Royal Atelier
+   Theme: Sacred Indian Fine-Art & Himalayan Aesthetics
+   ========================================= */
+
+:root {
+    /* Royal Himalayan & Fine-Art Palette */
+    --clr-gallery-white: #FAF9F6;
+    --clr-canvas-cream: #FCF9F5;
+    --clr-parchment: #F5EFEB;
+    --clr-indigo: #1A1A1A;
+    --clr-indigo-soft: #222D42;
+    --clr-terracotta: #C3512F;
+    --clr-terracotta-dark: #9F391C;
+    --clr-terracotta-light: #E07150;
+    --clr-gold: #D4AF37;
+    --clr-gold-light: #F7E7B4;
+    --clr-gold-dark: #AA820A;
+    --clr-gold-border: rgba(212, 175, 55, 0.38);
+    --clr-turquoise: #0E8B99;
+    --clr-turquoise-light: #48CAE4;
+    --clr-emerald: #1B6E53;
+    --clr-lotus-pink: #E25582;
+    --clr-lotus-soft: #FDF0F3;
+    
+    /* Typography - Artistic & Expressive */
+    --font-display: 'Cinzel Decorative', 'Playfair Display', serif;
+    --font-heading: 'Playfair Display', 'Cormorant Garamond', serif;
+    --font-artistic: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Spacing */
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    
+    /* Transitions & Shadows */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --shadow-subtle: 0 10px 30px rgba(20, 28, 43, 0.06);
+    --shadow-gold: 0 12px 35px rgba(212, 175, 55, 0.22);
+    --shadow-deep: 0 20px 50px rgba(20, 28, 43, 0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   ARTISAN PAINT BRUSH CURSOR
+   ========================================= */
+@media (hover: hover) and (pointer: fine) {
+    html, body, .horizontal-gallery-viewport, .gallery-horizontal-track, .main-header, main {
+        cursor: url('assets/elements/paintbrush_cursor.svg') 1 1, auto !important;
+    }
+
+    a, button, [role="button"], 
+    .frame-interactive, .guilded-museum-frame, .double-glass-frame, .filigree-museum-frame, .shadowbox-museum-frame,
+    .station-dot, .glide-arrow-btn, .hud-pill-btn, .nav-links a, .logo-link,
+    .mobile-nav-toggle, .nav-close-drawer, .modal-close,
+    input, textarea, select {
+        cursor: url('assets/elements/paintbrush_cursor_hover.svg') 1 1, pointer !important;
+    }
+}
+
+/* Golden Paint Splash / Dab Effect on Click */
+.brush-paint-dab {
+    position: fixed;
+    pointer-events: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.9) 0%, rgba(195, 81, 47, 0.55) 55%, transparent 100%);
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.85;
+    z-index: 99999;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-gallery-white);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 10% 35%, rgba(226, 85, 130, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 70%, rgba(14, 139, 153, 0.04) 0%, transparent 40%);
+    color: var(--clr-indigo);
+    line-height: 1.65;
+    overflow-x: hidden;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background-color: var(--clr-terracotta);
+}
+
+.text-center { text-align: center; }
+.mb-loose { margin-bottom: var(--space-lg); }
+
+/* =========================================
+   Buttons
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--clr-terracotta);
+    color: var(--clr-gallery-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--clr-indigo);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--clr-indigo);
+    color: var(--clr-indigo);
+}
+
+.btn-secondary:hover {
+    background-color: var(--clr-lotus-pink);
+    border-color: var(--clr-lotus-pink);
+    color: var(--clr-indigo);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(250, 247, 242, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 1000;
+    padding: 0.75rem 0;
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid var(--clr-gold-border);
+}
+
+.main-header.scrolled {
+    padding: 0.45rem 0;
+    background-color: rgba(250, 247, 242, 0.98);
+    box-shadow: 0 4px 25px rgba(26, 36, 54, 0.08);
+}
+
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 56px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform var(--transition-smooth), filter var(--transition-smooth);
+}
+
+.brand-logo-symmetric {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform var(--transition-smooth), height 0.3s ease, filter var(--transition-smooth);
+}
+
+.brand-logo-symmetric:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 4px 16px rgba(212, 175, 55, 0.28));
+}
+
+.main-header.scrolled .brand-logo-symmetric {
+    height: 42px;
+}
+
+.brand-logo:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 4px 14px rgba(184, 80, 54, 0.22));
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.6rem;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--clr-indigo);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    padding: 0.45rem 0;
+    transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--clr-terracotta), var(--clr-gold));
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--clr-terracotta);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-cta-link {
+    background: rgba(195, 81, 47, 0.08);
+    border: 1px solid rgba(195, 81, 47, 0.35);
+    padding: 0.45rem 1.1rem !important;
+    border-radius: 4px;
+    color: var(--clr-terracotta) !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-cta-link:hover {
+    background: var(--clr-terracotta) !important;
+    color: #FAF7F2 !important;
+    border-color: var(--clr-terracotta) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(195, 81, 47, 0.25);
+}
+
+.nav-cta-link::after {
+    display: none !important;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: rgba(195, 81, 47, 0.06);
+    border: 1px solid var(--clr-gold-border);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    padding: 0;
+}
+
+.mobile-nav-toggle:hover {
+    background: rgba(195, 81, 47, 0.12);
+    border-color: var(--clr-terracotta);
+}
+
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--clr-indigo);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background-color: var(--clr-indigo);
+    transition: transform 0.3s ease, top 0.3s ease;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+.mobile-nav-toggle.open .hamburger {
+    background-color: transparent;
+}
+
+.mobile-nav-toggle.open .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+    background-color: var(--clr-terracotta);
+}
+
+.mobile-nav-toggle.open .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background-color: var(--clr-terracotta);
+}
+
+/* Mobile Nav Drawer & Backdrop */
+.nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(16, 22, 34, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 999;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* =========================================
+   2.5D VIRTUAL ART MUSEUM WALKTHROUGH (Portfolio)
+   ========================================= */
+.museum-walkthrough-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #FAF9F6;
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 65%),
+        radial-gradient(circle at 20% 80%, rgba(195, 81, 47, 0.06) 0%, transparent 55%);
+    overflow: hidden;
+}
+
+.museum-viewport-sticky {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.museum-intro-badge-wrap {
+    position: absolute;
+    top: 4.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    width: 90%;
+    max-width: 600px;
+}
+
+.museum-intro-badge-wrap h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: #1A1A1A;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.museum-intro-badge-wrap p {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: #8C6D1F;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.museum-skip-btn {
+    pointer-events: auto;
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.35rem 1rem;
+    background: rgba(250, 249, 246, 0.95);
+    border: 1px solid var(--clr-gold);
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #8C6D1F;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    transition: all 0.25s ease;
+}
+
+.museum-skip-btn:hover {
+    background: var(--clr-gold);
+    color: #FAF9F6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+.museum-corridor-stage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Plaster Wall Textures & Architectural Depth */
+.museum-wall {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    pointer-events: none;
+    opacity: 0.45;
+    z-index: 2;
+}
+
+.museum-wall-left {
+    left: 0;
+    background: linear-gradient(90deg, rgba(235, 230, 222, 0.75) 0%, transparent 100%);
+    border-right: 1px dashed rgba(212, 175, 55, 0.25);
+}
+
+.museum-wall-right {
+    right: 0;
+    background: linear-gradient(-90deg, rgba(235, 230, 222, 0.75) 0%, transparent 100%);
+    border-left: 1px dashed rgba(212, 175, 55, 0.25);
+}
+
+.museum-floor-reflection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(0deg, rgba(240, 236, 228, 0.85) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Dynamic Spotlight that subtly highlights active artwork in viewport center */
+.museum-spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+    background: radial-gradient(circle 480px at 50% 50%, rgba(255, 250, 238, 0.7) 0%, rgba(250, 249, 246, 0.25) 55%, rgba(250, 249, 246, 0.9) 90%);
+    transition: opacity 0.4s ease;
+}
+
+/* 3D Framed Artworks */
+.museum-frame-item {
+    position: absolute;
+    width: 440px;
+    max-width: 86vw;
+    transform-style: preserve-3d;
+    pointer-events: auto;
+    will-change: transform, opacity;
+    z-index: 4;
+}
+
+/* Frame Aesthetics: Museum Guilding */
+.guilded-art-frame {
+    background: #FAF9F6;
+    padding: 14px;
+    border-radius: 4px;
+    border: 3px solid #D4AF37;
+    box-shadow: 
+        0 20px 50px rgba(26, 26, 26, 0.22),
+        0 0 25px rgba(212, 175, 55, 0.28),
+        inset 0 0 15px rgba(212, 175, 55, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guilded-art-frame img {
+    width: 100%;
+    height: 350px;
+    max-height: 48vh;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Double-Glass Floating Frame (Frame 3: Blue Buddha Peepal Leaf) */
+.double-glass-frame {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 18px;
+    border: 2px solid rgba(212, 175, 55, 0.65);
+    border-radius: 6px;
+    box-shadow: 
+        0 25px 60px rgba(26, 26, 26, 0.2),
+        0 0 35px rgba(212, 175, 55, 0.28);
+    position: relative;
+}
+
+.double-glass-frame::before {
+    content: '';
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 24px;
+    background: linear-gradient(180deg, #D4AF37, rgba(212, 175, 55, 0.2));
+}
+
+.double-glass-frame img {
+    width: 100%;
+    height: 330px;
+    max-height: 45vh;
+    object-fit: contain;
+    background: rgba(250, 249, 246, 0.92);
+    border-radius: 3px;
+    padding: 8px;
+}
+
+/* Frame 5 Pedestal Styling */
+.pedestal-showcase {
+    text-align: center;
+}
+
+.pedestal-marble-stand {
+    width: 260px;
+    max-width: 90%;
+    height: 44px;
+    margin: 12px auto 0;
+    background: linear-gradient(135deg, #e8e3d9 0%, #fdfbf7 50%, #dcd6cb 100%);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 4px;
+    box-shadow: 
+        0 15px 30px rgba(26, 26, 26, 0.22),
+        0 0 20px rgba(212, 175, 55, 0.2);
+    position: relative;
+}
+
+.pedestal-marble-stand::before {
+    content: 'EXHIBIT FINALE • MANDALA TABLE';
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #8C6D1F;
+    line-height: 44px;
+    display: block;
+}
+
+/* Museum Gallery Artwork Label Plaque */
+.museum-label-plaque {
+    margin-top: 10px;
+    background: rgba(250, 249, 246, 0.96);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 6px 12px;
+    border-radius: 3px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.06);
+}
+
+.plaque-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 2px;
+}
+
+.plaque-meta {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    color: #C3512F;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Walkthrough Scroll Prompt */
+.museum-scroll-cue {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.museum-scroll-cue span {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8C6D1F;
+    font-weight: 600;
+}
+
+.museum-scroll-cue .cue-arrow {
+    width: 18px;
+    height: 18px;
+    stroke: #D4AF37;
+    animation: cueBounce 2s infinite ease-in-out;
+}
+
+/* =========================================
+   WATER RIPPLE HOVER & PEBBLE FLOAT PHYSICS
+   ========================================= */
+.pebbles-garden-grid {
+    position: relative;
+}
+
+.water-ripple-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.garden-card, .pebble-garden-card, .pebbles-hero-wrap, .ripple-card {
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.45s ease;
+    will-change: transform;
+}
+
+.garden-card:hover, .pebble-garden-card:hover, .ripple-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(14, 139, 153, 0.22), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* =========================================
+   GLOWING ETSY STAR-SELLER BADGE
+   ========================================= */
+.etsy-badge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: transform 0.25s ease;
+}
+
+.etsy-badge-link:hover {
+    transform: translateX(4px);
+}
+
+.etsy-star-seller-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.65rem;
+    background: rgba(241, 100, 30, 0.12);
+    border: 1px solid rgba(241, 100, 30, 0.45);
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #F1641E;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 12px rgba(241, 100, 30, 0.25);
+    animation: etsyStarPulse 2.4s ease-in-out infinite alternate;
+}
+
+.etsy-star-icon {
+    width: 12px;
+    height: 12px;
+    fill: #F1641E;
+}
+
+@keyframes etsyStarPulse {
+    0% {
+        box-shadow: 0 0 6px rgba(241, 100, 30, 0.2);
+        border-color: rgba(241, 100, 30, 0.35);
+    }
+    100% {
+        box-shadow: 0 0 16px rgba(241, 100, 30, 0.55);
+        border-color: rgba(241, 100, 30, 0.75);
+    }
+}
+
+/* =========================================
+   About Page Styles
+   ========================================= */
+.about-page {
+    padding: calc(var(--space-xl) + 4rem) 0 var(--space-xl);
+    background-color: var(--clr-gallery-white);
+}
+
+.about-header {
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+}
+
+.about-quote {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--clr-terracotta);
+    line-height: 1.6;
+}
+
+.about-chapter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.about-chapter.alt-layout {
+    direction: rtl;
+}
+
+.about-chapter.alt-layout > * {
+    direction: ltr;
+}
+
+.chapter-title {
+    font-size: 2.2rem;
+    color: var(--clr-indigo);
+    margin-bottom: 1.5rem;
+}
+
+.chapter-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.academic-list {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style-type: square;
+    color: #444;
+}
+
+.academic-list li {
+    margin-bottom: 0.8rem;
+}
+
+.chapter-image img {
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+.chapter-image figcaption {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.philosophy-items {
+    margin-top: 2rem;
+}
+
+.philosophy-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--clr-lotus-pink);
+}
+
+.philosophy-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--clr-terracotta);
+}
+
+.welcome-atelier {
+    padding: 4rem;
+    background-color: var(--clr-lotus-pink);
+    border-radius: 8px;
+    margin-top: var(--space-lg);
+}
+
+.welcome-atelier h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+    .about-chapter, .about-chapter.alt-layout {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+}
+
+/* =========================================
+   Scroll Animations & Artistic Elements
+   ========================================= */
+
+/* Reveal on Scroll */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+/* Artistic Borders & Frames */
+.art-frame {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--clr-gallery-white);
+    border: 1px solid rgba(204, 90, 61, 0.3); /* Terracotta tint */
+}
+
+.art-frame::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    border: 1px solid rgba(26, 36, 54, 0.15); /* Indigo tint */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.art-frame img {
+    position: relative;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+/* Leaf Decorative Border */
+.leaf-border {
+    position: relative;
+}
+
+.leaf-border::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background-image: url('assets/leaf-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+
+.leaf-border:hover::after {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Enhancing existing sections */
+.boutique-section {
+    position: relative;
+    border: 1px solid rgba(204, 90, 61, 0.2);
+}
+
+.boutique-section::before, .boutique-section::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('assets/leaf-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+}
+
+.boutique-section::before {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-45deg);
+}
+
+.boutique-section::after {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(135deg);
+}
+
+/* Hero Section Artistic Overlay */
+.hero-img-wrapper {
+    position: relative;
+    height: 100%;
+}
+.hero-img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid var(--clr-terracotta);
+    z-index: 0;
+}
+.hero-img {
+    position: relative;
+    z-index: 1;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   Global Frame & Presentation Visuals
+   ========================================= */
+
+/* Global Leaf Frame */
+.global-frame {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+    border: 1px solid rgba(204, 90, 61, 0.15);
+    margin: 10px;
+}
+
+.global-frame {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    margin: 8px;
+    box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.04);
+}
+
+.frame-corner {
+    position: absolute;
+    width: 140px;
+    height: 180px;
+    background-image: url('assets/elements/corner_vine_branch.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.25));
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    pointer-events: none !important;
+}
+
+.top-left { top: -10px; left: -10px; transform: scaleY(-1); }
+.top-right { top: -10px; right: -10px; transform: scale(-1, -1); }
+.bottom-left { bottom: -10px; left: -10px; transform: none; }
+.bottom-right { bottom: -10px; right: -10px; transform: scaleX(-1); }
+
+@media (max-width: 768px) {
+    .frame-corner {
+        width: 85px;
+        height: 110px;
+        opacity: 0.6;
+    }
+}
+
+/* Presentation Modal */
+.presentation-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(26, 36, 54, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.presentation-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.presentation-modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    border: 2px solid var(--clr-terracotta);
+    border-radius: 4px;
+    transform: scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+}
+
+.presentation-modal.open img {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--clr-gallery-white);
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+    color: var(--clr-terracotta);
+}
+
+/* Falling Leaves Animation */
+.falling-leaves-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.falling-leaf {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('assets/leaf-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg) scale(0.8); opacity: 0; }
+    10% { opacity: 0.3; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(100vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+/* Enhanced Scroll Reveal Classes */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-scale.visible {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.reveal-slide-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-slide-left.visible {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* =========================================
+   GSAP REDESIGN STYLES
+   ========================================= */
+
+/* Section 1: Intro Preloader */
+.interactive-intro {
+    position: relative;
+    height: 100vh;
+    background-color: var(--clr-gallery-white);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+}
+
+.hero-layers-showcase {
+    display: contents;
+}
+
+.hero-layer {
+    position: absolute;
+    will-change: transform, opacity;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.layer-1 {
+    /* Buddha - Left Center */
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: 3;
+}
+
+.layer-2 {
+    /* Shiva - Right Center */
+    right: 10%;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 350px;
+    z-index: 2;
+}
+
+.layer-3 {
+    /* Yogi Chakra - Center Back */
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    z-index: 1;
+    filter: blur(2px);
+}
+
+.intro-text {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    z-index: 4;
+    background: rgba(250, 249, 246, 0.85);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--clr-terracotta);
+}
+
+.intro-ctas {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* ===================================================
+   SECTION 2: THE SACRED ARTISAN JOURNEY & ETSY SPOTLIGHT
+   =================================================== */
+.vine-section {
+    position: relative;
+    min-height: auto;
+    background: linear-gradient(180deg, var(--clr-gallery-white) 0%, #FAF6EE 50%, var(--clr-gallery-white) 100%);
+    padding: 3.8rem 0 3.2rem 0;
+    overflow: hidden;
+}
+
+.vine-container {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    z-index: 2;
+}
+
+/* Section Header Banner */
+.section-header-banner {
+    max-width: 840px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.section-header-banner .lotus-talisman-icon {
+    width: 46px;
+    height: auto;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.section-header-banner .section-script-badge {
+    color: var(--clr-terracotta);
+    font-size: 1.85rem;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+}
+
+.section-header-banner .section-title {
+    font-size: clamp(2.1rem, 3.8vw, 3rem);
+    color: var(--clr-indigo);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+.section-header-banner .section-description {
+    font-size: 1.08rem;
+    color: #555555;
+    line-height: 1.7;
+}
+
+/* ===================================================
+   ETSY VERIFIED STAR SELLER SPOTLIGHT BANNER
+/* ===================================================
+   ETSY VERIFIED STAR SELLER SPOTLIGHT BANNER
+   =================================================== */
+.etsy-artisan-spotlight-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 253, 249, 0.98) 0%, rgba(250, 244, 235, 0.95) 100%);
+    border: 1.5px solid rgba(212, 175, 55, 0.45);
+    border-radius: 20px;
+    padding: 2.25rem 2.75rem;
+    margin: 0 auto 2.8rem auto;
+    max-width: 1060px;
+    box-shadow: 
+        0 18px 45px rgba(26, 26, 26, 0.07),
+        0 0 35px rgba(212, 175, 55, 0.14);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.etsy-artisan-spotlight-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.75);
+    box-shadow: 
+        0 24px 55px rgba(26, 26, 26, 0.1),
+        0 0 45px rgba(212, 175, 55, 0.22);
+}
+
+.etsy-spotlight-glow {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.etsy-card-mandala-watermark {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    opacity: 0.12;
+    pointer-events: none;
+    animation: slowMandalaSpin 90s linear infinite;
+    z-index: 0;
+}
+
+@keyframes slowMandalaSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.etsy-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.etsy-seller-identity {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.etsy-seller-avatar-wrap {
+    position: relative;
+    width: 82px;
+    height: 82px;
+    flex-shrink: 0;
+}
+
+.etsy-seller-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2.5px solid var(--clr-gold);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.etsy-verified-check {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 24px;
+    height: 24px;
+    background: #1B6E53;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.etsy-seller-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.etsy-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.etsy-origin-pill {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #666666;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.etsy-shop-title {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--clr-indigo);
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.etsy-shop-curator {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.etsy-shop-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.etsy-official-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: linear-gradient(135deg, #F1641E 0%, #D44E0E 100%);
+    color: #FFFFFF !important;
+    padding: 0.85rem 1.85rem;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(241, 100, 30, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etsy-official-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(241, 100, 30, 0.45);
+}
+
+.etsy-shop-bag-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.etsy-btn-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.etsy-official-btn:hover .etsy-btn-arrow {
+    transform: translateX(4px);
+}
+
+.etsy-rating-tag {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: #8C6D1F;
+    font-weight: 600;
+}
+
+/* 4 Trust Pillars */
+.etsy-trust-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.trust-pillar-item {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+}
+
+.pillar-icon-box {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.pillar-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.pillar-text strong {
+    font-family: var(--font-heading);
+    font-size: 0.96rem;
+    color: var(--clr-indigo);
+    font-weight: 600;
+}
+
+.pillar-text span {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: #666666;
+    line-height: 1.45;
+}
+
+/* ===================================================
+   ARTISTIC ATMOSPHERE LAYER (FROM UPLOADED ART PACK)
+   =================================================== */
+.artistic-atmosphere-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* 1. Flying Monarch Butterfly */
+.ambient-butterfly-flight {
+    position: absolute;
+    top: 100px;
+    right: 8%;
+    width: 85px;
+    height: 85px;
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.22));
+    animation: butterflyFlightTrack 18s ease-in-out infinite alternate;
+    transition: transform 0.4s ease;
+}
+
+.ambient-butterfly-flight:hover {
+    transform: scale(1.25) translateY(-10px);
+}
+
+.butterfly-flight-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: butterflyWingFlap 0.75s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+
+@keyframes butterflyFlightTrack {
+    0% { transform: translate(0, 0) rotate(4deg); }
+    25% { transform: translate(-50px, 80px) rotate(-6deg); }
+    50% { transform: translate(-100px, 160px) rotate(8deg); }
+    75% { transform: translate(-40px, 240px) rotate(-4deg); }
+    100% { transform: translate(30px, 320px) rotate(6deg); }
+}
+
+@keyframes butterflyWingFlap {
+    0% { transform: scaleX(1); }
+    100% { transform: scaleX(0.72) skewY(3deg); }
+}
+
+/* 2. Drifting Pink Lotus Petals */
+.drifting-lotus-petal {
+    position: absolute;
+    opacity: 0.65;
+    filter: drop-shadow(0 4px 10px rgba(226, 85, 130, 0.25));
+    animation: petalSwayDrift 16s ease-in-out infinite alternate;
+}
+
+.petal-1 {
+    top: 60px;
+    left: 4%;
+    width: 65px;
+    transform: rotate(-20deg);
+}
+
+.petal-2 {
+    top: 480px;
+    right: 3%;
+    width: 75px;
+    transform: rotate(25deg);
+    animation-delay: -7s;
+    animation-duration: 20s;
+}
+
+@keyframes petalSwayDrift {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(45px) rotate(15deg); }
+    100% { transform: translateY(90px) rotate(-12deg); }
+}
+
+/* 3. Side Botanical Vine Accents */
+.side-botanical-vine {
+    position: absolute;
+    width: 110px;
+    opacity: 0.32;
+    filter: drop-shadow(0 4px 12px rgba(27, 110, 83, 0.15));
+    transition: opacity 0.4s ease;
+}
+
+.vine-left {
+    top: 240px;
+    left: 0;
+    transform: rotate(10deg);
+}
+
+.vine-right {
+    top: 360px;
+    right: 0;
+    transform: scaleX(-1) rotate(10deg);
+}
+
+/* ===================================================
+   ARTISAN'S WORKBENCH: SACRED CRAFT MEDIUMS
+   =================================================== */
+.artisan-workbench-bar {
+    position: relative;
+    max-width: 1060px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(252, 248, 240, 0.92) 100%);
+    border: 1.5px solid rgba(212, 175, 55, 0.38);
+    border-radius: 20px;
+    padding: 2.4rem 2.6rem;
+    box-shadow: 
+        0 14px 40px rgba(26, 26, 26, 0.06),
+        0 0 25px rgba(212, 175, 55, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+.workbench-bar-header {
+    margin-bottom: 2rem;
+}
+
+.workbench-script-kicker {
+    font-family: var(--font-script);
+    font-size: 1.75rem;
+    color: var(--clr-terracotta);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.workbench-bar-title {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--clr-indigo);
+    margin: 0;
+}
+
+.workbench-elements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
+}
+
+.workbench-element-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    padding: 1.75rem 1.25rem 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    position: relative;
+    cursor: default;
+}
+
+.workbench-element-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--clr-gold);
+    box-shadow: 
+        0 18px 35px rgba(26, 26, 26, 0.09),
+        0 0 25px rgba(212, 175, 55, 0.22);
+}
+
+.element-icon-wrap {
+    position: relative;
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.15rem;
+}
+
+.workbench-art-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Micro-animations */
+.workbench-element-card:hover .palette-float {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+.workbench-element-card:hover .brushes-tilt {
+    transform: scale(1.12) rotate(6deg);
+}
+
+.workbench-element-card:hover .pot-bob {
+    transform: scale(1.12) translateY(-4px);
+}
+
+.workbench-element-card:hover .leaf-shimmer {
+    transform: scale(1.12) rotate(-3deg);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6));
+}
+
+.element-ripple-badge {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    opacity: 0.85;
+    animation: pulseWaterDrop 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseWaterDrop {
+    0% { transform: scale(0.92); opacity: 0.7; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+.workbench-element-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--clr-indigo);
+    margin: 0 0 0.45rem 0;
+    line-height: 1.3;
+}
+
+.workbench-element-card p {
+    font-family: var(--font-body);
+    font-size: 0.83rem;
+    color: #555555;
+    line-height: 1.5;
+    margin: 0 0 0.95rem 0;
+    flex: 1;
+}
+
+.element-tag {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--clr-terracotta);
+    background: rgba(195, 81, 47, 0.08);
+    border: 1px solid rgba(195, 81, 47, 0.25);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+/* Section 3: Skeleton Leaf Vein-Breathe */
+.breathe-section {
+    padding: var(--space-xl) 0;
+    background-color: var(--clr-indigo);
+    color: var(--clr-gallery-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.breathe-card {
+    position: relative;
+    width: 440px;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 30px rgba(212, 175, 55, 0.25);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.breathe-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(212, 175, 55, 0.9);
+    box-shadow: 0 35px 75px rgba(0, 0, 0, 0.85), 0 0 45px rgba(212, 175, 55, 0.45);
+}
+
+.breathe-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.breathe-card:hover img {
+    transform: scale(1.03);
+}
+
+.breathe-card:hover .vein-overlay {
+    animation: breathe 4s infinite ease-in-out;
+}
+
+@keyframes breathe {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Section 4: Water Ripple Scatter */
+.ripple-section {
+    padding: var(--space-xl) 0;
+    background-color: #1a1a1a;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.water-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.scatter-item {
+    position: absolute;
+    width: 250px;
+    height: 310px;
+    border-radius: 50% 50% 48% 52% / 58% 58% 42% 42%;
+    cursor: pointer;
+    animation: float 6s infinite ease-in-out;
+    will-change: transform;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.28);
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.scatter-item:hover {
+    transform: scale(1.06) translateY(-6px);
+    box-shadow: 0 26px 55px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 175, 55, 0.55);
+    border-color: rgba(212, 175, 55, 0.9);
+}
+
+.scatter-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scatter-item:hover img {
+    transform: scale(1.08);
+}
+
+.scatter-item .pebble-sheen-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.05) 45%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.pebble-1 { top: 20%; left: 20%; animation-delay: 0s; }
+.pebble-2 { top: 38%; right: 22%; animation-delay: 2s; }
+.pebble-3 { bottom: 8%; left: 40%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.ripple-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.scatter-item:hover .ripple-effect {
+    animation: rippleWave 1.5s infinite linear;
+}
+
+@keyframes rippleWave {
+    0% { width: 100%; height: 100%; opacity: 0.6; }
+    100% { width: 150%; height: 150%; opacity: 0; }
+}
+
+/* Responsive mobile scaling consolidated in Master Mobile Suite below */
+
+
+/* ===================================================
+   BESPOKE ROYAL ATELIER COMPONENTS & THEME OVERLAYS
+   Assets extracted from reference artwork
+   =================================================== */
+
+/* 1. Ambient Rotating Mandala Watermarks */
+.mandala-watermark {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.06;
+    animation: rotateMandala 140s linear infinite;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+    user-select: none;
+}
+
+.hero-mandala {
+    width: 650px;
+    height: 650px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.08;
+}
+
+@keyframes rotateMandala {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 2. Floating Jeweled Butterfly Badge */
+.jeweled-butterfly-badge {
+    position: absolute;
+    top: 16%;
+    right: 14%;
+    width: 95px;
+    height: auto;
+    z-index: 35;
+    cursor: pointer;
+    filter: drop-shadow(0 8px 18px rgba(195, 81, 47, 0.28));
+    animation: butterflyBob 5s ease-in-out infinite alternate, butterflyWingFlutter 3.5s ease-in-out infinite;
+    transform-origin: center center;
+    perspective: 800px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
+}
+
+.jeweled-butterfly-badge img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.jeweled-butterfly-badge:hover {
+    transform: scale(1.22) translateY(-12px) rotate(6deg);
+    filter: drop-shadow(0 16px 30px rgba(212, 175, 55, 0.5));
+}
+
+@keyframes butterflyBob {
+    0% { top: 16%; right: 14%; }
+    50% { top: 13%; right: 12%; }
+    100% { top: 17%; right: 15%; }
+}
+
+@keyframes butterflyWingFlutter {
+    0% { transform: rotate(-4deg) rotateY(0deg) scale(1); }
+    30% { transform: rotate(2deg) rotateY(28deg) scale(0.96); }
+    60% { transform: rotate(5deg) rotateY(-22deg) scale(1.02); }
+    100% { transform: rotate(-4deg) rotateY(0deg) scale(1); }
+}
+
+/* 3. Hero Artistic Typography Additions */
+.intro-script {
+    font-family: var(--font-script);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--clr-terracotta);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.intro-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+    letter-spacing: 2px;
+    color: var(--clr-indigo);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.intro-subtitle {
+    font-family: var(--font-artistic);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--clr-indigo-soft);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.intro-text {
+    position: absolute;
+    bottom: 8%;
+    left: 10%;
+    z-index: 10;
+    background: rgba(253, 249, 245, 0.92);
+    padding: 2.5rem 3rem;
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--clr-gold-border);
+    border-radius: 4px;
+    box-shadow: 0 20px 45px rgba(20, 28, 43, 0.08), inset 0 0 20px rgba(212, 175, 55, 0.06);
+}
+
+/* 4. Sacred Lotus Talisman Dividers */
+.lotus-talisman-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2.25rem auto;
+    max-width: 800px;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.lotus-talisman-divider::before,
+.lotus-talisman-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+.lotus-talisman-icon {
+    width: 52px;
+    height: auto;
+    filter: drop-shadow(0 6px 15px rgba(226, 85, 130, 0.35));
+    animation: talismanAura 4s ease-in-out infinite alternate;
+    transition: transform 0.4s ease;
+}
+
+.lotus-talisman-icon:hover {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 8px 22px rgba(212, 175, 55, 0.6));
+}
+
+@keyframes talismanAura {
+    0% { transform: scale(1); filter: drop-shadow(0 4px 12px rgba(226, 85, 130, 0.3)); }
+    100% { transform: scale(1.06); filter: drop-shadow(0 8px 22px rgba(212, 175, 55, 0.55)); }
+}
+
+.light-theme-divider::before,
+.light-theme-divider::after {
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+}
+
+/* 5. Sacred Vine Vertical Side Garlands */
+.vine-side-garland {
+    position: absolute;
+    top: 50px;
+    width: 140px;
+    height: auto;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 10px 20px rgba(42, 77, 58, 0.15));
+}
+
+.garland-left {
+    left: 2%;
+}
+
+.garland-right {
+    right: 2%;
+    transform: scaleX(-1);
+}
+
+/* 6. Royal Ornate Mirror Showcase (Node 7 / Featured Art) */
+.royal-mirror-showcase {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mirror-artwork-container {
+    position: absolute;
+    width: 185px;
+    height: 185px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.55);
+    background-color: var(--clr-indigo);
+}
+
+.mirror-artwork-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mirror-frame-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    filter: drop-shadow(0 18px 40px rgba(20, 28, 43, 0.28));
+    transition: filter 0.5s ease;
+}
+
+.royal-mirror-showcase:hover .mirror-artwork-container img {
+    transform: scale(1.15) rotate(2deg);
+}
+
+.royal-mirror-showcase:hover .mirror-frame-overlay {
+    filter: drop-shadow(0 25px 50px rgba(212, 175, 55, 0.5));
+}
+
+/* 7. Skeleton Leaf Philosophy Duo Showcase */
+.skeleton-leaf-duo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 2;
+}
+
+.leaf-flank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 240px;
+}
+
+.skeleton-leaf-accent {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    filter: drop-shadow(0 12px 25px rgba(212, 175, 55, 0.3));
+    animation: leafGentlyBreathe 4.5s ease-in-out infinite alternate;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s ease;
+    cursor: pointer;
+}
+
+.leaf-flank-gold .skeleton-leaf-accent {
+    animation-delay: 2s;
+}
+
+.skeleton-leaf-accent:hover {
+    transform: scale(1.1) translateY(-10px);
+    filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.65));
+}
+
+.leaf-flank-caption {
+    font-family: var(--font-artistic);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--clr-gold-light);
+    margin-top: 1rem;
+    letter-spacing: 0.5px;
+}
+
+@keyframes leafGentlyBreathe {
+    0% { transform: translateY(0) rotate(-1deg); }
+    100% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.section-script-badge {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: var(--clr-gold);
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.section-description {
+    font-family: var(--font-artistic);
+    font-size: 1.2rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: -2rem auto var(--space-lg);
+    opacity: 0.9;
+}
+
+/* 8. Water Ripple Stage & River Pebbles */
+.water-ripple-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 650px;
+    opacity: 0.32;
+    pointer-events: none;
+    animation: rippleSpin 50s linear infinite;
+    filter: drop-shadow(0 0 35px rgba(72, 202, 228, 0.45));
+}
+
+@keyframes rippleSpin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.pebbles-hero-wrap {
+    margin: 0 auto 3rem;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.painted-pebbles-hero {
+    width: 280px;
+    height: auto;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.painted-pebbles-hero:hover {
+    transform: scale(1.08) translateY(-8px);
+    filter: drop-shadow(0 25px 50px rgba(14, 139, 153, 0.6));
+}
+
+.pebble-subtitle {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--clr-turquoise-light);
+    letter-spacing: 1px;
+}
+
+/* 9. Header & Nav Link Enhancements */
+.main-header {
+    background-color: rgba(250, 247, 242, 0.94);
+    border-bottom: 1px solid var(--clr-gold-border);
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--clr-indigo);
+}
+
+.nav-links a:hover {
+    color: var(--clr-terracotta);
+}
+
+/* 10. Button Luxury Refinements */
+.btn {
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--clr-terracotta) 0%, var(--clr-terracotta-dark) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 6px 20px rgba(195, 81, 47, 0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--clr-indigo) 0%, var(--clr-indigo-soft) 100%);
+    border-color: var(--clr-gold);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--clr-gold);
+    color: var(--clr-indigo);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+    background: var(--clr-gold);
+    color: var(--clr-gallery-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* 11. Section Title Artistic Refinements */
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    letter-spacing: 1.5px;
+    color: var(--clr-indigo);
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, transparent, var(--clr-gold), var(--clr-terracotta), transparent);
+    width: 120px;
+    height: 2px;
+}
+
+/* =========================================
+   12. PREMIUM ATELIER FOOTER (Part 1, 2 & 3)
+   ========================================= */
+.site-footer {
+    background: radial-gradient(ellipse at 50% 0%, rgba(195, 81, 47, 0.12) 0%, rgba(16, 22, 34, 0) 65%),
+                linear-gradient(180deg, #131722 0%, #0c0f17 100%);
+    color: #FAF7F2;
+    border-top: 1px solid var(--clr-gold-border);
+    position: relative;
+    padding: 5rem 0 2.5rem;
+    overflow: hidden;
+}
+
+.site-footer .mandala-watermark.footer-mandala {
+    position: absolute;
+    bottom: -160px;
+    right: -80px;
+    width: 480px;
+    height: 480px;
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* -----------------------------------------
+   PART 1: The Atelier Circle Card
+   ----------------------------------------- */
+.atelier-circle-card {
+    background: linear-gradient(135deg, rgba(26, 36, 54, 0.82) 0%, rgba(17, 21, 30, 0.95) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.32);
+    border-radius: 14px;
+    padding: 2.75rem 3.25rem;
+    margin-bottom: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.atelier-circle-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--clr-gold), var(--clr-terracotta), transparent);
+}
+
+.circle-card-content {
+    max-width: 600px;
+}
+
+.circle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--clr-gold-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.circle-badge-icon {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+.circle-heading {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #FAF7F2;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.circle-subtext {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #C2CBD8;
+    margin: 0;
+}
+
+.circle-signup-form {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 440px;
+}
+
+.signup-input-wrap {
+    display: flex;
+    align-items: center;
+    background: rgba(12, 16, 24, 0.88);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 8px;
+    padding: 0.35rem 0.45rem 0.35rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.signup-input-wrap:focus-within {
+    border-color: var(--clr-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+}
+
+.signup-input-wrap input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #FAF7F2;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
+}
+
+.signup-input-wrap input::placeholder {
+    color: #8391A5;
+}
+
+.signup-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: linear-gradient(135deg, var(--clr-terracotta) 0%, #A83A1B 100%);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    color: #FAF7F2;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: linear-gradient(135deg, var(--clr-gold) 0%, #B89228 100%);
+    color: #101622;
+    transform: translateX(2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.signup-status {
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+    color: var(--clr-gold-light);
+    display: none;
+}
+
+/* -----------------------------------------
+   PART 2: 4-Column Footer Navigation
+   ----------------------------------------- */
+.footer-grid-4col {
+    display: grid;
+    grid-template-columns: 1.55fr 1.15fr 1.15fr 1.25fr;
+    gap: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.footer-col-header {
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--clr-gold);
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.6rem;
+}
+
+.footer-col-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background: var(--clr-terracotta);
+    border-radius: 2px;
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.footer-nav-list a {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: #C2CBD8;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.footer-nav-list a:hover {
+    color: #FAF7F2;
+    transform: translateX(4px);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+}
+
+.footer-col-brand .footer-brand-lockup {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+}
+
+.footer-logo-img {
+    height: 68px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 14px rgba(212, 175, 55, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.02);
+}
+
+.footer-brand-desc {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #AAB7C9;
+    margin-bottom: 1.5rem;
+}
+
+.atelier-certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--clr-gold-light);
+}
+
+.cert-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--clr-gold);
+    flex-shrink: 0;
+}
+
+.etsy-badge-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(241, 100, 30, 0.14);
+    border: 1px solid rgba(241, 100, 30, 0.45);
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    color: #FFA585 !important;
+    font-weight: 500;
+    margin-top: 0.35rem;
+}
+
+.etsy-badge-link:hover {
+    background: rgba(241, 100, 30, 0.28);
+    border-color: #F1641E;
+    color: #FFFFFF !important;
+    transform: translateX(4px);
+    box-shadow: 0 4px 15px rgba(241, 100, 30, 0.35);
+}
+
+/* -----------------------------------------
+   PART 3: Footer Bottom Bar
+   ----------------------------------------- */
+.footer-bottom-bar {
+    border-top: 1px solid rgba(250, 247, 242, 0.12);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-copyright {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #8C9BAE;
+}
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    color: var(--clr-gold-light);
+    transition: all 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background: var(--clr-terracotta);
+    border-color: var(--clr-terracotta);
+    color: #FAF7F2;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(195, 81, 47, 0.45);
+}
+
+.footer-trust-badges {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: #AAB7C9;
+    letter-spacing: 0.3px;
+}
+
+.trust-badge svg {
+    color: var(--clr-gold);
+    flex-shrink: 0;
+}
+
+/* -----------------------------------------
+   Atelier Info Modals (Customer Support)
+   ----------------------------------------- */
+.atelier-info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(12, 16, 24, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.atelier-info-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-dialog {
+    background: linear-gradient(135deg, #181E2C 0%, #121622 100%);
+    border: 1px solid var(--clr-gold-border);
+    border-radius: 12px;
+    max-width: 620px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    color: #FAF7F2;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.atelier-info-modal.open .modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--clr-gold-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.modal-close-btn:hover {
+    background: var(--clr-terracotta);
+    color: #FFF;
+    border-color: var(--clr-terracotta);
+}
+
+.modal-dialog h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--clr-gold);
+    margin-bottom: 1.25rem;
+    padding-right: 2rem;
+}
+
+.modal-dialog p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #C2CBD8;
+    margin-bottom: 1rem;
+}
+
+.modal-dialog ul {
+    margin: 0 0 1.5rem 1.25rem;
+    color: #C2CBD8;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.modal-dialog li {
+    margin-bottom: 0.5rem;
+}
+
+.modal-dialog .btn {
+    margin-top: 1rem;
+}
+
+/* -----------------------------------------
+   Footer Responsive Breakpoints
+   ----------------------------------------- */
+@media (max-width: 1100px) {
+    .footer-grid-4col {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    .atelier-circle-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.25rem;
+        gap: 2rem;
+    }
+    .circle-signup-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 3.5rem 0 2rem;
+    }
+    .footer-grid-4col {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .atelier-circle-card {
+        padding: 1.75rem 1.5rem;
+    }
+    .circle-heading {
+        font-size: 1.65rem;
+    }
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .footer-trust-badges {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/* Tablet & Mobile Breakpoints handled in Master Mobile Suite below */
+
+
+/* ===================================================
+   ARTISAN TOOLS & SACRED PEBBLES GARDEN STYLES
+   =================================================== */
+
+/* Section 5: Atelier Tools & Organic Pigments */
+.atelier-tools-section {
+    position: relative;
+    padding: var(--space-xl) 0;
+    background: linear-gradient(180deg, var(--clr-gallery-white) 0%, #F6EFE7 50%, var(--clr-gallery-white) 100%);
+    border-top: 1px solid var(--clr-gold-border);
+    border-bottom: 1px solid var(--clr-gold-border);
+    overflow: hidden;
+}
+
+.tools-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1300px;
+    margin: 3.5rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--clr-gold-border);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 12px 35px rgba(20, 28, 43, 0.06);
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--clr-gold), var(--clr-terracotta), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.22);
+    border-color: var(--clr-gold);
+}
+
+.tool-card:hover::before {
+    opacity: 1;
+}
+
+.tool-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-img {
+    max-height: 180px;
+    max-width: 80%;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 25px rgba(20, 28, 43, 0.15));
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 2;
+}
+
+.tool-img-secondary {
+    position: absolute;
+    filter: drop-shadow(0 8px 18px rgba(20, 28, 43, 0.18));
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 3;
+}
+
+.clay-palette-img {
+    width: 160px;
+}
+
+.brushes-img {
+    width: 110px;
+    right: 5%;
+    bottom: -10px;
+    transform: rotate(15deg);
+}
+
+.tool-card:hover .brushes-img {
+    transform: rotate(22deg) scale(1.1) translateY(-8px);
+}
+
+.wooden-palette-img {
+    width: 190px;
+}
+
+.pot-img {
+    width: 115px;
+    right: 2%;
+    bottom: 0;
+    transform: rotate(-8deg);
+}
+
+.tool-card:hover .pot-img {
+    transform: rotate(-12deg) scale(1.1) translateY(-6px);
+}
+
+.pigment-jars-img {
+    width: 210px;
+}
+
+.splash-img {
+    width: 160px;
+    left: 2%;
+    bottom: -15px;
+    opacity: 0.85;
+    transform: rotate(-10deg);
+}
+
+.tool-card:hover .splash-img {
+    transform: rotate(-5deg) scale(1.15);
+    opacity: 1;
+}
+
+.tool-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--clr-indigo);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.tool-card p {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+/* 6-Pebble Sacred River Garden in Section 4 */
+.pebbles-garden-container {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 4;
+}
+
+.pebbles-garden-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+}
+
+.pebble-item-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pebble-item-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    border-color: var(--clr-gold);
+    box-shadow: 0 20px 40px rgba(14, 139, 153, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pebble-thumb-wrap {
+    position: relative;
+    width: 110px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.pebble-thumb-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.7));
+    transition: transform 0.5s ease;
+}
+
+.pebble-item-card:hover .pebble-thumb-img {
+    transform: scale(1.12);
+}
+
+.pebble-ripple-ring {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px dashed rgba(72, 202, 228, 0.3);
+    pointer-events: none;
+    animation: ripplePedestal 6s linear infinite;
+}
+
+@keyframes ripplePedestal {
+    0% { transform: scale(0.9) rotate(0deg); opacity: 0.3; }
+    50% { transform: scale(1.15) rotate(180deg); opacity: 0.7; }
+    100% { transform: scale(0.9) rotate(360deg); opacity: 0.3; }
+}
+
+.pebble-item-name {
+    font-family: var(--font-artistic);
+    font-size: 1.05rem;
+    color: var(--clr-gold-light);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+}
+
+.pebble-item-desc {
+    font-size: 0.78rem;
+    color: #94A3B8;
+    line-height: 1.35;
+}
+
+/* Mobile adjustments */
+@media (max-width: 1100px) {
+    .pebbles-garden-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .tools-showcase-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 650px) {
+    .pebbles-garden-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .pebble-thumb-wrap {
+        width: 85px;
+        height: 95px;
+    }
+}
+
+/* =========================================
+   Portfolio Archive Page & Masonry Gallery
+   ========================================= */
+.portfolio-page {
+    padding: calc(var(--space-xl) + 4rem) 0 var(--space-xl);
+    background-color: var(--clr-gallery-white);
+    min-height: 80vh;
+}
+
+.portfolio-header {
+    max-width: 850px;
+    margin: 0 auto var(--space-lg);
+    text-align: center;
+}
+
+.masonry-portfolio {
+    column-count: 3;
+    column-gap: 1.75rem;
+    padding: 1rem 0;
+}
+
+.portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 1.75rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid var(--clr-gold-border);
+    box-shadow: 0 10px 30px rgba(20, 28, 43, 0.06);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(212, 175, 55, 0.22);
+    border-color: var(--clr-gold);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 7px;
+    transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.03);
+}
+
+@media (max-width: 1080px) {
+    .masonry-portfolio { column-count: 2; column-gap: 1.25rem; }
+}
+
+@media (max-width: 640px) {
+    .masonry-portfolio { column-count: 1; }
+    .portfolio-page { padding-top: 6.5rem; }
+}
+
+/* Fallback for reduced motion or delayed script execution */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll,
+    .reveal-scale,
+    .reveal-slide-left,
+    .layer-1, .layer-2, .layer-3,
+    .intro-text,
+    .node {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===================================================
+   MASTER MOBILE RESPONSIVENESS SUITE (Smartphones & Tablets)
+   =================================================== */
+
+/* 1. Global Viewport & Frame Rules */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 1080px) {
+    .main-header {
+        padding: 0.45rem 0;
+    }
+    .header-container {
+        padding: 0 1.25rem;
+        min-height: 54px;
+    }
+    .brand-logo {
+        height: 42px;
+        max-width: 200px;
+    }
+    .mobile-nav-toggle {
+        display: flex;
+        width: 44px;
+        height: 44px;
+    }
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 84vw;
+        max-width: 320px;
+        height: 100vh;
+        height: 100dvh;
+        background: #FAF7F2;
+        box-shadow: -15px 0 45px rgba(20, 28, 43, 0.25);
+        border-left: 1px solid var(--clr-gold-border);
+        padding: 5rem 1.5rem 2.5rem;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+    .main-nav.active {
+        right: 0;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+        width: 100%;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        padding: 0.75rem 0.85rem;
+        border-radius: 6px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        display: block;
+        transition: all 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: rgba(195, 81, 47, 0.08);
+        color: var(--clr-terracotta);
+        padding-left: 1.1rem;
+    }
+    .nav-cta-link {
+        margin-top: 1rem;
+        text-align: center;
+        padding: 0.85rem 1.25rem !important;
+        background: var(--clr-terracotta) !important;
+        color: #FAF7F2 !important;
+        border-radius: 6px;
+    }
+
+    /* Tablet adjustments for Artisan's Workbench Bar */
+    .artisan-workbench-bar {
+        padding: 2rem 1.6rem;
+    }
+
+    .workbench-elements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.35rem;
+    }
+}
+
+/* 2. Comprehensive Mobile Styling (Screen width <= 768px) */
+@media (max-width: 768px) {
+    /* Corner Frame: eliminate intrusive corner decorations on phones */
+    .global-frame {
+        display: none !important;
+    }
+
+    .container {
+        padding: 0 1.25rem !important;
+        width: 100% !important;
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 6.5vw, 2.3rem) !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .section-description {
+        font-size: 0.9rem !important;
+        line-height: 1.55 !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .section-script-badge {
+        font-size: clamp(1.25rem, 4.8vw, 1.75rem) !important;
+    }
+
+    .btn {
+        padding: 0.85rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        min-height: 46px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Ambient Elements */
+    .jeweled-butterfly-badge {
+        width: 48px !important;
+        height: 48px !important;
+        right: 0.85rem !important;
+        top: 4.5rem !important;
+        opacity: 0.8 !important;
+    }
+
+    .hero-mandala {
+        width: 320px !important;
+        height: 320px !important;
+        opacity: 0.05 !important;
+    }
+
+    .footer-mandala {
+        width: 260px !important;
+        height: 260px !important;
+        opacity: 0.04 !important;
+    }
+
+    /* SECTION 1: HERO ATELIER (Title First, Fanned Royal Paintings Below) */
+    .interactive-intro {
+        height: auto !important;
+        min-height: calc(100vh - 56px);
+        min-height: calc(100dvh - 56px);
+        padding: 4.5rem 1rem 3rem !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+
+    .intro-canvas {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 440px !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .intro-text {
+        order: 1 !important;
+        position: relative !important;
+        left: auto !important;
+        bottom: auto !important;
+        top: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        padding: 1.6rem 1.25rem !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        background: rgba(250, 247, 242, 0.95) !important;
+        border: 1px solid var(--clr-gold-border) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 30px rgba(20, 28, 43, 0.08) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .intro-script {
+        font-size: 1.05rem !important;
+        color: var(--clr-terracotta) !important;
+        display: block;
+        margin-bottom: 0.2rem;
+    }
+
+    .intro-text h1 {
+        font-size: clamp(2rem, 7.5vw, 2.5rem) !important;
+        letter-spacing: 0.12em !important;
+        line-height: 1.15 !important;
+        margin: 0.35rem 0 0.55rem !important;
+        color: var(--clr-indigo) !important;
+    }
+
+    .intro-subtitle {
+        font-size: 0.88rem !important;
+        line-height: 1.55 !important;
+        color: var(--clr-indigo-soft) !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .intro-ctas {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+        margin-top: 0.75rem !important;
+    }
+
+    .intro-ctas .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.85rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* 3 Hero Paintings in Royal Fan Showcase */
+    .hero-layers-showcase {
+        order: 2 !important;
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 340px !important;
+        height: 235px !important;
+        margin: 1.75rem auto 0 !important;
+    }
+
+    .layer-1, .layer-2, .layer-3 {
+        position: absolute !important;
+        will-change: transform;
+        transition: transform 0.3s ease;
+    }
+
+    .layer-3 {
+        width: 150px !important;
+        left: 10px !important;
+        top: 20px !important;
+        transform: rotate(-7deg) !important;
+        z-index: 1 !important;
+        opacity: 0.85 !important;
+        filter: none !important;
+        border-radius: 8px !important;
+        border: 1px solid var(--clr-gold-border) !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+    }
+
+    .layer-2 {
+        width: 155px !important;
+        right: 10px !important;
+        left: auto !important;
+        top: 15px !important;
+        transform: rotate(7deg) !important;
+        z-index: 2 !important;
+        opacity: 0.92 !important;
+        border-radius: 8px !important;
+        border: 1px solid var(--clr-gold-border) !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+    }
+
+    .layer-1 {
+        width: 185px !important;
+        left: 50% !important;
+        right: auto !important;
+        top: 0 !important;
+        transform: translateX(-50%) !important;
+        z-index: 3 !important;
+        opacity: 1 !important;
+        border-radius: 10px !important;
+        border: 2px solid var(--clr-gold) !important;
+        box-shadow: 0 14px 35px rgba(20, 28, 43, 0.28) !important;
+    }
+
+    /* SECTION 2: THE SACRED VINE GALLERY & ETSY SPOTLIGHT (Mobile Suite) */
+    .vine-section {
+        min-height: auto !important;
+        padding: 3rem 0 !important;
+        overflow: hidden !important;
+    }
+
+    .vine-container {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .vine-side-garland,
+    .vine-svg {
+        display: none !important;
+    }
+
+    .section-header-banner {
+        margin-bottom: 2.25rem !important;
+    }
+
+    .section-header-banner .section-script-badge {
+        font-size: 1.45rem !important;
+    }
+
+    .etsy-artisan-spotlight-card {
+        padding: 1.6rem 1.25rem !important;
+        margin-bottom: 3rem !important;
+        border-radius: 16px !important;
+    }
+
+    .etsy-card-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .etsy-seller-identity {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    .etsy-shop-action {
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+
+    .etsy-official-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.85rem 1.25rem !important;
+    }
+
+    .etsy-rating-tag {
+        text-align: center !important;
+    }
+
+    .etsy-trust-pillars {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+    }
+
+    /* ARTISAN WORKBENCH & SACRED MEDIUMS MOBILE STYLING */
+    .artisan-workbench-bar {
+        padding: 1.6rem 1.15rem !important;
+        border-radius: 16px !important;
+        margin: 0 auto !important;
+    }
+
+    .workbench-bar-header {
+        margin-bottom: 1.35rem !important;
+    }
+
+    .workbench-script-kicker {
+        font-size: 1.35rem !important;
+    }
+
+    .workbench-bar-title {
+        font-size: 1.45rem !important;
+    }
+
+    .workbench-elements-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+    }
+
+    .workbench-element-card {
+        padding: 1.35rem 1rem !important;
+    }
+
+    .element-icon-wrap {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    /* Ambient animated elements on mobile */
+    .ambient-butterfly-flight {
+        width: 50px !important;
+        height: 50px !important;
+        right: 3% !important;
+        top: 20px !important;
+    }
+
+    .side-botanical-vine {
+        display: none !important;
+    }
+
+    .drifting-lotus-petal.petal-2 {
+        display: none !important;
+    }
+
+    .drifting-lotus-petal.petal-1 {
+        width: 45px !important;
+        opacity: 0.45 !important;
+    }
+
+    .node-art-visual {
+        width: 100% !important;
+        max-width: 260px !important;
+        margin: 0 auto !important;
+    }
+
+    .node-art-visual img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 260px !important;
+        object-fit: cover !important;
+        display: block !important;
+        border-radius: 8px;
+    }
+
+    .node-craft-title {
+        font-size: 1.4rem !important;
+    }
+
+    .node-card-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .btn-card-etsy {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.75rem 1.25rem !important;
+    }
+
+    .btn-card-story {
+        text-align: center !important;
+    }
+
+    .royal-mirror-showcase {
+        width: 280px !important;
+        height: 295px !important;
+        max-width: 90vw !important;
+        margin: 0 auto !important;
+        position: relative !important;
+    }
+
+    .mirror-artwork-container {
+        width: 135px !important;
+        height: 135px !important;
+    }
+
+    .mirror-frame-overlay {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* SECTION 3: SKELETON LEAF VEIN-BREATHE */
+    .breathe-section {
+        padding: 3.5rem 0 !important;
+    }
+
+    .skeleton-leaf-duo {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .breathe-card {
+        width: 100% !important;
+        max-width: 310px !important;
+        margin: 0 auto !important;
+        border-radius: 8px !important;
+    }
+
+    .breathe-card img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .leaf-flank {
+        width: 100% !important;
+        max-width: 180px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .skeleton-leaf-accent {
+        width: 120px !important;
+        margin: 0 auto !important;
+    }
+
+    /* SECTION 4: RIVER PEBBLE ART & SHOP */
+    .ripple-section {
+        padding: 3.5rem 0 !important;
+    }
+
+    .water-ripple-bg {
+        width: 270px !important;
+        height: 270px !important;
+        opacity: 0.12 !important;
+    }
+
+    .pebbles-hero-wrap {
+        width: 100% !important;
+        padding: 0 1rem !important;
+        text-align: center !important;
+    }
+
+    .painted-pebbles-hero {
+        max-width: 200px !important;
+        width: 65% !important;
+        height: auto !important;
+    }
+
+    .pebbles-garden-container {
+        width: 100% !important;
+        padding: 0 0.75rem !important;
+        margin-top: 1.75rem !important;
+    }
+
+    .pebbles-garden-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+    }
+
+    .pebble-item-card {
+        padding: 1.15rem 0.5rem !important;
+        border-radius: 8px !important;
+    }
+
+    .pebble-thumb-wrap {
+        width: 72px !important;
+        height: 72px !important;
+        margin: 0 auto 0.5rem !important;
+    }
+
+    .pebble-thumb-img {
+        width: 68px !important;
+        height: 68px !important;
+    }
+
+    .water-container {
+        height: auto !important;
+        min-height: unset !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.85rem !important;
+        margin: 2rem auto 0 !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .scatter-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 105px !important;
+        height: 135px !important;
+        border-radius: 50% 50% 48% 52% / 58% 58% 42% 42% !important;
+        margin: 0 !important;
+    }
+
+    .scatter-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: inherit !important;
+    }
+
+    /* SECTION 5: ATELIER TOOLS */
+    .atelier-tools-section {
+        padding: 3.5rem 0 !important;
+    }
+
+    .tools-showcase-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 2rem auto 0 !important;
+        padding: 0 1rem !important;
+    }
+
+    .tool-card {
+        padding: 1.75rem 1.25rem !important;
+        width: 100% !important;
+    }
+
+    .tool-img-wrap {
+        height: 150px !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* FOOTER */
+    .site-footer {
+        padding: 3.5rem 0 2rem !important;
+        overflow: hidden !important;
+    }
+
+    .footer-container {
+        padding: 0 1.25rem !important;
+    }
+
+    .atelier-circle-card {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        gap: 1.5rem !important;
+    }
+
+    .circle-heading {
+        font-size: 1.4rem !important;
+    }
+
+    .signup-input-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.65rem !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .signup-input-wrap input {
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid var(--clr-gold-border) !important;
+        border-radius: 8px !important;
+        padding: 0.85rem 1rem !important;
+        font-size: 0.95rem !important;
+        color: #FAF7F2 !important;
+    }
+
+    .signup-btn {
+        width: 100% !important;
+        border-radius: 8px !important;
+        justify-content: center !important;
+        padding: 0.85rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .footer-grid-4col {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.25rem !important;
+        width: 100% !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    .footer-logo-img {
+        max-width: 190px !important;
+        height: auto !important;
+    }
+
+    .footer-bottom-bar {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1.25rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    .footer-social-strip {
+        justify-content: center !important;
+        gap: 1rem !important;
+    }
+
+    .footer-trust-badges {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+    }
+
+    /* MODALS */
+    .modal-dialog {
+        width: 92vw !important;
+        max-height: 85vh !important;
+        padding: 2rem 1.25rem 1.5rem !important;
+        margin: auto !important;
+    }
+
+    .modal-dialog h3 {
+        font-size: 1.4rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .modal-close-btn {
+        width: 38px !important;
+        height: 38px !important;
+        top: 0.75rem !important;
+        right: 0.75rem !important;
+        font-size: 1.3rem !important;
+    }
+
+    .presentation-modal img {
+        max-width: 92vw !important;
+        max-height: 75vh !important;
+    }
+
+    #modal-close {
+        top: 1rem !important;
+        right: 1rem !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 2rem !important;
+    }
+
+    /* PORTFOLIO & ABOUT PAGES */
+    .portfolio-page,
+    .about-page {
+        padding-top: 5rem !important;
+    }
+
+    .portfolio-header,
+    .about-hero {
+        padding: 0 1rem 1.5rem !important;
+    }
+
+    .portfolio-header h1 {
+        font-size: clamp(2rem, 7vw, 2.6rem) !important;
+    }
+
+    .masonry-portfolio {
+        column-count: 1 !important;
+        column-gap: 0 !important;
+        width: 100% !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .portfolio-item {
+        margin-bottom: 1.25rem !important;
+        width: 100% !important;
+        border-radius: 8px !important;
+    }
+
+    .portfolio-item img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 7px !important;
+    }
+
+    .about-chapter,
+    .about-chapter.alt-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        padding: 1.75rem 0 !important;
+    }
+
+    .chapter-image {
+        width: 100% !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+    }
+
+    .chapter-image img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 6px !important;
+    }
+
+    .chapter-content {
+        width: 100% !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .chapter-content h2 {
+        font-size: 1.6rem !important;
+    }
+}
+
+
+
+
+/* 2.5D Virtual Walkthrough Responsive Adaptation */
+@media (max-width: 768px) {
+    .museum-intro-badge-wrap {
+        top: 3.8rem;
+    }
+    .museum-intro-badge-wrap h2 {
+        font-size: 1.35rem;
+    }
+    .museum-intro-badge-wrap p {
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+    }
+    .museum-skip-btn {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.68rem;
+    }
+    .museum-frame-item {
+        width: 88vw;
+        max-width: 360px;
+    }
+    .guilded-art-frame {
+        padding: 10px;
+    }
+    .guilded-art-frame img {
+        height: 250px;
+        max-height: 38vh;
+    }
+    .double-glass-frame {
+        padding: 12px;
+    }
+    .double-glass-frame img {
+        height: 230px;
+        max-height: 36vh;
+    }
+    .museum-label-plaque {
+        padding: 4px 8px;
+    }
+    .plaque-title {
+        font-size: 0.88rem;
+    }
+    .plaque-meta {
+        font-size: 0.65rem;
+    }
+    .pedestal-marble-stand {
+        height: 36px;
+    }
+    .pedestal-marble-stand::before {
+        font-size: 0.58rem;
+        line-height: 36px;
+    }
+    .museum-wall {
+        width: 40px;
+        opacity: 0.2;
+    }
+}
+
+
+/* Ensure masonry portfolio archive images are fully visible */
+.masonry-portfolio .portfolio-item {
+    opacity: 1;
+    transform: none;
+}
+
+/* =========================================
+   CONCEPT 3: THE HORIZONTAL "SWAYING FRAMES" GALLERY
+   (Tactile & Grounded Horizontal Pinning)
+   ========================================= */
+
+/* Pinned Fullscreen Gallery Viewport */
+.horizontal-gallery-viewport {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #FAF9F6;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 80% 60%, rgba(195, 81, 47, 0.04) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+    box-shadow: inset 0 0 100px rgba(26, 26, 26, 0.03);
+}
+
+/* High Architectural Brass Picture Rail Molding */
+.picture-rail {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: linear-gradient(180deg, #F0DB98 0%, #D4AF37 35%, #9E7D17 75%, #5E4603 100%);
+    box-shadow: 
+        0 4px 12px rgba(26, 26, 26, 0.16),
+        0 1px 2px rgba(0, 0, 0, 0.25);
+    z-index: 45;
+    pointer-events: none;
+}
+
+.picture-rail-sheen {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+    opacity: 0.7;
+}
+
+/* Baseboard Molding along the bottom of the Plaster Wall */
+.gallery-baseboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background: linear-gradient(180deg, #423326 0%, #2A1F16 55%, #150E0A 100%);
+    border-top: 2px solid #5A4736;
+    box-shadow: 0 -4px 15px rgba(26, 26, 26, 0.12);
+    z-index: 45;
+    pointer-events: none;
+}
+
+/* Horizontal Track holding all exhibits side-by-side */
+.gallery-horizontal-track {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: max-content;
+    align-items: center;
+    will-change: transform;
+    padding-left: 3vw;
+    padding-right: 6vw;
+}
+
+/* Gallery Slide Item */
+.gallery-slide {
+    flex-shrink: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 4.5vw;
+    box-sizing: border-box;
+}
+
+/* Intro & Finale Slides */
+.intro-slide {
+    width: 580px;
+    max-width: 90vw;
+    padding: 0 2vw;
+}
+
+.finale-slide {
+    width: 560px;
+    max-width: 90vw;
+    padding: 0 2vw;
+}
+
+.intro-curatorial-card, .finale-card {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 8px;
+    padding: 2rem 2.2rem;
+    box-shadow: 
+        0 20px 45px rgba(26, 26, 26, 0.08),
+        0 0 20px rgba(212, 175, 55, 0.12);
+    text-align: center;
+}
+
+/* Hanging Assembly with Realistic Bronze Chains */
+.hanging-assembly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+/* Bronze Chains Wrapper */
+.bronze-chains-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    height: 65px;
+    max-height: 9vh;
+    position: relative;
+    z-index: 25;
+    margin-bottom: -2px;
+}
+
+/* Authentic Delicate Bronze Chain */
+.bronze-chain {
+    width: 4px;
+    height: 100%;
+    background: repeating-linear-gradient(180deg, 
+        #5E4603 0px, 
+        #AA820A 3px, 
+        #D4AF37 5px, 
+        #8C6D1F 7px, 
+        #3A2B1D 9px);
+    box-shadow: 
+        2px 3px 6px rgba(26, 26, 26, 0.22),
+        inset 0 0 2px rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    position: relative;
+}
+
+/* Picture Rail Top Hook Ring */
+.bronze-chain::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #D4AF37;
+    background: #5E4603;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Frame Hook Hardware Fastener */
+.frame-hook-hardware {
+    position: absolute;
+    top: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #F0DB98 0%, #AA820A 100%);
+    border: 1px solid #5E4603;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    z-index: 35;
+}
+
+.frame-hook-left {
+    left: 11%;
+}
+
+.frame-hook-right {
+    right: 11%;
+}
+
+/* Tactile Physics Swaying Unit (Pivot Point at top center where chains meet) */
+.swaying-frame-unit {
+    transform-origin: 50% 0px;
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 30;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Soft Gallery Spotlight radiating above frame */
+.frame-spotlight {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 380px;
+    background: radial-gradient(ellipse at 50% 25%, rgba(255, 255, 255, 0.65) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Interactive Click-to-Zoom Frame Styling */
+.frame-interactive {
+    cursor: zoom-in;
+    position: relative;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frame-interactive:hover {
+    filter: brightness(1.02);
+}
+
+.frame-interactive:hover .view-zoom-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Zoom Hover Indicator Badge */
+.view-zoom-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(26, 26, 26, 0.85);
+    color: #FAF9F6;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    z-index: 32;
+}
+
+/* Guilded Museum Frame */
+.guilded-museum-frame {
+    background: #FAF9F6;
+    padding: 14px;
+    border-radius: 4px;
+    border: 3px solid #D4AF37;
+    box-shadow: 
+        0 24px 50px rgba(26, 26, 26, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        0 0 25px rgba(212, 175, 55, 0.22),
+        inset 0 0 12px rgba(212, 175, 55, 0.15);
+    position: relative;
+    width: 420px;
+    max-width: 82vw;
+    box-sizing: border-box;
+}
+
+.guilded-museum-frame img {
+    width: 100%;
+    height: 310px;
+    max-height: 40vh;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Double-Glass Suspended Frame (Station 3) */
+.double-glass-frame {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 16px;
+    border: 2px solid rgba(212, 175, 55, 0.7);
+    border-radius: 6px;
+    box-shadow: 
+        0 24px 50px rgba(26, 26, 26, 0.18),
+        0 0 30px rgba(212, 175, 55, 0.25);
+    position: relative;
+    width: 390px;
+    max-width: 82vw;
+    box-sizing: border-box;
+}
+
+.double-glass-frame img {
+    width: 100%;
+    height: 300px;
+    max-height: 38vh;
+    object-fit: contain;
+    background: rgba(250, 249, 246, 0.94);
+    border-radius: 3px;
+    padding: 8px;
+}
+
+/* Filigree Museum Frame (Station 5) */
+.filigree-museum-frame {
+    background: #FAF9F6;
+    padding: 14px;
+    border-radius: 6px;
+    border: 4px double #D4AF37;
+    box-shadow: 
+        0 24px 50px rgba(26, 26, 26, 0.2),
+        0 0 25px rgba(212, 175, 55, 0.28),
+        inset 0 0 15px rgba(212, 175, 55, 0.18);
+    position: relative;
+    width: 410px;
+    max-width: 82vw;
+    box-sizing: border-box;
+}
+
+.filigree-museum-frame img {
+    width: 100%;
+    height: 305px;
+    max-height: 39vh;
+    object-fit: contain;
+    background: rgba(250, 249, 246, 0.94);
+    border-radius: 3px;
+    padding: 8px;
+}
+
+/* Oval Pebble Frame (Station 6 - Organic River Stone Visualization) */
+.pebble-oval-frame {
+    background: #FAF9F6;
+    padding: 10px;
+    border-radius: 50% 50% 48% 52% / 58% 58% 42% 42%;
+    border: 4px solid #8C6D1F;
+    box-shadow: 
+        0 24px 50px rgba(26, 26, 26, 0.22),
+        0 0 30px rgba(140, 109, 31, 0.35),
+        inset 0 0 20px rgba(140, 109, 31, 0.2);
+    position: relative;
+    width: 330px;
+    height: 330px;
+    max-width: 82vw;
+    max-height: 42vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.pebble-oval-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50% 50% 48% 52% / 58% 58% 42% 42%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease;
+}
+
+.pebble-oval-frame:hover img {
+    transform: scale(1.05);
+}
+
+.pebble-sheen-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.45) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(212, 175, 55, 0.12) 0%, transparent 60%, rgba(26, 26, 26, 0.25) 100%);
+    pointer-events: none;
+}
+
+/* Museum Curatorial Plaque below Artworks */
+.museum-plaque {
+    margin-top: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 6px;
+    padding: 10px 16px;
+    width: 95%;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(26, 26, 26, 0.06);
+    text-align: left;
+}
+
+.plaque-tag {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #C3512F;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.plaque-title {
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.25;
+    margin-bottom: 3px;
+}
+
+.plaque-desc {
+    font-family: var(--font-title);
+    font-size: 0.76rem;
+    color: #4A4A4A;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.plaque-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-size: 9px;
+    color: #777;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    padding-top: 4px;
+}
+
+/* =========================================
+   GALLERY HUD & NAVIGATION CONTROLS
+   ========================================= */
+.gallery-hud-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Top Left Live Station Indicator */
+.hud-indicator-badge {
+    position: absolute;
+    top: 85px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 30px;
+    padding: 6px 14px;
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.08);
+    pointer-events: auto;
+}
+
+/* Top Right Actions */
+.hud-top-actions {
+    position: absolute;
+    top: 85px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.hud-pill-btn {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 25px;
+    padding: 5px 12px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1A1A1A;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(26, 26, 26, 0.06);
+    cursor: pointer;
+}
+
+.hud-pill-btn:hover {
+    background: #D4AF37;
+    color: #1A1A1A;
+    border-color: #D4AF37;
+}
+
+/* Bottom Glide Arrow Controls */
+.hud-glide-controls {
+    position: absolute;
+    bottom: 38px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.glide-arrow-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 25px;
+    padding: 7px 14px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1A1A1A;
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.glide-arrow-btn:hover {
+    background: #D4AF37;
+    color: #1A1A1A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+/* Bottom Center Station Dots */
+.hud-station-dots {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 30px;
+    padding: 6px 14px;
+    box-shadow: 0 4px 15px rgba(26, 26, 26, 0.08);
+    pointer-events: auto;
+}
+
+.station-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.station-dot:hover {
+    background: #D4AF37;
+    transform: scale(1.3);
+}
+
+.station-dot.active {
+    width: 22px;
+    border-radius: 10px;
+    background: #D4AF37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+/* Bottom Progress Bar Track */
+.gallery-progress-track {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(26, 26, 26, 0.08);
+    z-index: 55;
+}
+
+.gallery-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #D4AF37 0%, #C3512F 60%, #D4AF37 100%);
+    transition: width 0.08s ease-out;
+}
+
+/* Lightbox Modal */
+.presentation-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+}
+
+.presentation-modal.active,
+.presentation-modal.open {
+    display: flex;
+}
+
+.modal-content-wrapper {
+    max-width: 92vw;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: zoomModalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-content-wrapper img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+@keyframes zoomModalIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    color: #FAF9F6;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #D4AF37;
+    color: #1A1A1A;
+}
+
+/* =========================================
+   RESPONSIVENESS: MOBILE & TABLET PERFECTION
+   ========================================= */
+@media (max-width: 768px) {
+    .picture-rail {
+        top: 60px;
+        height: 14px;
+    }
+    .gallery-horizontal-track {
+        padding-left: 5vw;
+        padding-right: 8vw;
+    }
+    .gallery-slide {
+        padding: 0 3vw;
+    }
+    .hanging-assembly {
+        padding-top: 68px;
+        padding-bottom: 35px;
+    }
+    .bronze-chains-wrapper {
+        height: 45px;
+        max-height: 6vh;
+    }
+    .guilded-museum-frame, .filigree-museum-frame {
+        width: 84vw;
+        max-width: 320px;
+        padding: 10px;
+    }
+    .guilded-museum-frame img, .filigree-museum-frame img {
+        height: 220px;
+        max-height: 32vh;
+    }
+    .double-glass-frame {
+        width: 84vw;
+        max-width: 300px;
+        padding: 12px;
+    }
+    .double-glass-frame img {
+        height: 210px;
+        max-height: 30vh;
+    }
+    .pebble-oval-frame {
+        width: 72vw;
+        height: 72vw;
+        max-width: 250px;
+        max-height: 250px;
+        padding: 8px;
+    }
+    .museum-plaque {
+        margin-top: 8px;
+        padding: 8px 12px;
+        max-width: 310px;
+    }
+    .plaque-title {
+        font-size: 0.88rem;
+    }
+    .plaque-desc {
+        font-size: 0.7rem;
+        line-height: 1.35;
+        margin-bottom: 4px;
+    }
+    .plaque-meta {
+        font-size: 8px;
+    }
+    .hud-indicator-badge {
+        top: 68px;
+        left: 12px;
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+    .hud-top-actions {
+        top: 68px;
+        right: 12px;
+    }
+    .hud-glide-controls {
+        bottom: 48px;
+        left: 12px;
+    }
+    .hud-station-dots {
+        bottom: 12px;
+        gap: 5px;
+        padding: 4px 10px;
+    }
+    .station-dot {
+        width: 6px;
+        height: 6px;
+    }
+    .station-dot.active {
+        width: 16px;
+    }
+}
+
