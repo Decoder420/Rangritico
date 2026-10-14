@@ -825,7 +825,7 @@ window.initCommissionConfigurator = function() {
 ⏳ Estimated Creation Timeframe: ${currentDuration}
 
 Could we please discuss consultation details, pricing, and curation?`;
-            whatsappBtn.href = `https://wa.me/918979803131?text=${encodeURIComponent(rawMessage)}`;
+            whatsappBtn.href = `https://wa.me/919762767258?text=${encodeURIComponent(rawMessage)}`;
         }
     }
 

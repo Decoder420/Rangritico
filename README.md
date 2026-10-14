@@ -53,7 +53,7 @@ This web showcase is designed as an interactive virtual gallery and curatorial p
   - Multi-step interactive configurator for sacred mediums (Peepal leaf, Ganga river quartz, gilded linen, Lippan mirror roundels, terracotta jewelry, hardwood mandala tables).
   - Sacred iconography selection and sizing/framing specifications.
   - Live dynamic creation timeline and materials calculator.
-  - Direct pre-filled WhatsApp consultation link (`https://wa.me/918979803131`) and consultation inquiry form.
+  - Direct pre-filled WhatsApp consultation link (`https://wa.me/919762767258`) and consultation inquiry form.
 
 - **🏛️ The Curatorial Vault & Archive (45 Authentic Artworks)**:
   - Permanent digital catalog showcasing all 45 authentic artworks mapped from `prachi-mandal-portfolio-001` through `045`.
