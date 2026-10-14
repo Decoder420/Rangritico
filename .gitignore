@@ -22,3 +22,5 @@ yarn-error.log*
 # Local environment & config
 .env
 .env.local
+.wrangler/
+node_modules/

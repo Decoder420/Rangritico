@@ -52,16 +52,23 @@
             <a href="index.html" class="logo-link logo-center" aria-label="RANGRITICO by Prachi Mandal">
                 <img src="assets/rangritico_symmetric_brand_logo.png" alt="RANGRITICO | Art Atelier by Prachi Mandal" class="brand-logo-symmetric" onerror="this.onerror=null; this.src='assets/rangritico_brand_logo.png'">
             </a>
+            <div class="lighting-mode-switcher" id="lightingModeSwitcher" aria-label="Atelier Atmospheric Lighting">
+                <button class="light-mode-btn active" data-theme="dawn" title="Rishikesh Dawn (Natural Warm Sun)">🌅 Dawn</button>
+                <button class="light-mode-btn" data-theme="museum" title="Archival Museum (4000K Spotlights)">🏛️ Museum</button>
+                <button class="light-mode-btn" data-theme="diya" title="Temple Diya (Sacred Candlelight Sanctuary)">🪔 Diya</button>
+            </div>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <nav class="main-nav">
                 <button class="nav-close-drawer" aria-label="Close navigation menu">&times;</button>
                 <ul class="nav-links">
-                    <li><a href="portfolio.html">The Gallery (Portfolio)</a></li>
-                    <li><a href="#shop">The Atelier Shop</a></li>
-                    <li><a href="about.html#scholar">Research & Pedagogy</a></li>
-                    <li><a href="about.html">Our Story (About)</a></li>
+                    <li><a href="portfolio.html">Gallery</a></li>
+                    <li><a href="interactive-gallery.html" class="nav-infinite-link">Infinite 3D <span class="nav-badge-pill">WebGL</span></a></li>
+                    <li><a href="#shop">Atelier Shop</a></li>
+                    <li><a href="#commission-studio">Commissions</a></li>
+                    <li><a href="about.html#scholar">Research</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#contact" class="nav-cta-link">Contact</a></li>
                 </ul>
             </nav>
@@ -80,9 +87,9 @@
 
         <div class="intro-canvas">
             <div class="hero-layers-showcase">
-                <img src="assets/IMG_2143.PNG" class="hero-layer layer-3" alt="Yogi Chakra Meditation Artwork">
-                <img src="assets/IMG_9805.PNG" class="hero-layer layer-1" alt="Meditating Buddha Painting">
-                <img src="assets/IMG_1243.jpg" class="hero-layer layer-2" alt="Shiva-Parvati Sacred Fine Art">
+                <img src="assets/IMG_2143.PNG" class="hero-layer layer-3" alt="Kundalini Awakening & Srichakra Meditation Yantra Geometry by Prachi Mandal">
+                <img src="assets/IMG_9805.PNG" class="hero-layer layer-1" alt="Meditating Buddha (Dhyana Mudra) — Oil & 24K Gold Leaf Linen Canvas">
+                <img src="assets/IMG_1243.jpg" class="hero-layer layer-2" alt="Lord Shiva & Parvati (Ardhanarishvara / Divine Union) Mineral Pigments Linen Scroll">
             </div>
             <div class="intro-text">
                 <span class="intro-script">Art Atelier by Prachi Mandal</span>
@@ -90,7 +97,8 @@
                 <p class="intro-subtitle">Fine Art Canvases, Skeleton Leaf Miniatures & Handcrafted Clay Jewelry by Visual Researcher & Curator Prachi Mandal</p>
                 <div class="intro-ctas">
                     <button class="btn btn-primary scroll-to-vine">Explore Sacred Gallery</button>
-                    <a href="portfolio.html" class="btn btn-secondary">Full Portfolio</a>
+                    <a href="interactive-gallery.html" class="btn btn-secondary" style="border-color: #D4AF37; color: #D4AF37; background: rgba(212,175,55,0.08);">✨ Infinite WebGL Exhibition</a>
+                    <a href="portfolio.html" class="btn btn-secondary">Curatorial Portfolio</a>
                 </div>
             </div>
         </div>
@@ -419,6 +427,168 @@
                     <h3>Natural Earth & Mineral Pigments</h3>
                     <p>Sustainably sourced Himalayan ochre, temple vermilion, deep spiritual indigo, and crushed lapis lazuli for archival visual radiance.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 6: ARTISAN BESPOKE COMMISSION STUDIO
+         Interactive Sacred Creation Configurator
+         ========================================= -->
+    <section id="commission-studio" class="commission-studio-section">
+        <div class="commission-studio-container">
+            <header class="commission-header">
+                <div class="lotus-talisman-divider" style="margin-bottom: 0.75rem;">
+                    <img src="assets/elements/golden_lotus_mandala_lineart.png" class="lotus-talisman-icon" alt="Golden Lotus Mandala" style="width: 42px;">
+                </div>
+                <span class="commission-kicker">Custom Atelier Commissions</span>
+                <h2 class="commission-title">Commission a Sacred Creation</h2>
+                <p class="commission-desc">
+                    Collaborate directly with visual researcher and curator Prachi Mandal to create a bespoke, museum-grade heirloom. Handcrafted in our Rishikesh atelier using sacred botanicals, river-washed quartz, or archival gilded linen.
+                </p>
+            </header>
+
+            <div class="commission-configurator-card">
+                <!-- Step 1: Choose Sacred Medium -->
+                <div class="configurator-step-title">
+                    <span class="step-num-badge">1</span>
+                    <span>Select Your Sacred Craft Medium</span>
+                </div>
+                <div class="medium-options-grid">
+                    <div class="medium-option-item selected" data-medium-key="leaf">
+                        <span class="medium-option-icon">🍃</span>
+                        <h4 class="medium-option-title">Peepal Skeleton Leaf</h4>
+                        <p class="medium-option-sub">Preserved translucent Bodhi leaf & 24K gold foil in shadowbox.</p>
+                    </div>
+                    <div class="medium-option-item" data-medium-key="stone">
+                        <span class="medium-option-icon">🪨</span>
+                        <h4 class="medium-option-title">Ganges River Pebble</h4>
+                        <p class="medium-option-sub">Naturally tumbled quartz from Rishikesh ghats & mineral pigments.</p>
+                    </div>
+                    <div class="medium-option-item" data-medium-key="canvas">
+                        <span class="medium-option-icon">🎨</span>
+                        <h4 class="medium-option-title">Linen Canvas / Scroll</h4>
+                        <p class="medium-option-sub">Layered oil, natural pigments & 24K gold leaf on woven linen.</p>
+                    </div>
+                    <div class="medium-option-item" data-medium-key="lippan">
+                        <span class="medium-option-icon">🪞</span>
+                        <h4 class="medium-option-title">Pichwai & Lippan Roundel</h4>
+                        <p class="medium-option-sub">Traditional folk painting with hand-cut mirror mud mosaic.</p>
+                    </div>
+                    <div class="medium-option-item" data-medium-key="terracotta">
+                        <span class="medium-option-icon">🪴</span>
+                        <h4 class="medium-option-title">Terracotta Jewelry Set</h4>
+                        <p class="medium-option-sub">Hand-molded temple clay, cowrie shells & cotton cord.</p>
+                    </div>
+                    <div class="medium-option-item" data-medium-key="furniture">
+                        <span class="medium-option-icon">🪵</span>
+                        <h4 class="medium-option-title">Mandala Hardwood Table</h4>
+                        <p class="medium-option-sub">Functional centerpiece on Himalayan hardwood & glass resin.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Choose Sacred Iconography / Theme -->
+                <div class="configurator-step-title">
+                    <span class="step-num-badge">2</span>
+                    <span>Choose Sacred Iconography &amp; Spiritual Theme</span>
+                </div>
+                <div class="theme-options-wrap">
+                    <button type="button" class="theme-pill-item selected">Meditating Buddha (Dhyana Mudra)</button>
+                    <button type="button" class="theme-pill-item">Lord Shiva &amp; Shakti (Ardhanarishvara)</button>
+                    <button type="button" class="theme-pill-item">Shreenathji &amp; Pichwai Sacred Cow</button>
+                    <button type="button" class="theme-pill-item">Kundalini Awakening &amp; Srichakra Geometry</button>
+                    <button type="button" class="theme-pill-item">Lord Venkateswara (Tirupati Balaji)</button>
+                    <button type="button" class="theme-pill-item">Lord Ganesha in Divine Abhaya</button>
+                    <button type="button" class="theme-pill-item">Mayura Peacock &amp; Botanical Flora</button>
+                    <button type="button" class="theme-pill-item">Bespoke Custom Family Heirloom Motif</button>
+                </div>
+
+                <!-- Step 3: Select Dimensions & Framing -->
+                <div class="configurator-step-title">
+                    <span class="step-num-badge">3</span>
+                    <span>Select Dimensions &amp; Presentation Style</span>
+                </div>
+                <div class="size-options-grid">
+                    <div class="size-option-card selected">
+                        <div class="size-card-name">Intimate Miniature</div>
+                        <div class="size-card-dim">8 &times; 10 in &bull; Shadowbox</div>
+                    </div>
+                    <div class="size-option-card">
+                        <div class="size-card-name">Atelier Circular</div>
+                        <div class="size-card-dim">18 &times; 18 in &bull; Wood Roundel</div>
+                    </div>
+                    <div class="size-option-card">
+                        <div class="size-card-name">Gallery Canvas</div>
+                        <div class="size-card-dim">24 &times; 36 in &bull; Gilded Linen</div>
+                    </div>
+                    <div class="size-option-card">
+                        <div class="size-card-name">Grand Masterpiece</div>
+                        <div class="size-card-dim">36 &times; 48 in &bull; Temple Scroll</div>
+                    </div>
+                    <div class="size-option-card">
+                        <div class="size-card-name">Custom Architecture</div>
+                        <div class="size-card-dim">Bespoke Wall Mural / Furniture</div>
+                    </div>
+                </div>
+
+                <!-- Live Dynamic Atelier Estimation Summary -->
+                <div class="commission-summary-banner">
+                    <div class="summary-details">
+                        <h4>Atelier Live Commission Preview</h4>
+                        <div class="summary-selection-text" id="commissionSummaryText">
+                            Dried Peepal Skeleton Leaf Miniature • Meditating Buddha (Dhyana Mudra)
+                        </div>
+                        <div class="summary-timeline-tag" id="commissionTimelineTag">
+                            ⏱ Estimated Atelier Timeline: 14 – 21 Days (Multi-week leaf vein curing & 000-fine bristle gouache)
+                        </div>
+                        <p style="font-size: 0.78rem; color: #AAA; margin-top: 0.5rem; line-height: 1.4;">
+                            Includes museum-grade UV-protective mounting, certificate of authenticity signed by curator Prachi Mandal, and worldwide insured rigid cushioning dispatch.
+                        </p>
+                    </div>
+
+                    <div class="summary-actions-wrap">
+                        <a href="https://wa.me/918979803131" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-commission" id="commissionWhatsappBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.311.045-.698.077-2.073-.49-1.632-.674-2.67-2.333-2.752-2.443-.08-.11-1.282-1.705-1.282-3.253 0-1.549.808-2.311 1.096-2.628.288-.316.63-.396.84-.396.21 0 .421.002.607.011.196.01.458-.074.717.548.267.638.91 2.222.989 2.382.08.16.133.348.026.56-.107.211-.161.343-.318.528-.157.185-.33.414-.471.556-.157.157-.32.327-.138.64.182.312.809 1.332 1.737 2.158 1.194 1.064 2.202 1.393 2.514 1.549.312.157.494.133.676-.077.182-.211.777-.905.986-1.215.209-.311.419-.258.706-.152.288.106 1.83.863 2.143 1.02.313.157.522.235.6.368.077.133.077.774-.067 1.179z"></path></svg>
+                            <span>Discuss on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direct Consultation Inquiry Form -->
+                <form id="commissionInquiryForm" onsubmit="return handleCommissionSubmit(event)">
+                    <div class="commission-form-grid">
+                        <div class="commission-input-group">
+                            <label for="commName">Your Full Name *</label>
+                            <input type="text" id="commName" required placeholder="Collector or Institution Name">
+                        </div>
+                        <div class="commission-input-group">
+                            <label for="commEmail">Email Address *</label>
+                            <input type="email" id="commEmail" required placeholder="name@domain.com">
+                        </div>
+                        <div class="commission-input-group">
+                            <label for="commPhone">Phone / WhatsApp *</label>
+                            <input type="tel" id="commPhone" required placeholder="+91 or International Phone">
+                        </div>
+                        <div class="commission-input-group">
+                            <label for="commLocation">Delivery Country / City *</label>
+                            <input type="text" id="commLocation" required placeholder="e.g., London, UK / New York, USA / New Delhi">
+                        </div>
+                    </div>
+
+                    <div class="commission-input-group" style="margin-bottom: 1.25rem;">
+                        <label for="commNotes">Your Vision &amp; Sacred Intentions (Optional)</label>
+                        <textarea id="commNotes" rows="3" placeholder="Describe any sacred color preferences, personal dedication, wedding/heirloom significance, or custom wall space..."></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn-submit-commission">
+                            <span>Submit Atelier Commission Consultation</span>
+                            <span style="font-size: 1.1rem;">&rarr;</span>
+                        </button>
+                    </div>
+
+                    <div id="commissionFormStatus" style="display:none;"></div>
+                </form>
             </div>
         </div>
     </section>

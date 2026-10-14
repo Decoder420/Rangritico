@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swaying Frames Gallery | The Art of Silent Narratives | RANGRITICO</title>
+    <meta name="description" content="Immerse in the tactile Horizontal Swaying Frames Gallery of original fine-art canvases, skeleton peepal leaf miniatures, handcrafted Himalayan river pebbles, and sacred craft by Prachi Mandal.">
+    
+    <!-- Favicon & URL Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Open Graph / URL Sharing Meta Image -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Swaying Frames Gallery | RANGRITICO by Prachi Mandal">
+    <meta property="og:description" content="Tactile Horizontal Gallery: Explore sacred miniatures and fine art canvases suspended from delicate bronze chains by UGC NET Visual Arts Researcher Prachi Mandal.">
+    <meta property="og:image" content="assets/rangritico_og_image.jpg">
+    
+    <!-- Google Fonts - Artistic & Fine-Art Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN configured with Curated Atelier Palette -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gallery: '#FAF9F6',
+                        charcoal: '#1A1A1A',
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F7E7B4',
+                            dark: '#AA820A',
+                        },
+                        terracotta: '#C3512F',
+                        bronze: '#8C6D1F',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel Decorative"', 'serif'],
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#FAF9F6] text-[#1A1A1A] overflow-x-hidden select-none m-0 p-0 font-sans">
+
+    <!-- =========================================
+         FIXED HEADER: SYMMETRIC BRAND LOGO & ATELIER NAV
+         ========================================= -->
+    <header class="main-header" id="header" style="z-index: 60;">
+        <div class="header-container">
+            <a href="index.html" class="logo-link logo-center" aria-label="RANGRITICO by Prachi Mandal">
+                <img src="assets/rangritico_symmetric_brand_logo.png" alt="RANGRITICO | Art Atelier by Prachi Mandal" class="brand-logo-symmetric" onerror="this.onerror=null; this.src='assets/rangritico_brand_logo.png'">
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav">
+                <button class="nav-close-drawer" aria-label="Close navigation menu">&times;</button>
+                <ul class="nav-links">
+                    <li><a href="portfolio.html" class="active">The Gallery (Swaying Frames)</a></li>
+                    <li><a href="index.html#shop">The Atelier Shop</a></li>
+                    <li><a href="about.html#scholar">Research & Pedagogy</a></li>
+                    <li><a href="about.html">Our Story (About)</a></li>
+                    <li><a href="index.html#contact" class="nav-cta-link">Contact & Commissions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================================
+         CONCEPT 3: HORIZONTAL SWAYING FRAMES GALLERY
+         Pinned Container driven by Vertical Scroll
+         ========================================= -->
+    <main id="horizontalGalleryContainer" class="horizontal-gallery-viewport">
+
+        <!-- Top Brass Picture Rail Molding -->
+        <div class="picture-rail" id="pictureRail">
+            <div class="picture-rail-sheen"></div>
+        </div>
+
+        <!-- Horizontal Gallery Track -->
+        <div class="gallery-horizontal-track" id="galleryTrack">
+
+            <!-- =========================================
+                 STATION 0: THE CURATORIAL VISION INTRO
+                 ========================================= -->
+            <section class="gallery-slide intro-slide" id="slide0" data-station="0" data-title="Curatorial Vision">
+                <div class="intro-curatorial-card">
+                    <!-- Talisman Emblem -->
+                    <div class="mb-3 text-center">
+                        <img src="assets/elements/sacred_lotus_talisman.png" alt="Sacred Lotus Talisman" class="w-10 h-10 mx-auto opacity-85 animate-pulse">
+                    </div>
+
+                    <span class="font-cinzel tracking-[0.3em] text-[10px] sm:text-xs uppercase text-gold-dark font-bold mb-1 block text-center">Tactile Curatorial Exhibition</span>
+                    <h1 class="font-cinzel text-2xl sm:text-4xl text-[#1A1A1A] tracking-wider text-center mb-1">RANGRITICO</h1>
+                    <p class="font-serif italic text-lg sm:text-xl text-terracotta text-center mb-1">The Art of Silent Narratives</p>
+                    <p class="font-sans text-[10px] sm:text-xs tracking-widest uppercase text-[#555] text-center mb-5 font-medium">
+                        Curated by Prachi Mandal &bull; UGC NET Qualified Visual Arts Researcher, Historian & Curator
+                    </p>
+
+                    <div class="w-16 h-[1px] bg-gold opacity-50 mb-5 mx-auto"></div>
+
+                    <!-- Curatorial Essay Snippet -->
+                    <div class="bg-white/80 backdrop-blur-sm border border-gold/30 rounded-lg p-5 sm:p-6 shadow-sm text-left mb-5">
+                        <h2 class="font-serif text-lg sm:text-xl text-[#1A1A1A] mb-2 font-semibold text-center">The Curatorial Vision</h2>
+                        <p class="font-serif text-xs sm:text-sm leading-relaxed text-[#2A2A2A] mb-3">
+                            Welcome to a tactile gallery where craft meets the academic depth of art history. Rooted in the natural serenity of <span class="text-terracotta font-semibold">Rishikesh, Uttarakhand</span>, this exhibition explores slow, meditative creation between organic elements of the earth and sacred motifs of traditional Indian visual culture.
+                        </p>
+                        <p class="font-serif text-xs sm:text-sm leading-relaxed text-[#2A2A2A]">
+                            Drawing from Fine Arts & History of Art at <span class="font-semibold">Panjab University</span>, each piece—from large spiritual canvases to translucent skeleton peepal leaf miniatures and hand-molded clay artifacts—hangs from delicate bronze chains, breathing with organic physical life.
+                        </p>
+                    </div>
+
+                    <!-- Scroll to Explore Prompt -->
+                    <div class="flex items-center justify-center gap-3 text-gold-dark text-xs font-sans uppercase tracking-widest font-semibold cursor-pointer hover:text-charcoal transition-colors" onclick="glideToNextStation();">
+                        <span>Scroll or Glide to Walk Along the Wall</span>
+                        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 1: MEDITATING BUDDHA (DHYANA MUDRA)
+                 ========================================= -->
+            <section class="gallery-slide" id="slide1" data-station="1" data-title="Station 1 &bull; Meditating Buddha">
+                <div class="hanging-assembly">
+                    <!-- Dual Delicate Bronze Chains -->
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <!-- Hanging Swaying Frame Unit -->
+                    <div class="swaying-frame-unit" data-sway-index="1">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Guilded Frame -->
+                        <div class="guilded-museum-frame frame-interactive" onclick="openLightbox('assets/IMG_9805.PNG', 'Meditating Buddha (Dhyana Mudra) — Oil & 24K Gold Leaf on Canvas')">
+                            <div class="frame-hook-hardware frame-hook-left"></div>
+                            <div class="frame-hook-hardware frame-hook-right"></div>
+                            <img src="assets/IMG_9805.PNG" alt="Meditating Buddha - Sacred Oil & Gold Leaf Canvas" loading="eager">
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <!-- Museum Curatorial Plaque below the artwork -->
+                        <div class="museum-plaque">
+                            <span class="plaque-tag">Station 01 &bull; Fine Art Canvas</span>
+                            <h3 class="plaque-title">Meditating Buddha (Dhyana Mudra)</h3>
+                            <p class="plaque-desc">
+                                Large-format sacred canvas exploring the tranquil visual transition from physical space to spiritual void, detailed with oil and 24K gold leaf ornamentation.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Oil & 24K Gold Leaf on Canvas</span>
+                                <span>36 &times; 48 inches &bull; 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 2: LORD SHIVA & PARVATI (SACRED UNION)
+                 ========================================= -->
+            <section class="gallery-slide" id="slide2" data-station="2" data-title="Station 2 &bull; Lord Shiva & Parvati">
+                <div class="hanging-assembly">
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <div class="swaying-frame-unit" data-sway-index="2">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Terracotta Wood Frame -->
+                        <div class="guilded-museum-frame frame-interactive" style="border-color: #C3512F;" onclick="openLightbox('assets/IMG_1243.jpg', 'Lord Shiva & Parvati (Sacred Union) — Natural Mineral Pigments & Acrylic')">
+                            <div class="frame-hook-hardware frame-hook-left"></div>
+                            <div class="frame-hook-hardware frame-hook-right"></div>
+                            <img src="assets/IMG_1243.jpg" alt="Lord Shiva & Parvati (Sacred Union) - Acrylic on Linen" loading="eager">
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <div class="museum-plaque">
+                            <span class="plaque-tag text-terracotta">Station 02 &bull; Fine Art Canvas</span>
+                            <h3 class="plaque-title">Lord Shiva &amp; Parvati (Sacred Union)</h3>
+                            <p class="plaque-desc">
+                                Fine-line spiritual brushwork capturing the eternal cosmic harmony, divine union, and serenity of Lord Shiva and Parvati in mineral pigments and acrylic on linen.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Natural Mineral Pigments & Acrylic</span>
+                                <span>30 &times; 40 inches &bull; 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 3: BLUE BUDDHA ON SKELETON PEEPAL LEAF
+                 Authentic Archival Framed Masterpiece
+                 ========================================= -->
+            <section class="gallery-slide" id="slide3" data-station="3" data-title="Station 3 &bull; Blue Buddha on Peepal Leaf">
+                <div class="hanging-assembly">
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <div class="swaying-frame-unit" data-sway-index="3">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Archival Museum Frame Showcase -->
+                        <div class="double-glass-frame frame-interactive" onclick="openLightbox('assets/elements/buddha_leaf_framed_clean.jpg', 'Blue Buddha on Skeleton Peepal Leaf — Authentic Miniature Painting on Dried Bodhi Leaf in Museum Frame')">
+                            <div class="frame-hook-hardware frame-hook-left"></div>
+                            <div class="frame-hook-hardware frame-hook-right"></div>
+                            <img src="assets/elements/buddha_leaf_framed_clean.jpg" alt="Blue Buddha on Skeleton Peepal Leaf in Museum Frame" loading="eager">
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <div class="museum-plaque">
+                            <span class="plaque-tag text-gold-dark">Station 03 &bull; Skeleton Leaf Miniature</span>
+                            <h3 class="plaque-title">Blue Buddha on Skeleton Peepal Leaf</h3>
+                            <p class="plaque-desc">
+                                Miniature traditional gouache and gold leaf painted on the translucent, delicate cellular skeleton of a naturally shed sacred peepal leaf, preserved within a contemporary archival museum gallery frame.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Miniature Gouache on Bodhi Leaf</span>
+                                <span>Archival Museum Frame &bull; 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 4: SRICHAKRA / YOGI CHAKRA MEDITATION
+                 ========================================= -->
+            <section class="gallery-slide" id="slide4" data-station="4" data-title="Station 4 &bull; Srichakra Yogi Meditation">
+                <div class="hanging-assembly">
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <div class="swaying-frame-unit" data-sway-index="4">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Antique Bronze Frame -->
+                        <div class="guilded-museum-frame frame-interactive" style="border-color: #8C6D1F; box-shadow: 0 15px 35px rgba(26,26,26,0.18), inset 0 0 15px rgba(140,109,31,0.25);" onclick="openLightbox('assets/IMG_2143.PNG', 'Srichakra / Yogi Chakra Canvas (Kundalini Flow) — Yantra Geometry & Tempera')">
+                            <div class="frame-hook-hardware frame-hook-left"></div>
+                            <div class="frame-hook-hardware frame-hook-right"></div>
+                            <img src="assets/IMG_2143.PNG" alt="Srichakra / Yogi Chakra Meditation (Kundalini Flow)" loading="eager">
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <div class="museum-plaque">
+                            <span class="plaque-tag text-terracotta">Station 04 &bull; Fine Art Canvas</span>
+                            <h3 class="plaque-title">Srichakra &bull; Yogi Chakra Meditation</h3>
+                            <p class="plaque-desc">
+                                Intense spiritual sacred geometry tracing the ascending vitality of the seven inner chakras alongside traditional solar yantra symbology.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Yantra Geometry & Tempera</span>
+                                <span>32 &times; 44 inches &bull; 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 5: PICHWAI SACRED COW & LIPPAN MIRROR ART
+                 Carved Gold Wood Filigree Frame
+                 ========================================= -->
+            <section class="gallery-slide" id="slide5" data-station="5" data-title="Station 5 &bull; Pichwai Sacred Cow & Lippan Mirror">
+                <div class="hanging-assembly">
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <div class="swaying-frame-unit" data-sway-index="5">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Carved Gold Wood Filigree Frame -->
+                        <div class="filigree-museum-frame frame-interactive" onclick="openLightbox('assets/painting2.jpeg', 'Pichwai Sacred Cow & Lippan Mirror Art — Traditional Rajasthani Folk Painting with Mirror Inlay')">
+                            <div class="frame-hook-hardware frame-hook-left"></div>
+                            <div class="frame-hook-hardware frame-hook-right"></div>
+                            <img src="assets/painting2.jpeg" alt="Pichwai Sacred Cow & Lippan Mirror Inlay Artwork" loading="eager">
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <div class="museum-plaque">
+                            <span class="plaque-tag text-terracotta">Station 05 &bull; Traditional Folk Art Fusion</span>
+                            <h3 class="plaque-title">Pichwai Sacred Cow &amp; Lippan Mirror Art</h3>
+                            <p class="plaque-desc">
+                                Traditional Rajasthani Pichwai depiction of the sacred Kamadhenu cow beside blooming lotuses, framed by concentric rings of hand-inlaid Lippan mirror work and terracotta ochre borders.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Acrylic, Clay & Mirror Inlay on Circular Board</span>
+                                <span>18 &times; 18 inches &bull; 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 6: HAND-PAINTED SACRED JAGANNATH PEBBLE
+                 Organic Oval Shape Visualisation (River Stone Only)
+                 ========================================= -->
+            <section class="gallery-slide" id="slide6" data-station="6" data-title="Station 6 &bull; Sacred Jagannath Pebble">
+                <div class="hanging-assembly">
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <div class="swaying-frame-unit" data-sway-index="6">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Oval Pebble Shape Visualization (Ganga River Stone Only) -->
+                        <div class="pebble-oval-frame frame-interactive" onclick="openLightbox('assets/stone1.jpeg', 'Hand-Painted Sacred Jagannath Pebble — Mineral Pigments on Ganga River Stone')">
+                            <div class="frame-hook-hardware frame-hook-left" style="left: 20%;"></div>
+                            <div class="frame-hook-hardware frame-hook-right" style="right: 20%;"></div>
+                            <img src="assets/stone1.jpeg" alt="Hand-Painted Sacred Jagannath Pebble Art on Ganga River Stone" loading="eager">
+                            <div class="pebble-sheen-overlay"></div>
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <div class="museum-plaque text-center" style="max-width: 360px;">
+                            <span class="plaque-tag text-terracotta">Station 06 &bull; Sacred River Stone (Rishikesh)</span>
+                            <h3 class="plaque-title">Hand-Painted Sacred Jagannath Pebble</h3>
+                            <p class="plaque-desc">
+                                Naturally tumbled, smooth Ganga river stone from Rishikesh, hand-painted with sacred Lord Jagannath iconography in traditional mineral pigments, celebrating Himalayan earth and sacred craft.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Mineral Pigments on River Stone</span>
+                                <span>Rishikesh Collection &bull; 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 STATION 7: HAND-PAINTED MANDALA WOODEN TABLE
+                 ========================================= -->
+            <section class="gallery-slide" id="slide7" data-station="7" data-title="Station 7 &bull; Mandala Wooden Table">
+                <div class="hanging-assembly">
+                    <div class="bronze-chains-wrapper">
+                        <div class="bronze-chain bronze-chain-left"></div>
+                        <div class="bronze-chain bronze-chain-right"></div>
+                    </div>
+
+                    <div class="swaying-frame-unit" data-sway-index="7">
+                        <div class="frame-spotlight"></div>
+                        
+                        <!-- Grand Masterpiece Frame -->
+                        <div class="guilded-museum-frame frame-interactive" style="border-width: 5px; border-color: #D4AF37; box-shadow: 0 25px 50px rgba(0,0,0,0.22), 0 0 30px rgba(212,175,55,0.35);" onclick="openLightbox('assets/IMG_2754.jpg', 'Hand-Painted Circular Floral Mandala Wooden Table — Himalayan Hardwood & Protective Resin')">
+                            <div class="frame-hook-hardware frame-hook-left"></div>
+                            <div class="frame-hook-hardware frame-hook-right"></div>
+                            <img src="assets/IMG_2754.jpg" alt="Hand-Painted Circular Floral Mandala Wooden Table" loading="eager">
+                            <div class="view-zoom-hint">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                <span>Zoom</span>
+                            </div>
+                        </div>
+
+                        <div class="museum-plaque">
+                            <span class="plaque-tag text-gold-dark">Station 07 &bull; Atelier Masterpiece</span>
+                            <h3 class="plaque-title">Hand-Painted Mandala Wooden Table</h3>
+                            <p class="plaque-desc">
+                                Bespoke functional atelier centerpiece hand-painted with intricate circular floral and Tibetan mandala geometries on solid Himalayan hardwood, sealed under protective glass-gloss resin.
+                            </p>
+                            <div class="plaque-meta">
+                                <span>Himalayan Hardwood & Protective Resin</span>
+                                <span>30-in Diameter Top &bull; Atelier Masterpiece</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 FINALE: ATELIER ARCHIVE & INQUIRY PORTAL
+                 ========================================= -->
+            <section class="gallery-slide finale-slide" id="slide8" data-station="8" data-title="The Atelier Circle &bull; Archive">
+                <div class="finale-card">
+                    <div class="mb-4">
+                        <img src="assets/rangritico_brand_mark.png" alt="RANGRITICO Brand Mark" class="w-16 h-16 mx-auto opacity-90 drop-shadow-md">
+                    </div>
+                    <span class="font-cinzel tracking-[0.25em] text-xs uppercase text-gold-dark font-bold mb-1 block">Conclude the Walkthrough</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl text-charcoal mb-3">Begin Your Collection</h2>
+                    <p class="font-serif text-xs sm:text-sm text-[#444] mb-6 max-w-md mx-auto leading-relaxed">
+                        Every painting, skeleton leaf miniature, and terracotta adornment at RANGRITICO is handcrafted as a singular, numbered creation.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+                        <a href="index.html#shop" class="bg-charcoal text-white hover:bg-gold hover:text-charcoal px-5 py-2.5 rounded font-sans text-xs uppercase tracking-widest font-semibold transition-all shadow-sm">
+                            Explore The Atelier Shop
+                        </a>
+                        <a href="about.html#scholar" class="bg-white border border-gold/40 text-charcoal hover:bg-gold/10 px-5 py-2.5 rounded font-sans text-xs uppercase tracking-widest font-semibold transition-all shadow-sm">
+                            Academic Research & Bio
+                        </a>
+                    </div>
+
+                    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="text-xs text-gold-dark hover:text-charcoal font-sans uppercase tracking-wider font-semibold flex items-center justify-center gap-2 mx-auto">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg>
+                        <span>Return to Exhibition Entrance</span>
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Baseboard Architectural Molding along Bottom of Wall -->
+        <div class="gallery-baseboard"></div>
+
+        <!-- =========================================
+             GALLERY HUD: PROGRESS, STATION STATUS & ARROWS
+             ========================================= -->
+        <div class="gallery-hud-overlay">
+            
+            <!-- Top Left Live Station Indicator -->
+            <div class="hud-indicator-badge">
+                <span class="w-2.5 h-2.5 rounded-full bg-gold animate-pulse"></span>
+                <span class="font-sans text-[11px] sm:text-xs uppercase tracking-widest font-semibold text-charcoal" id="hudStationIndicator">
+                    Curatorial Vision &bull; Introduction
+                </span>
+            </div>
+
+            <!-- Top Right Navigation & Reset Controls -->
+            <div class="hud-top-actions">
+                <a href="index.html" class="hud-pill-btn" title="Atelier Home">Home</a>
+                <a href="index.html#shop" class="hud-pill-btn" title="Shop Collection">Shop</a>
+                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="hud-pill-btn" title="Rewind to entrance">&larr; Rewind</button>
+            </div>
+
+            <!-- Bottom Left/Right Arrow Navigation Controls -->
+            <div class="hud-glide-controls">
+                <button onclick="glideToPrevStation();" class="glide-arrow-btn" aria-label="Previous artwork" title="Previous artwork">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <span class="hidden sm:inline">Prev</span>
+                </button>
+                <button onclick="glideToNextStation();" class="glide-arrow-btn" aria-label="Next artwork" title="Next artwork">
+                    <span class="hidden sm:inline">Next</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <!-- Bottom Center Station Dots Navigation -->
+            <div class="hud-station-dots" id="hudStationDots">
+                <button class="station-dot active" data-index="0" title="Curatorial Vision" onclick="glideToStation(0)"></button>
+                <button class="station-dot" data-index="1" title="Station 1: Meditating Buddha" onclick="glideToStation(1)"></button>
+                <button class="station-dot" data-index="2" title="Station 2: Lord Shiva &amp; Parvati" onclick="glideToStation(2)"></button>
+                <button class="station-dot" data-index="3" title="Station 3: Blue Buddha on Peepal Leaf" onclick="glideToStation(3)"></button>
+                <button class="station-dot" data-index="4" title="Station 4: Srichakra Yogi Meditation" onclick="glideToStation(4)"></button>
+                <button class="station-dot" data-index="5" title="Station 5: Twin Peacocks Leaf Miniature" onclick="glideToStation(5)"></button>
+                <button class="station-dot" data-index="6" title="Station 6: Sacred Jagannath Pebble" onclick="glideToStation(6)"></button>
+                <button class="station-dot" data-index="7" title="Station 7: Mandala Wooden Table" onclick="glideToStation(7)"></button>
+                <button class="station-dot" data-index="8" title="The Atelier Circle" onclick="glideToStation(8)"></button>
+            </div>
+
+            <!-- Bottom Horizontal Gallery Progress Bar -->
+            <div class="gallery-progress-track">
+                <div class="gallery-progress-bar" id="galleryProgressBar"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- =========================================
+         LIGHTBOX ZOOM MODAL
+         ========================================= -->
+    <div id="presentation-modal" class="presentation-modal" onclick="closeLightbox(event)">
+        <button class="modal-close" id="modal-close" aria-label="Close presentation" onclick="closeLightbox()">&times;</button>
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <img id="presentation-image" src="" alt="Enlarged view">
+            <p id="presentation-caption" class="text-center font-serif text-sm text-gold-light mt-3 px-4"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="gsap-animations.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Cloudflare Pages Assets Ignore
+.git/
+.github/
+.vscode/
+.idea/
+backup_original_design/
+components/
+*.ts
+*.tsx
+.DS_Store
+*.log
+portfolio_images.txt
+ChatGPT Image*.png

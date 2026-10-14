@@ -274,6 +274,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let swayResetTimeout = null;
         let lastActiveIndex = -1;
 
+        // Anchor suspension: frames swing from ceiling picture rail
+        gsap.set(swayingFrames, { transformOrigin: "50% -120px" });
+
         // Pinned Horizontal Timeline driven smoothly by vertical scroll
         const horizontalTween = gsap.to(galleryTrack, {
             x: () => -getScrollAmount(),
@@ -289,40 +292,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 onUpdate: (self) => {
                     const p = self.progress;
 
+                    // Spatial binaural audio panning across gallery walk (-0.85 to +0.85)
+                    if (window.atelierAudio && typeof window.atelierAudio.setSpatialPan === 'function') {
+                        window.atelierAudio.setSpatialPan((p * 2) - 1);
+                    }
+
                     // 1. Bottom progress bar width
                     if (progressBar) {
                         progressBar.style.width = (p * 100) + '%';
                     }
 
-                    // 2. Physics Sway & Wobble: Calculate tilt from scroll velocity
+                    // 2. Physics Dual-Chain Pendulum Sway: Calculate tilt from scroll velocity
                     const velocity = self.getVelocity(); // px / sec
-                    // Clamped tilt angle between -6.5 and +6.5 degrees
-                    const targetAngle = gsap.utils.clamp(-6.5, 6.5, velocity / -200);
+                    // Clamped tilt angle between -8.5 and +8.5 degrees with natural damping
+                    const targetAngle = gsap.utils.clamp(-8.5, 8.5, velocity / -175);
 
                     // Organic inertia tilt on frames with staggered phase lag
                     swayingFrames.forEach((frame, idx) => {
                         gsap.to(frame, {
                             rotation: targetAngle,
-                            duration: 0.35,
-                            delay: idx * 0.012,
-                            ease: "power1.out",
+                            duration: 0.32,
+                            delay: idx * 0.015,
+                            ease: "power2.out",
                             overwrite: "auto"
                         });
                     });
 
-                    // Settle physics: when scrolling slows or stops, oscillate smoothly back to 0
+                    // Settle physics: when scrolling stops, settle like heavy museum glass
                     clearTimeout(swayResetTimeout);
                     swayResetTimeout = setTimeout(() => {
                         swayingFrames.forEach((frame, idx) => {
                             gsap.to(frame, {
                                 rotation: 0,
-                                duration: 1.4,
-                                delay: idx * 0.015,
-                                ease: "elastic.out(1.15, 0.35)",
+                                duration: 1.6,
+                                delay: idx * 0.02,
+                                ease: "elastic.out(1.25, 0.38)",
                                 overwrite: "auto"
                             });
                         });
-                    }, 100);
+                    }, 90);
 
                     // 3. Dynamic Station Indicator & Dots Synchronization
                     const viewportCenter = window.innerWidth / 2;
@@ -361,23 +369,100 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         });
 
-        // Interactive tactile nudge sway on hover or touch
+        // Tactile Pointer Tug & Release Physics on Hanging Frames
         swayingFrames.forEach((frame) => {
-            frame.addEventListener('mouseenter', () => {
+            let isDragging = false;
+            let startX = 0;
+
+            const onPointerDown = (e) => {
+                isDragging = true;
+                startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                gsap.killTweensOf(frame);
+            };
+
+            const onPointerMove = (e) => {
+                if (!isDragging) return;
+                const currentX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+                const diffX = currentX - startX;
+                const dynamicAngle = gsap.utils.clamp(-12, 12, diffX * 0.12);
+                gsap.to(frame, { rotation: dynamicAngle, duration: 0.1, ease: "power1.out" });
+            };
+
+            const onPointerUp = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                // Elastic spring recoil when released
                 gsap.to(frame, {
-                    rotation: 3.2,
-                    duration: 0.3,
-                    ease: "power2.out",
-                    onComplete: () => {
-                        gsap.to(frame, {
-                            rotation: 0,
-                            duration: 1.2,
-                            ease: "elastic.out(1.2, 0.35)"
-                        });
-                    }
+                    rotation: 0,
+                    duration: 1.5,
+                    ease: "elastic.out(1.3, 0.35)",
+                    overwrite: "auto"
                 });
+                if (window.playAtelierChime) window.playAtelierChime(528);
+            };
+
+            frame.addEventListener('pointerdown', onPointerDown);
+            window.addEventListener('pointermove', onPointerMove);
+            window.addEventListener('pointerup', onPointerUp);
+
+            // Subtle mouse hover sway for desktop
+            frame.addEventListener('mouseenter', () => {
+                if (!isDragging) {
+                    gsap.to(frame, {
+                        rotation: 3.5,
+                        duration: 0.35,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            gsap.to(frame, {
+                                rotation: 0,
+                                duration: 1.3,
+                                ease: "elastic.out(1.2, 0.35)"
+                            });
+                        }
+                    });
+                }
             });
+
+            // Dynamic museum track lighting spotlight beam following pointer
+            const spotlight = frame.querySelector('.frame-spotlight');
+            if (spotlight) {
+                frame.addEventListener('mousemove', (e) => {
+                    const rect = frame.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    spotlight.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255, 245, 220, 0.28) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 75%)`;
+                });
+            }
         });
+
+        // Mobile Touch Horizontal Gesture Handler
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let isHorizontalSwipe = false;
+
+        horizontalGallery.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                isHorizontalSwipe = false;
+            }
+        }, { passive: true });
+
+        horizontalGallery.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1) {
+                const deltaX = touchStartX - e.touches[0].clientX;
+                const deltaY = touchStartY - e.touches[0].clientY;
+                if (!isHorizontalSwipe && Math.abs(deltaX) > Math.abs(deltaY) + 10) {
+                    isHorizontalSwipe = true;
+                }
+                if (isHorizontalSwipe) {
+                    // Translate horizontal swipe distance into vertical page scroll
+                    window.scrollBy({ top: deltaX * 0.8, behavior: 'auto' });
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                }
+            }
+        }, { passive: true });
 
         // Global Navigation helper: Glide to Station index (0 to 8)
         window.glideToStation = function(index) {
@@ -402,7 +487,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         window.glideToNextStation = function() {
             const currentActive = document.querySelector('.station-dot.active');
             const currentIndex = currentActive ? parseInt(currentActive.getAttribute('data-index') || 0) : 0;
-            const nextIndex = Math.min(8, currentIndex + 1);
+            const nextIndex = Math.min(9, currentIndex + 1);
             window.glideToStation(nextIndex);
         };
 

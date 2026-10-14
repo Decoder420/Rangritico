@@ -36,14 +36,32 @@ This web showcase is designed as an interactive virtual gallery and curatorial p
   - Educational deep-dive into the sacred lacy venation of Peepal leaves.
   - Interactive before/after leaf skeletonization showcase.
 
-- **🌊 Section 4: The Swaying Frames Horizontal Gallery**:
-  - Fluid GSAP-pinned horizontal scrolling exhibition track.
-  - HUD station indicators, progress tracking bar, and glide navigation buttons.
+- **🎧 Himalayan Audio Ambiance Engine (Web Audio API)**:
+  - Zero-dependency procedural synthesizer delivering 432Hz & 528Hz Tibetan singing bowl resonance with exponential decay.
+  - Flowing Ganga River stream simulation using bandpass-filtered pink noise with breath LFO modulation.
+  - Meditative four-string Tanpura drone (Pa-Sa intervals at 108Hz, 144Hz, 216Hz, 288Hz).
+  - Floating brass-trimmed widget (`#atelierAudioWidget`) with play/pause, gold equalizer bars, preset selector, and volume slider.
 
-- **📱 Full Responsive Suite**:
-  - Tailored experiences across Desktop, Tablet, and Mobile with touch-friendly interactions and optimized layout flow.
+- **⛓️ Fluid GSAP Dual-Chain Pendulum Inertia Gallery**:
+  - Pinned horizontal scrolling exhibition with authentic ceiling-anchor rotation (`transform-origin: 50% -120px`).
+  - Dynamic scroll-velocity angular sway (-8.5° to +8.5°) and heavy museum glass elastic settlement.
+  - Interactive pointer drag-and-release with tactile spring recoil and harmonic singing bowl chime.
+  - Real-time halogen spotlight beam tracking cursor coordinates across canvases.
+  - Mobile touch horizontal swipe gesture detection.
 
----
+- **🎨 Section 6: Artisan Bespoke Commission Studio**:
+  - Multi-step interactive configurator for sacred mediums (Peepal leaf, Ganga river quartz, gilded linen, Lippan mirror roundels, terracotta jewelry, hardwood mandala tables).
+  - Sacred iconography selection and sizing/framing specifications.
+  - Live dynamic creation timeline and materials calculator.
+  - Direct pre-filled WhatsApp consultation link (`https://wa.me/918979803131`) and consultation inquiry form.
+
+- **🏛️ The Curatorial Vault & Archive (45 Authentic Artworks)**:
+  - Permanent digital catalog showcasing all 45 authentic artworks mapped from `prachi-mandal-portfolio-001` through `045`.
+  - Instant category filter tabs: *All Artworks*, *Peepal Leaf Miniatures*, *Pichwai & Lippan Art*, *Spiritual Canvases*, *Ganges River Stones*, *Mandalas & Hardwood*, *Terracotta Adornments*, and *Pedagogy & Studies*.
+  - High-resolution zoom Lightbox modal with curatorial accession metadata.
+
+- **🗄️ Preserved Original Design Backup**:
+  - Complete, untouched archive in `backup_original_design/` for one-click rollback at any time (`cp backup_original_design/* .`).
 
 ## 🛠️ Technology Stack
 
@@ -68,6 +86,7 @@ Rangritico/
 ├── assets/                 # High-resolution artwork images, icons & elements
 │   ├── elements/           # Transparent art pack elements (brushes, palette, butterfly, petals)
 │   └── ...
+├── backup_original_design/ # Untouched backup archive of original site version
 ├── RESUME_PRACHI_MANDAL.pdf # Academic & curatorial credentials
 └── README.md               # Project documentation
 ```
