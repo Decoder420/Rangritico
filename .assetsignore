@@ -1,13 +1,26 @@
-# Cloudflare Pages Assets Ignore
+# Cloudflare Assets Ignore
+node_modules/
+node_modules/**
+.wrangler/
+.wrangler/**
 .git/
+.git/**
 .github/
+.github/**
 .vscode/
 .idea/
 backup_original_design/
+backup_original_design/**
 components/
+components/**
 *.ts
 *.tsx
 .DS_Store
 *.log
 portfolio_images.txt
 ChatGPT Image*.png
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+wrangler.jsonc
