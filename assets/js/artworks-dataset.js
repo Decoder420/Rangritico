@@ -6,7 +6,7 @@
   const artworks = [
   {
     "id": "prachi-mandal-portfolio-001",
-    "image": "assets/prachi-mandal-portfolio-001.png",
+    "image": "assets/prachi-mandal-portfolio-001.jpg",
     "title": "Meditating Buddha (Dhyana Mudra)",
     "category": "canvas",
     "medium": "Oil, Acrylic & 24K Gold Leaf on Linen Canvas",
@@ -60,7 +60,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-007",
-    "image": "assets/prachi-mandal-portfolio-007.png",
+    "image": "assets/prachi-mandal-portfolio-007.jpg",
     "title": "Lord Shiva Damru & Sacred Serpent",
     "category": "canvas",
     "medium": "Acrylic & Sanskrit Calligraphy on Linen Canvas",
@@ -69,7 +69,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-008",
-    "image": "assets/prachi-mandal-portfolio-008.png",
+    "image": "assets/prachi-mandal-portfolio-008.jpg",
     "title": "Crimson Flamingo Sunset Sanctuary",
     "category": "canvas",
     "medium": "Layered Acrylic & Mineral Glaze on Stretched Canvas",
@@ -123,7 +123,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-014",
-    "image": "assets/prachi-mandal-portfolio-014.png",
+    "image": "assets/prachi-mandal-portfolio-014.jpg",
     "title": "Tri-Murti Serenity (Ajanta Buddha Faces)",
     "category": "canvas",
     "medium": "Acrylic & Gold Dust on Linen Canvas",
@@ -177,7 +177,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-020",
-    "image": "assets/prachi-mandal-portfolio-020.png",
+    "image": "assets/prachi-mandal-portfolio-020.jpg",
     "title": "Turquoise Blue Buddha & Bodhi Tree",
     "category": "canvas",
     "medium": "Acrylic & Gold Dust on Stretched Canvas",
@@ -195,7 +195,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-022",
-    "image": "assets/prachi-mandal-portfolio-022.png",
+    "image": "assets/prachi-mandal-portfolio-022.jpg",
     "title": "Golden Bodhi Tree of Life & Lotus",
     "category": "canvas",
     "medium": "24K Gold Leaf & Acrylic on Linen Canvas",
@@ -213,7 +213,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-024",
-    "image": "assets/prachi-mandal-portfolio-024.png",
+    "image": "assets/prachi-mandal-portfolio-024.jpg",
     "title": "Solar Yantra & Sacred Radial Mandala",
     "category": "mandala",
     "medium": "Pointillist Acrylic Geometry on Circular Canvas",
@@ -267,7 +267,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-030",
-    "image": "assets/prachi-mandal-portfolio-030.png",
+    "image": "assets/prachi-mandal-portfolio-030.jpg",
     "title": "Golden Lotus Bindu Mandala",
     "category": "mandala",
     "medium": "Gold Foil & Acrylic on Deep Charcoal Canvas",
@@ -285,7 +285,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-032",
-    "image": "assets/prachi-mandal-portfolio-032.png",
+    "image": "assets/prachi-mandal-portfolio-032.jpg",
     "title": "Meditating Yogi in Srichakra Field",
     "category": "canvas",
     "medium": "Tantric Geometry & Acrylic on Canvas",
@@ -294,7 +294,7 @@
   },
   {
     "id": "prachi-mandal-portfolio-033",
-    "image": "assets/prachi-mandal-portfolio-033.png",
+    "image": "assets/prachi-mandal-portfolio-033.jpg",
     "title": "Celestial Lotus Bloom with 24K Gold",
     "category": "canvas",
     "medium": "Gold Leaf & Archival Glaze on Linen",

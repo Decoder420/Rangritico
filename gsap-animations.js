@@ -423,28 +423,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 }
             });
 
-            // Dynamic museum track lighting spotlight beam following pointer
+            // Dynamic museum track lighting spotlight beam following pointer (desktop only)
             const spotlight = frame.querySelector('.frame-spotlight');
-            if (spotlight) {
+            if (spotlight && !isMobile && window.matchMedia('(hover: hover)').matches) {
                 frame.addEventListener('mousemove', (e) => {
                     const rect = frame.getBoundingClientRect();
                     const x = ((e.clientX - rect.left) / rect.width) * 100;
                     const y = ((e.clientY - rect.top) / rect.height) * 100;
                     spotlight.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255, 245, 220, 0.28) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 75%)`;
-                });
+                }, { passive: true });
             }
         });
 
-        // Mobile Touch Horizontal Gesture Handler
+        // Mobile Touch Horizontal Gesture Handler (60fps throttled)
         let touchStartX = 0;
         let touchStartY = 0;
         let isHorizontalSwipe = false;
+        let scrollPending = false;
+        let pendingDelta = 0;
 
         horizontalGallery.addEventListener('touchstart', (e) => {
             if (e.touches.length === 1) {
                 touchStartX = e.touches[0].clientX;
                 touchStartY = e.touches[0].clientY;
                 isHorizontalSwipe = false;
+                pendingDelta = 0;
             }
         }, { passive: true });
 
@@ -456,10 +459,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     isHorizontalSwipe = true;
                 }
                 if (isHorizontalSwipe) {
-                    // Translate horizontal swipe distance into vertical page scroll
-                    window.scrollBy({ top: deltaX * 0.8, behavior: 'auto' });
+                    pendingDelta += deltaX * 0.8;
                     touchStartX = e.touches[0].clientX;
                     touchStartY = e.touches[0].clientY;
+                    if (!scrollPending) {
+                        scrollPending = true;
+                        requestAnimationFrame(() => {
+                            window.scrollBy({ top: pendingDelta, behavior: 'auto' });
+                            pendingDelta = 0;
+                            scrollPending = false;
+                        });
+                    }
                 }
             }
         }, { passive: true });

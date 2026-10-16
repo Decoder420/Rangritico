@@ -169,8 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createLeaves() {
         if (!fallingLeavesContainer) return;
+        // Skip particle DOM nodes on mobile devices to preserve battery and frame rate
+        if (window.innerWidth <= 768) {
+            fallingLeavesContainer.innerHTML = '';
+            return;
+        }
         fallingLeavesContainer.innerHTML = '';
-        const leafCount = 15;
+        const leafCount = 8;
         for (let i = 0; i < leafCount; i++) {
             const leaf = document.createElement('div');
             leaf.classList.add('falling-leaf');
@@ -304,12 +309,35 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ripples.length > 20) ripples.shift();
         }
 
+        let isRippleRunning = false;
+        let isSectionVisible = true;
+
+        // Use IntersectionObserver to stop animation when out of view
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                isSectionVisible = entries[0].isIntersecting;
+                if (isSectionVisible && ripples.length > 0 && !isRippleRunning) {
+                    isRippleRunning = true;
+                    requestAnimationFrame(animateRipples);
+                }
+            }, { threshold: 0.05 });
+            observer.observe(waterContainer);
+        }
+
+        function queueRippleAnimation() {
+            if (!isRippleRunning && isSectionVisible && animActive) {
+                isRippleRunning = true;
+                requestAnimationFrame(animateRipples);
+            }
+        }
+
         waterContainer.addEventListener('mousemove', (e) => {
             const rect = waterContainer.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             createRipple(x, y);
-        });
+            queueRippleAnimation();
+        }, { passive: true });
 
         // Trigger gentle ripples when hovering over individual river pebble cards
         document.querySelectorAll('.river-pebble-card, .scatter-item').forEach(pebble => {
@@ -319,12 +347,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const x = (pRect.left + pRect.width / 2) - rect.left;
                 const y = (pRect.top + pRect.height / 2) - rect.top;
                 for (let i = 0; i < 3; i++) {
-                    setTimeout(() => createRipple(x + (Math.random() * 24 - 12), y + (Math.random() * 24 - 12)), i * 140);
+                    setTimeout(() => {
+                        createRipple(x + (Math.random() * 24 - 12), y + (Math.random() * 24 - 12));
+                        queueRippleAnimation();
+                    }, i * 140);
                 }
-            });
+            }, { passive: true });
         });
 
         function animateRipples() {
+            if (!isSectionVisible || !animActive || ripples.length === 0) {
+                isRippleRunning = false;
+                ctx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+                return;
+            }
+
             ctx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
             for (let i = ripples.length - 1; i >= 0; i--) {
                 const r = ripples[i];
@@ -351,9 +388,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     ripples.splice(i, 1);
                 }
             }
-            if (animActive) requestAnimationFrame(animateRipples);
+
+            if (ripples.length > 0) {
+                requestAnimationFrame(animateRipples);
+            } else {
+                isRippleRunning = false;
+                ctx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+            }
         }
-        animateRipples();
     }
 
     // Close modals on Escape key
@@ -906,6 +948,9 @@ document.addEventListener('DOMContentLoaded', () => {
    1. ARTISAN JEWELER'S LOUPE (MICROSCOPIC INSPECTION LENS)
    ========================================================================== */
 window.initJewelersLoupe = function() {
+    // Only run on desktop devices with a precision mouse cursor; never on mobile touchscreens
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
     let loupe = document.querySelector('.jewelers-loupe');
     if (!loupe) {
         loupe = document.createElement('div');

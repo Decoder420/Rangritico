@@ -61,7 +61,7 @@
     <header class="main-header" id="header" style="z-index: 60;">
         <div class="header-container">
             <a href="index.html" class="logo-link logo-center" aria-label="RANGRITICO by Prachi Mandal">
-                <img src="assets/rangritico_symmetric_brand_logo.png" alt="RANGRITICO | Art Atelier by Prachi Mandal" class="brand-logo-symmetric" onerror="this.onerror=null; this.src='assets/rangritico_brand_logo.png'">
+                <img src="assets/rangritico_symmetric_brand_logo.png" alt="RANGRITICO | Art Atelier by Prachi Mandal" class="brand-logo-symmetric" onerror="this.onerror=null; this.src='assets/rangritico_brand_logo.png'" decoding="async" loading="eager" fetchpriority="high">
             </a>
             <div class="lighting-mode-switcher" id="lightingModeSwitcher" aria-label="Atelier Atmospheric Lighting">
                 <button class="light-mode-btn active" data-theme="dawn" title="Rishikesh Dawn (Natural Warm Sun)">🌅 Dawn</button>
@@ -108,7 +108,7 @@
                 <div class="intro-curatorial-card">
                     <!-- Talisman Emblem -->
                     <div class="mb-3 text-center">
-                        <img src="assets/elements/sacred_lotus_talisman.png" alt="Sacred Lotus Talisman" class="w-10 h-10 mx-auto opacity-85 animate-pulse">
+                        <img src="assets/elements/sacred_lotus_talisman.png" alt="Sacred Lotus Talisman" class="w-10 h-10 mx-auto opacity-85 animate-pulse" decoding="async" loading="eager" fetchpriority="high">
                     </div>
 
                     <span class="font-cinzel tracking-[0.3em] text-[10px] sm:text-xs uppercase text-gold-dark font-bold mb-1 block text-center">Tactile Curatorial Exhibition</span>
@@ -131,12 +131,14 @@
                         </p>
                     </div>
 
-                    <!-- Scroll to Explore Prompt -->
-                    <div class="flex items-center justify-center gap-3 text-gold-dark text-xs font-sans uppercase tracking-widest font-semibold cursor-pointer hover:text-charcoal transition-colors" onclick="glideToNextStation();">
-                        <span>Scroll or Glide to Walk Along the Wall</span>
-                        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
+                    <!-- Navigation Options -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2">
+                        <button onclick="glideToNextStation();" class="w-full sm:w-auto px-5 py-2.5 bg-white border border-gold text-charcoal text-xs font-sans uppercase tracking-widest font-semibold rounded-full shadow-sm hover:bg-gold/10 transition-all flex items-center justify-center gap-2">
+                            <span>Walk Along the Wall &rarr;</span>
+                        </button>
+                        <a href="#curatorial-archive" class="w-full sm:w-auto px-5 py-2.5 bg-[#D4AF37] text-black text-xs font-sans uppercase tracking-widest font-bold rounded-full shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-1.5">
+                            <span>🏛️ Jump to All 45 Artworks</span>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -157,10 +159,10 @@
                         <div class="frame-spotlight"></div>
                         
                         <!-- Guilded Frame -->
-                        <div class="guilded-museum-frame frame-interactive" onclick="openLightbox('assets/IMG_9805.PNG', 'Meditating Buddha (Dhyana Mudra) — Oil & 24K Gold Leaf on Canvas')">
+                        <div class="guilded-museum-frame frame-interactive" onclick="openLightbox('assets/IMG_9805.jpg', 'Meditating Buddha (Dhyana Mudra) — Oil & 24K Gold Leaf on Canvas')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/IMG_9805.PNG" alt="Meditating Buddha - Sacred Oil & Gold Leaf Canvas" loading="eager">
+                            <img src="assets/IMG_9805.jpg" alt="Meditating Buddha - Sacred Oil & Gold Leaf Canvas" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -179,7 +181,7 @@
                                 <span>36 &times; 48 inches &bull; 2024</span>
                             </div>
                             <div class="plaque-actions">
-                                <button class="btn-plaque-action" onclick="window.openRoomMockup('assets/IMG_9805.PNG', 'Meditating Buddha (Dhyana Mudra)', '36 × 48 in')">🖼️ View on Wall</button>
+                                <button class="btn-plaque-action" onclick="window.openRoomMockup('assets/IMG_9805.jpg', 'Meditating Buddha (Dhyana Mudra)', '36 × 48 in')">🖼️ View on Wall</button>
                                 <button class="btn-plaque-action" onclick="window.openCoA('RG-2024-PL001', 'Meditating Buddha (Dhyana Mudra)', 'Oil & 24K Gold Leaf on Canvas', 'Himalayan Pine Stretcher, 24K Florentine Gold Leaf')">📜 Provenance CoA</button>
                             </div>
                         </div>
@@ -204,7 +206,7 @@
                         <div class="guilded-museum-frame frame-interactive" style="border-color: #C3512F;" onclick="openLightbox('assets/IMG_1243.jpg', 'Lord Shiva & Parvati (Sacred Union) — Natural Mineral Pigments & Acrylic')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/IMG_1243.jpg" alt="Lord Shiva & Parvati (Sacred Union) - Acrylic on Linen" loading="eager">
+                            <img src="assets/IMG_1243.jpg" alt="Lord Shiva & Parvati (Sacred Union) - Acrylic on Linen" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -248,7 +250,7 @@
                         <div class="double-glass-frame frame-interactive" onclick="openLightbox('assets/elements/buddha_leaf_framed_clean.jpg', 'Blue Buddha on Skeleton Peepal Leaf — Authentic Miniature Painting on Dried Bodhi Leaf in Museum Frame')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/elements/buddha_leaf_framed_clean.jpg" alt="Blue Buddha on Skeleton Peepal Leaf in Museum Frame" loading="eager">
+                            <img src="assets/elements/buddha_leaf_framed_clean.jpg" alt="Blue Buddha on Skeleton Peepal Leaf in Museum Frame" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -291,7 +293,7 @@
                         <div class="guilded-museum-frame frame-interactive" style="border-color: #8C6D1F; box-shadow: 0 15px 35px rgba(26,26,26,0.18), inset 0 0 15px rgba(140,109,31,0.25);" onclick="openLightbox('assets/IMG_2143.PNG', 'Srichakra / Yogi Chakra Canvas (Kundalini Flow) — Yantra Geometry & Tempera')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/IMG_2143.PNG" alt="Srichakra / Yogi Chakra Meditation (Kundalini Flow)" loading="eager">
+                            <img src="assets/IMG_2143.PNG" alt="Srichakra / Yogi Chakra Meditation (Kundalini Flow)" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -335,7 +337,7 @@
                         <div class="double-glass-frame frame-interactive" onclick="openLightbox('assets/prachi-mandal-portfolio-016.jpg', 'Twin Sacred Peacocks on Dried Peepal Skeleton Leaf — Authentic Indian Miniature Folk Painting with 24K Gold Leaf in Shadowbox Frame')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/prachi-mandal-portfolio-016.jpg" alt="Twin Sacred Peacocks on Dried Peepal Skeleton Leaf Miniature" loading="eager">
+                            <img src="assets/prachi-mandal-portfolio-016.jpg" alt="Twin Sacred Peacocks on Dried Peepal Skeleton Leaf Miniature" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -379,7 +381,7 @@
                         <div class="filigree-museum-frame frame-interactive" onclick="openLightbox('assets/painting2.jpeg', 'Pichwai Sacred Cow (Kamadhenu) & Lippan Mirror Art Roundel — Traditional Rajasthani Folk Painting with Hand-Cut Mirror Inlay')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/painting2.jpeg" alt="Pichwai Sacred Cow & Lippan Mirror Inlay Artwork" loading="eager">
+                            <img src="assets/painting2.jpeg" alt="Pichwai Sacred Cow & Lippan Mirror Inlay Artwork" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -423,7 +425,7 @@
                         <div class="pebble-oval-frame frame-interactive" onclick="openLightbox('assets/stone1.jpeg', 'Hand-Painted Sacred Jagannath Pebble — Mineral Pigments on Ganga River Stone')">
                             <div class="frame-hook-hardware frame-hook-left" style="left: 20%;"></div>
                             <div class="frame-hook-hardware frame-hook-right" style="right: 20%;"></div>
-                            <img src="assets/stone1.jpeg" alt="Hand-Painted Sacred Jagannath Pebble Art on Ganga River Stone" loading="eager">
+                            <img src="assets/stone1.jpeg" alt="Hand-Painted Sacred Jagannath Pebble Art on Ganga River Stone" loading="eager" decoding="async">
                             <div class="pebble-sheen-overlay"></div>
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
@@ -468,7 +470,7 @@
                         <div class="guilded-museum-frame frame-interactive" style="border-width: 5px; border-color: #D4AF37; box-shadow: 0 25px 50px rgba(0,0,0,0.22), 0 0 30px rgba(212,175,55,0.35);" onclick="openLightbox('assets/IMG_2754.jpg', 'Hand-Painted Circular Floral Mandala Wooden Table — Himalayan Hardwood & Protective Resin')">
                             <div class="frame-hook-hardware frame-hook-left"></div>
                             <div class="frame-hook-hardware frame-hook-right"></div>
-                            <img src="assets/IMG_2754.jpg" alt="Hand-Painted Circular Floral Mandala Wooden Table" loading="eager">
+                            <img src="assets/IMG_2754.jpg" alt="Hand-Painted Circular Floral Mandala Wooden Table" loading="eager" decoding="async">
                             <div class="view-zoom-hint">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                                 <span>Zoom</span>
@@ -500,7 +502,7 @@
             <section class="gallery-slide finale-slide" id="slide9" data-station="9" data-title="The Atelier Circle &bull; Archive">
                 <div class="finale-card">
                     <div class="mb-4">
-                        <img src="assets/rangritico_brand_mark.png" alt="RANGRITICO Brand Mark" class="w-16 h-16 mx-auto opacity-90 drop-shadow-md">
+                        <img src="assets/rangritico_brand_mark.png" alt="RANGRITICO Brand Mark" class="w-16 h-16 mx-auto opacity-90 drop-shadow-md" decoding="async" loading="lazy">
                     </div>
                     <span class="font-cinzel tracking-[0.25em] text-xs uppercase text-gold-dark font-bold mb-1 block">Conclude the Walkthrough</span>
                     <h2 class="font-serif text-2xl sm:text-3xl text-charcoal mb-3">Explore The Full Archive</h2>
@@ -651,8 +653,8 @@
             <!-- Archive Masonry Grid -->
             <div class="archive-masonry-grid" id="archiveMasonryGrid">
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-001.png', 'Meditating Buddha (Dhyana Mudra) — Oil, Acrylic & 24K Gold Leaf on Linen Canvas (36 × 48 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-001.png" alt="Meditating Buddha (Dhyana Mudra)" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-001.jpg', 'Meditating Buddha (Dhyana Mudra) — Oil, Acrylic & 24K Gold Leaf on Linen Canvas (36 × 48 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-001.jpg" alt="Meditating Buddha (Dhyana Mudra)" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -669,7 +671,7 @@
                 </div>
                 <div class="archive-item-card" data-category="mandala">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-002.jpg', 'Crimson Peony & Lotus 3D Relief — 3D Sculpted Impasto & 24K Gold on Circular Disc (16 × 16 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-002.jpg" alt="Crimson Peony & Lotus 3D Relief" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-002.jpg" alt="Crimson Peony & Lotus 3D Relief" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -686,7 +688,7 @@
                 </div>
                 <div class="archive-item-card" data-category="stone">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-003.jpg', 'Sweet Heart Penguin River Pebble — Acrylic & Glitter on Smooth Ganga River Quartz (4 × 3 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-003.jpg" alt="Sweet Heart Penguin River Pebble" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-003.jpg" alt="Sweet Heart Penguin River Pebble" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -703,7 +705,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pedagogy">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-004.jpg', 'Classical Indian Devdasi Dancer Study — Traditional Gouache on Raw Tussar Silk Canvas (20 × 28 in, 2023)')">
-                        <img src="assets/prachi-mandal-portfolio-004.jpg" alt="Classical Indian Devdasi Dancer Study" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-004.jpg" alt="Classical Indian Devdasi Dancer Study" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -720,7 +722,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pedagogy">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-005.jpeg', 'Teachers Day 3D Heritage Installation — Clay, Wood & Recycled Organic Materials (Atelier Project, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-005.jpeg" alt="Teachers Day 3D Heritage Installation" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-005.jpeg" alt="Teachers Day 3D Heritage Installation" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -737,7 +739,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pedagogy">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-006.jpg', 'Puri Jagannath Ratha Yatra Study — Watercolor & Archival Ink on Deckle-Edge Paper (12 × 16 in, 2023)')">
-                        <img src="assets/prachi-mandal-portfolio-006.jpg" alt="Puri Jagannath Ratha Yatra Study" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-006.jpg" alt="Puri Jagannath Ratha Yatra Study" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -753,8 +755,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-007.png', 'Lord Shiva Damru & Sacred Serpent — Acrylic & Sanskrit Calligraphy on Linen Canvas (24 × 36 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-007.png" alt="Lord Shiva Damru & Sacred Serpent" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-007.jpg', 'Lord Shiva Damru & Sacred Serpent — Acrylic & Sanskrit Calligraphy on Linen Canvas (24 × 36 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-007.jpg" alt="Lord Shiva Damru & Sacred Serpent" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -770,8 +772,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-008.png', 'Crimson Flamingo Sunset Sanctuary — Layered Acrylic & Mineral Glaze on Stretched Canvas (30 × 40 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-008.png" alt="Crimson Flamingo Sunset Sanctuary" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-008.jpg', 'Crimson Flamingo Sunset Sanctuary — Layered Acrylic & Mineral Glaze on Stretched Canvas (30 × 40 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-008.jpg" alt="Crimson Flamingo Sunset Sanctuary" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -788,7 +790,7 @@
                 </div>
                 <div class="archive-item-card" data-category="terracotta">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-009.jpeg', 'Hand-Molded Terracotta Lotus Pendant — Kiln-Fired Terracotta Clay & Cotton Cord (Artisan Set, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-009.jpeg" alt="Hand-Molded Terracotta Lotus Pendant" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-009.jpeg" alt="Hand-Molded Terracotta Lotus Pendant" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -805,7 +807,7 @@
                 </div>
                 <div class="archive-item-card" data-category="terracotta">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-010.jpeg', 'Pink Lotus Terracotta Necklace & Jhumkas — Hand-Molded Baked Clay & Natural Cowrie Shells (Collector Set, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-010.jpeg" alt="Pink Lotus Terracotta Necklace & Jhumkas" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-010.jpeg" alt="Pink Lotus Terracotta Necklace & Jhumkas" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -822,7 +824,7 @@
                 </div>
                 <div class="archive-item-card" data-category="canvas">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-011.jpg', 'Lord Shiva & Parvati Ardhanarishvara — Mineral Pigments & Acrylic on Hand-Woven Linen Scroll (48 × 60 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-011.jpg" alt="Lord Shiva & Parvati Ardhanarishvara" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-011.jpg" alt="Lord Shiva & Parvati Ardhanarishvara" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -839,7 +841,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pedagogy">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-012.jpeg', 'Sculptural Figurative Clay Study — Natural Earthen Terracotta Sculpting (Museum Study, 2023)')">
-                        <img src="assets/prachi-mandal-portfolio-012.jpeg" alt="Sculptural Figurative Clay Study" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-012.jpeg" alt="Sculptural Figurative Clay Study" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -856,7 +858,7 @@
                 </div>
                 <div class="archive-item-card" data-category="terracotta">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-013.jpeg', 'Terracotta Lotus Ring & Stud Adornments — Hand-Molded Clay with Natural Mineral Glaze (Jewelry Suite, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-013.jpeg" alt="Terracotta Lotus Ring & Stud Adornments" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-013.jpeg" alt="Terracotta Lotus Ring & Stud Adornments" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -872,8 +874,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-014.png', 'Tri-Murti Serenity (Ajanta Buddha Faces) — Acrylic & Gold Dust on Linen Canvas (36 × 36 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-014.png" alt="Tri-Murti Serenity (Ajanta Buddha Faces)" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-014.jpg', 'Tri-Murti Serenity (Ajanta Buddha Faces) — Acrylic & Gold Dust on Linen Canvas (36 × 36 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-014.jpg" alt="Tri-Murti Serenity (Ajanta Buddha Faces)" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -890,7 +892,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pichwai">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-015.jpg', 'Shreenathji Pichwai with Lotus Medallion — Traditional Gouache & Gold Foil on Circular Wood (24 × 24 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-015.jpg" alt="Shreenathji Pichwai with Lotus Medallion" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-015.jpg" alt="Shreenathji Pichwai with Lotus Medallion" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -907,7 +909,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-016.jpg', 'Twin Sacred Peacocks on Peepal Leaf — Folk Gouache on Dried Peepal Skeleton Leaf in Shadowbox (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-016.jpg" alt="Twin Sacred Peacocks on Peepal Leaf" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-016.jpg" alt="Twin Sacred Peacocks on Peepal Leaf" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -924,7 +926,7 @@
                 </div>
                 <div class="archive-item-card" data-category="terracotta">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-017.jpeg', 'Sacred Conch & Floral Clay Medallion — Earthen Baked Clay with Hand-Painted Motifs (Temple Adornment, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-017.jpeg" alt="Sacred Conch & Floral Clay Medallion" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-017.jpeg" alt="Sacred Conch & Floral Clay Medallion" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -941,7 +943,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-018.jpg', 'Golden Saffron Bird on Silver Vine — Micro Miniature Gouache on Dried Bodhi Leaf (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-018.jpg" alt="Golden Saffron Bird on Silver Vine" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-018.jpg" alt="Golden Saffron Bird on Silver Vine" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -958,7 +960,7 @@
                 </div>
                 <div class="archive-item-card" data-category="canvas">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-019.jpeg', 'Kundalini Serpent & Seven Chakras — Yantra Geometry & Calligraphy on Tea-Stained Paper (24 × 30 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-019.jpeg" alt="Kundalini Serpent & Seven Chakras" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-019.jpeg" alt="Kundalini Serpent & Seven Chakras" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -974,8 +976,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-020.png', 'Turquoise Blue Buddha & Bodhi Tree — Acrylic & Gold Dust on Stretched Canvas (24 × 36 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-020.png" alt="Turquoise Blue Buddha & Bodhi Tree" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-020.jpg', 'Turquoise Blue Buddha & Bodhi Tree — Acrylic & Gold Dust on Stretched Canvas (24 × 36 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-020.jpg" alt="Turquoise Blue Buddha & Bodhi Tree" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -992,7 +994,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pichwai">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-021.jpeg', 'Pichwai Sacred Cow & Lippan Mirror Roundel — Acrylic, Clay & Hand-Cut Mirror Inlay on Board (18 × 18 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-021.jpeg" alt="Pichwai Sacred Cow & Lippan Mirror Roundel" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-021.jpeg" alt="Pichwai Sacred Cow & Lippan Mirror Roundel" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1008,8 +1010,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-022.png', 'Golden Bodhi Tree of Life & Lotus — 24K Gold Leaf & Acrylic on Linen Canvas (30 × 30 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-022.png" alt="Golden Bodhi Tree of Life & Lotus" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-022.jpg', 'Golden Bodhi Tree of Life & Lotus — 24K Gold Leaf & Acrylic on Linen Canvas (30 × 30 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-022.jpg" alt="Golden Bodhi Tree of Life & Lotus" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1026,7 +1028,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-023.jpg', 'Royal Caparisoned Elephant Peepal Leaf — Rajasthani Folk Miniature on Dried Bodhi Leaf (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-023.jpg" alt="Royal Caparisoned Elephant Peepal Leaf" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-023.jpg" alt="Royal Caparisoned Elephant Peepal Leaf" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1042,8 +1044,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="mandala">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-024.png', 'Solar Yantra & Sacred Radial Mandala — Pointillist Acrylic Geometry on Circular Canvas (20 × 20 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-024.png" alt="Solar Yantra & Sacred Radial Mandala" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-024.jpg', 'Solar Yantra & Sacred Radial Mandala — Pointillist Acrylic Geometry on Circular Canvas (20 × 20 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-024.jpg" alt="Solar Yantra & Sacred Radial Mandala" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1060,7 +1062,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pichwai">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-025.jpeg', 'Pichwai Lotus Pond with Sacred Flute — Traditional Rajasthani Pichwai on Fine Cloth (24 × 32 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-025.jpeg" alt="Pichwai Lotus Pond with Sacred Flute" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-025.jpeg" alt="Pichwai Lotus Pond with Sacred Flute" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1077,7 +1079,7 @@
                 </div>
                 <div class="archive-item-card" data-category="stone">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-026.jpg', 'Hand-Painted Dot Mandala River Pebble — Acrylic Dotting on Ganga River Quartz Stone (5 × 4 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-026.jpg" alt="Hand-Painted Dot Mandala River Pebble" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-026.jpg" alt="Hand-Painted Dot Mandala River Pebble" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1094,7 +1096,7 @@
                 </div>
                 <div class="archive-item-card" data-category="stone">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-027.jpg', 'Amber Monarch Butterfly River Pebble — Mineral Pigments on Water-Smoothed River Quartz (4 × 4 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-027.jpg" alt="Amber Monarch Butterfly River Pebble" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-027.jpg" alt="Amber Monarch Butterfly River Pebble" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1111,7 +1113,7 @@
                 </div>
                 <div class="archive-item-card" data-category="stone">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-028.jpg', 'Mayura Peacock Feather River Pebble — Iridescent Pigments on Ganga River Stone (4 × 3 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-028.jpg" alt="Mayura Peacock Feather River Pebble" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-028.jpg" alt="Mayura Peacock Feather River Pebble" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1128,7 +1130,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-029.jpg', 'Kamadhenu Pichwai Cow on Peepal Leaf — Sacred Cow Miniature on Dried Bodhi Leaf (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-029.jpg" alt="Kamadhenu Pichwai Cow on Peepal Leaf" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-029.jpg" alt="Kamadhenu Pichwai Cow on Peepal Leaf" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1144,8 +1146,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="mandala">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-030.png', 'Golden Lotus Bindu Mandala — Gold Foil & Acrylic on Deep Charcoal Canvas (24 × 24 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-030.png" alt="Golden Lotus Bindu Mandala" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-030.jpg', 'Golden Lotus Bindu Mandala — Gold Foil & Acrylic on Deep Charcoal Canvas (24 × 24 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-030.jpg" alt="Golden Lotus Bindu Mandala" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1162,7 +1164,7 @@
                 </div>
                 <div class="archive-item-card" data-category="canvas">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-031.jpeg', 'Lord Venkateswara Balaji Lotus Canvas — Acrylic & Gold Detailing on Circular Board (18 × 18 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-031.jpeg" alt="Lord Venkateswara Balaji Lotus Canvas" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-031.jpeg" alt="Lord Venkateswara Balaji Lotus Canvas" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1178,8 +1180,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-032.png', 'Meditating Yogi in Srichakra Field — Tantric Geometry & Acrylic on Canvas (30 × 40 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-032.png" alt="Meditating Yogi in Srichakra Field" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-032.jpg', 'Meditating Yogi in Srichakra Field — Tantric Geometry & Acrylic on Canvas (30 × 40 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-032.jpg" alt="Meditating Yogi in Srichakra Field" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1195,8 +1197,8 @@
                     </div>
                 </div>
                 <div class="archive-item-card" data-category="canvas">
-                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-033.png', 'Celestial Lotus Bloom with 24K Gold — Gold Leaf & Archival Glaze on Linen (24 × 24 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-033.png" alt="Celestial Lotus Bloom with 24K Gold" class="archive-thumb-img" loading="lazy">
+                    <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-033.jpg', 'Celestial Lotus Bloom with 24K Gold — Gold Leaf & Archival Glaze on Linen (24 × 24 in, 2024)')">
+                        <img src="assets/prachi-mandal-portfolio-033.jpg" alt="Celestial Lotus Bloom with 24K Gold" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1213,7 +1215,7 @@
                 </div>
                 <div class="archive-item-card" data-category="terracotta">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-034.jpeg', 'Terracotta Temple Bell & Shell Choker — Sun-Cured Clay, Hand-Painted Beads & Cowries (Traditional Choker, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-034.jpeg" alt="Terracotta Temple Bell & Shell Choker" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-034.jpeg" alt="Terracotta Temple Bell & Shell Choker" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1230,7 +1232,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-035.jpg', 'Serene Blue Buddha Bodhi Leaf Miniature — Miniature Gouache on Dried Peepal Skeleton Leaf (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-035.jpg" alt="Serene Blue Buddha Bodhi Leaf Miniature" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-035.jpg" alt="Serene Blue Buddha Bodhi Leaf Miniature" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1247,7 +1249,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pedagogy">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-036.jpg', 'Prachi Mandal with Chakra Yogi Canvas — Visual Research Documentation, Rishikesh Studio (Atelier Archive, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-036.jpg" alt="Prachi Mandal with Chakra Yogi Canvas" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-036.jpg" alt="Prachi Mandal with Chakra Yogi Canvas" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1264,7 +1266,7 @@
                 </div>
                 <div class="archive-item-card" data-category="stone">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-037.jpg', 'Padma Lotus Hand-Painted River Stone — Mineral Pigments on Ganga River Quartz (4 × 4 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-037.jpg" alt="Padma Lotus Hand-Painted River Stone" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-037.jpg" alt="Padma Lotus Hand-Painted River Stone" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1281,7 +1283,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pichwai">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-038.jpeg', 'Pichwai Kamadhenu & Dancing Peacocks — Traditional Folk Gouache on Roundel Plaque (20 × 20 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-038.jpeg" alt="Pichwai Kamadhenu & Dancing Peacocks" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-038.jpeg" alt="Pichwai Kamadhenu & Dancing Peacocks" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1298,7 +1300,7 @@
                 </div>
                 <div class="archive-item-card" data-category="mandala">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-039.jpeg', 'Dot Mandala Wooden Platter — Pointillist Geometry on Turned Himalayan Hardwood (14 in dia, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-039.jpeg" alt="Dot Mandala Wooden Platter" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-039.jpeg" alt="Dot Mandala Wooden Platter" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1315,7 +1317,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pedagogy">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-040.JPG', 'Rajasthani Folk Musicians Heritage Study — Academic Visual Art Study, Panjab University (18 × 24 in, 2023)')">
-                        <img src="assets/prachi-mandal-portfolio-040.JPG" alt="Rajasthani Folk Musicians Heritage Study" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-040.JPG" alt="Rajasthani Folk Musicians Heritage Study" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1332,7 +1334,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-041.jpg', 'Sacred Lord Ganesha Peepal Leaf Miniature — Fine Liner & 24K Gold on Dried Bodhi Leaf (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-041.jpg" alt="Sacred Lord Ganesha Peepal Leaf Miniature" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-041.jpg" alt="Sacred Lord Ganesha Peepal Leaf Miniature" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1349,7 +1351,7 @@
                 </div>
                 <div class="archive-item-card" data-category="stone">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-042.jpg', 'Dhyana Mudra Buddha River Pebble — Natural Mineral Pigments on Ganga River Quartz (5 × 4 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-042.jpg" alt="Dhyana Mudra Buddha River Pebble" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-042.jpg" alt="Dhyana Mudra Buddha River Pebble" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1366,7 +1368,7 @@
                 </div>
                 <div class="archive-item-card" data-category="mandala">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-043.jpg', 'Hand-Painted Circular Mandala Wooden Table — Solid Hardwood, Acrylic Mandala & Glass Resin Coat (30 in dia, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-043.jpg" alt="Hand-Painted Circular Mandala Wooden Table" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-043.jpg" alt="Hand-Painted Circular Mandala Wooden Table" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1383,7 +1385,7 @@
                 </div>
                 <div class="archive-item-card" data-category="pichwai">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-044.jpeg', 'Lippan Mud-and-Mirror Geometric Plaque — Sacred Kutch Mud Relief & Mirror Mosaic on Board (16 × 16 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-044.jpeg" alt="Lippan Mud-and-Mirror Geometric Plaque" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-044.jpeg" alt="Lippan Mud-and-Mirror Geometric Plaque" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1400,7 +1402,7 @@
                 </div>
                 <div class="archive-item-card" data-category="leaf">
                     <div class="archive-thumb-wrap" onclick="openLightbox('assets/prachi-mandal-portfolio-045.jpg', 'Radha Krishna Divine Melody Peepal Leaf — Traditional Miniature Painting on Dried Bodhi Leaf (8 × 10 in, 2024)')">
-                        <img src="assets/prachi-mandal-portfolio-045.jpg" alt="Radha Krishna Divine Melody Peepal Leaf" class="archive-thumb-img" loading="lazy">
+                        <img src="assets/prachi-mandal-portfolio-045.jpg" alt="Radha Krishna Divine Melody Peepal Leaf" class="archive-thumb-img" loading="lazy" decoding="async">
                         <div class="archive-zoom-overlay">
                             <span>🔍 View High-Res</span>
                         </div>
@@ -1426,7 +1428,7 @@
     <div id="presentation-modal" class="presentation-modal" onclick="closeLightbox(event)">
         <button class="modal-close" id="modal-close" aria-label="Close presentation" onclick="closeLightbox()">&times;</button>
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
-            <img id="presentation-image" src="" alt="Enlarged view">
+            <img id="presentation-image" src="" alt="Enlarged view" decoding="async" loading="lazy">
             <p id="presentation-caption" class="text-center font-serif text-sm text-gold-light mt-3 px-4"></p>
             <div class="lightbox-action-row" style="display: flex; justify-content: center; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
                 <button class="btn-plaque-action" style="padding: 7px 14px; font-size: 10.5px; background: rgba(26,26,26,0.85); color: #F7E7B4; border-color: #D4AF37;" onclick="window.openCurrentInRoomMockup()">
