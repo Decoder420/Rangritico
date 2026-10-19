@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         // Update HUD status
                         if (hudIndicator && slides[closestIndex]) {
                             const title = slides[closestIndex].getAttribute('data-title') || 'The Gallery';
-                            hudIndicator.innerHTML = title;
+                            hudIndicator.textContent = title;
                         }
                     }
                 }

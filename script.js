@@ -910,19 +910,32 @@ Could we please discuss consultation details, pricing, and curation?`;
     updateLiveSummary();
 };
 
+// Safe HTML entity encoder to prevent DOM-based XSS
+function escapeHTML(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 // Form submission for bespoke commission
 window.handleCommissionSubmit = function(e) {
     if (e) e.preventDefault();
     const form = document.getElementById('commissionInquiryForm');
     const statusEl = document.getElementById('commissionFormStatus');
-    const name = document.getElementById('commName')?.value || 'Collector';
-    const email = document.getElementById('commEmail')?.value || '';
+    const rawName = document.getElementById('commName')?.value || 'Collector';
+    const rawEmail = document.getElementById('commEmail')?.value || '';
+    const safeName = escapeHTML(rawName);
+    const safeEmail = escapeHTML(rawEmail);
 
     if (statusEl) {
         statusEl.innerHTML = `
             <div style="background: rgba(212, 175, 55, 0.15); border: 1px solid #D4AF37; border-radius: 8px; padding: 1.25rem; text-align: center; margin-top: 1rem;">
                 <h4 style="font-family: 'Cinzel Decorative', serif; color: #1A1A1A; margin-bottom: 0.5rem;">✨ Sacred Commission Inquiry Received</h4>
-                <p style="font-size: 0.9rem; color: #333; line-height: 1.5;">Thank you, <strong>${name}</strong>. Prachi Mandal will review your vision notes and contact you at <strong>${email}</strong> within 24–48 hours with curatorial sketches and timeline specifics.</p>
+                <p style="font-size: 0.9rem; color: #333; line-height: 1.5;">Thank you, <strong>${safeName}</strong>. Prachi Mandal will review your vision notes and contact you at <strong>${safeEmail}</strong> within 24–48 hours with curatorial sketches and timeline specifics.</p>
             </div>
         `;
         statusEl.style.display = 'block';
