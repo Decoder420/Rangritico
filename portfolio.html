@@ -76,7 +76,7 @@
                 <ul class="nav-links">
                     <li><a href="portfolio.html" class="active">Swaying Frames</a></li>
                     <li><a href="#curatorial-archive">45-Piece Vault</a></li>
-                    <li><a href="interactive-gallery.html" class="nav-infinite-link">Infinite 3D <span class="nav-badge-pill">WebGL</span></a></li>
+                    <li><a href="interactive-gallery.html" class="nav-infinite-link">Drifting Canvas <span class="nav-badge-pill">Field</span></a></li>
                     <li><a href="index.html#shop">Atelier Shop</a></li>
                     <li><a href="index.html#commission-studio">Commissions</a></li>
                     <li><a href="about.html#scholar">Research</a></li>
@@ -614,9 +614,6 @@
                         <button class="view-mode-btn active" id="btnVaultMasonry" onclick="setVaultViewMode('masonry')">
                             <span>🏛️</span> Curated Vault (Masonry)
                         </button>
-                        <button class="view-mode-btn" id="btnVaultFisheye" onclick="setVaultViewMode('fisheye')">
-                            <span>👁️</span> WebGL Fisheye Lens
-                        </button>
                         <button class="view-mode-btn" id="btnVaultDrifting" onclick="setVaultViewMode('drifting')">
                             <span>🌊</span> Drifting Canvas Field
                         </button>
@@ -627,19 +624,14 @@
                 </div>
             </div>
 
-            <!-- Interactive Stage for WebGL Fisheye Grid & 2D Canvas Drifting Field -->
+            <!-- Interactive Stage for 2D Canvas Drifting Field -->
             <div class="vault-interactive-stage hidden" id="vaultInteractiveStage">
                 <div class="interactive-stage-hud">
                     <div class="stage-hud-info">
-                        <span class="stage-hud-badge" id="vaultStageBadge">👁️ WebGL Curvature Engine</span>
-                        <span class="stage-hud-tip" id="vaultStageTip">Drag with momentum in any direction &bull; Wheel scroll to explore &bull; Click tile to inspect</span>
+                        <span class="stage-hud-badge" id="vaultStageBadge">🌊 Fluid Drifting Canvas</span>
+                        <span class="stage-hud-tip" id="vaultStageTip">Steer camera velocity with cursor offset from center &bull; Click artwork to open plaque</span>
                     </div>
                     <div class="stage-hud-controls">
-                        <div class="stage-hud-control" id="vaultCurvatureControlWrap">
-                            <label for="vaultCurvatureSlider">Warp:</label>
-                            <input type="range" id="vaultCurvatureSlider" min="0" max="1.5" step="0.02" value="0.38" oninput="updateVaultCurvature(this.value)">
-                            <span id="vaultCurvatureNum" class="font-mono text-[10px] text-stone-400">0.38</span>
-                        </div>
                         <div class="stage-hud-control">
                             <label>Theme:</label>
                             <button class="stage-theme-btn" onclick="toggleVaultTheme()">🌓</button>
@@ -1447,7 +1439,6 @@
     <script src="script.js"></script>
     <script src="gsap-animations.js"></script>
     <script src="assets/js/artworks-dataset.js"></script>
-    <script src="assets/js/fisheye-infinite-grid.js"></script>
     <script src="assets/js/infinite-image-field.js"></script>
 
     <script>
@@ -1476,9 +1467,8 @@
             });
         });
 
-        // Curatorial Vault Interactive View Modes (Masonry vs WebGL Fisheye vs 2D Canvas Drifting)
+        // Curatorial Vault Interactive View Modes (Masonry vs 2D Canvas Drifting)
         let vaultViewMode = "masonry";
-        let vaultFisheyeGrid = null;
         let vaultDriftingField = null;
         let vaultTheme = "dark";
 
@@ -1490,105 +1480,54 @@
             const canvasViewport = document.getElementById("vaultCanvasViewport");
             const badge = document.getElementById("vaultStageBadge");
             const tip = document.getElementById("vaultStageTip");
-            const warpControl = document.getElementById("vaultCurvatureControlWrap");
 
             const btnMasonry = document.getElementById("btnVaultMasonry");
-            const btnFisheye = document.getElementById("btnVaultFisheye");
             const btnDrifting = document.getElementById("btnVaultDrifting");
 
-            [btnMasonry, btnFisheye, btnDrifting].forEach(b => b.classList.remove("active"));
+            [btnMasonry, btnDrifting].forEach(b => b.classList.remove("active"));
 
             if (mode === "masonry") {
                 btnMasonry.classList.add("active");
                 masonryGrid.style.display = "grid";
                 filterTabs.style.display = "flex";
                 interactiveStage.classList.add("hidden");
-            } else {
+            } else if (mode === "drifting") {
+                btnDrifting.classList.add("active");
                 masonryGrid.style.display = "none";
                 filterTabs.style.display = "none";
                 interactiveStage.classList.remove("hidden");
+                badge.textContent = "🌊 Fluid Drifting Canvas";
+                tip.textContent = "Steer camera velocity with cursor offset from center • Click artwork to open plaque";
 
-                if (mode === "fisheye") {
-                    btnFisheye.classList.add("active");
-                    badge.textContent = "👁️ WebGL Spherical Fisheye";
-                    tip.textContent = "Drag with momentum in any direction • Wheel scroll to explore • Click tile to inspect";
-                    warpControl.classList.remove("hidden");
-
-                    if (vaultDriftingField) {
-                        vaultDriftingField.destroy();
-                        vaultDriftingField = null;
-                    }
-
-                    if (!vaultFisheyeGrid) {
-                        canvasViewport.innerHTML = "";
-                        vaultFisheyeGrid = new FisheyeInfiniteGrid(canvasViewport, {
-                            items: window.RANGRITICO_ARTWORKS,
-                            tileWidth: 250,
-                            tileHeight: 300,
-                            lensStrength: 0.38,
-                            theme: vaultTheme,
-                            inertia: 0.94,
-                            onItemClick: (item) => {
-                                if (window.openLightbox) {
-                                    window.openLightbox(item.image, item.caption || item.title);
-                                }
+                if (!vaultDriftingField) {
+                    canvasViewport.innerHTML = "";
+                    vaultDriftingField = new InfiniteImageField(canvasViewport, {
+                        items: window.RANGRITICO_ARTWORKS,
+                        imageWidth: 220,
+                        imageHeight: 295,
+                        gap: 30,
+                        maxSpeed: 6,
+                        theme: vaultTheme,
+                        onItemClick: (item) => {
+                            if (window.openLightbox) {
+                                window.openLightbox(item.image, item.caption || item.title);
                             }
-                        });
-                    } else {
-                        vaultFisheyeGrid.resize();
-                    }
-                } else if (mode === "drifting") {
-                    btnDrifting.classList.add("active");
-                    badge.textContent = "🌊 Fluid Drifting Canvas";
-                    tip.textContent = "Steer camera velocity with cursor offset from center • Click artwork to open plaque";
-                    warpControl.classList.add("hidden");
-
-                    if (vaultFisheyeGrid) {
-                        vaultFisheyeGrid.destroy();
-                        vaultFisheyeGrid = null;
-                    }
-
-                    if (!vaultDriftingField) {
-                        canvasViewport.innerHTML = "";
-                        vaultDriftingField = new InfiniteImageField(canvasViewport, {
-                            items: window.RANGRITICO_ARTWORKS,
-                            imageWidth: 220,
-                            imageHeight: 295,
-                            gap: 30,
-                            maxSpeed: 6,
-                            theme: vaultTheme,
-                            onItemClick: (item) => {
-                                if (window.openLightbox) {
-                                    window.openLightbox(item.image, item.caption || item.title);
-                                }
-                            }
-                        });
-                    }
+                        }
+                    });
                 }
             }
 
             if (window.playAtelierChime) window.playAtelierChime(528);
         }
 
-        function updateVaultCurvature(val) {
-            document.getElementById("vaultCurvatureNum").textContent = Number(val).toFixed(2);
-            if (vaultFisheyeGrid) vaultFisheyeGrid.setCurvature(val);
-        }
-
         function toggleVaultTheme() {
             vaultTheme = vaultTheme === "dark" ? "light" : "dark";
-            if (vaultFisheyeGrid) vaultFisheyeGrid.setTheme(vaultTheme);
             if (vaultDriftingField) vaultDriftingField.setTheme(vaultTheme);
             const stage = document.getElementById("vaultInteractiveStage");
             stage.style.background = vaultTheme === "light" ? "#F4F1EA" : "#080706";
         }
 
         function resetVaultPosition() {
-            if (vaultFisheyeGrid) {
-                vaultFisheyeGrid.pos = { x: 0, y: 0 };
-                vaultFisheyeGrid.vel = { x: 0, y: 0 };
-                vaultFisheyeGrid.requestRender();
-            }
             if (vaultDriftingField) {
                 vaultDriftingField.cam = { x: 0, y: 0 };
                 vaultDriftingField.vel = { x: 0, y: 0 };

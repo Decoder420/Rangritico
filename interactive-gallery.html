@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Draggable Exhibition &bull; WebGL Fisheye Gallery | RANGRITICO</title>
-    <meta name="description" content="Explore 45 authentic sacred Himalayan artworks by Prachi Mandal across an infinite WebGL spherical fisheye lens grid and fluid drifting canvas field.">
+    <title>Infinite Draggable Exhibition &bull; Drifting Canvas Field | RANGRITICO</title>
+    <meta name="description" content="Explore authentic sacred Himalayan artworks by Prachi Mandal across an infinite fluid drifting canvas field.">
     
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -170,14 +170,10 @@
             </a>
         </div>
 
-        <!-- Center Mode Switcher -->
-        <div class="flex items-center bg-black/50 border border-gold/30 p-0.5 sm:p-1 rounded-full space-x-1">
-            <button id="btnModeFisheye" class="mode-btn active" onclick="switchMode('fisheye')">
-                <span class="hidden sm:inline">👁️</span> Fisheye 3D
-            </button>
-            <button id="btnModeDrifting" class="mode-btn" onclick="switchMode('drifting')">
-                <span class="hidden sm:inline">🌊</span> Drifting Field
-            </button>
+        <!-- Center Exhibition Title Badge -->
+        <div class="flex items-center bg-black/60 border border-gold/40 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full space-x-2 text-xs text-[#F7E7B4]">
+            <span class="text-sm">🌊</span>
+            <span class="font-cinzel tracking-widest text-[10px] sm:text-xs uppercase font-semibold text-gold">Drifting Canvas Field</span>
         </div>
 
         <!-- Right Quick Actions -->
@@ -197,31 +193,21 @@
 
     <!-- Main Canvas Viewport Container -->
     <main class="w-full h-full relative" id="interactiveStage">
-        <!-- WebGL Fisheye Grid Stage -->
-        <div id="fisheyeViewport" class="absolute inset-0 w-full h-full"></div>
-
         <!-- 2D Canvas Drifting Field Stage -->
-        <div id="driftingViewport" class="absolute inset-0 w-full h-full hidden"></div>
+        <div id="driftingViewport" class="absolute inset-0 w-full h-full"></div>
     </main>
 
     <!-- Bottom Left Gesture Guidance Prompt -->
     <div class="fixed bottom-6 left-6 z-30 pointer-events-none hidden md:flex items-center space-x-3 bg-black/60 backdrop-blur-md border border-gold/25 px-4 py-2.5 rounded-full text-xs text-stone-300">
         <span class="text-gold animate-bounce">👆</span>
-        <span id="guidanceText">Drag with momentum in any direction &bull; Trackpad / Wheel scroll to explore &bull; Click tile for high-res plaque</span>
+        <span id="guidanceText">Glide your cursor across screen to steer drifting velocity &bull; Click floating artwork to view</span>
     </div>
 
     <!-- Bottom Floating HUD Control Bar -->
     <aside class="fixed bottom-6 right-6 z-30 hud-panel px-5 py-3.5 rounded-2xl flex flex-wrap items-center gap-5 transition-all">
-        <!-- Lens Curvature (Fisheye only) -->
-        <div id="curvatureControlWrap" class="flex items-center space-x-3 text-xs">
-            <label for="curvatureSlider" class="text-gold uppercase tracking-wider text-[10px] font-semibold">Lens Warp:</label>
-            <input type="range" id="curvatureSlider" min="0" max="1.5" step="0.02" value="0.38" class="w-24 cursor-pointer" oninput="updateCurvature(this.value)">
-            <span id="curvatureVal" class="text-[10px] text-stone-400 font-mono w-7">0.38</span>
-        </div>
-
         <!-- Speed / Momentum Control -->
         <div class="flex items-center space-x-3 text-xs">
-            <label for="speedSlider" class="text-gold uppercase tracking-wider text-[10px] font-semibold">Inertia:</label>
+            <label for="speedSlider" class="text-gold uppercase tracking-wider text-[10px] font-semibold">Drift Speed:</label>
             <input type="range" id="speedSlider" min="0.6" max="0.98" step="0.01" value="0.94" class="w-20 cursor-pointer" oninput="updateSpeed(this.value)">
             <span id="speedVal" class="text-[10px] text-stone-400 font-mono w-7">0.94</span>
         </div>
@@ -285,28 +271,11 @@
 
     <!-- Scripts -->
     <script src="assets/js/artworks-dataset.js"></script>
-    <script src="assets/js/fisheye-infinite-grid.js"></script>
     <script src="assets/js/infinite-image-field.js"></script>
 
     <script>
-        let currentMode = "fisheye";
         let currentTheme = "dark";
-        let fisheyeGrid = null;
         let driftingField = null;
-
-        // Initialize WebGL Fisheye Grid
-        const fisheyeContainer = document.getElementById("fisheyeViewport");
-        fisheyeGrid = new FisheyeInfiniteGrid(fisheyeContainer, {
-            items: window.RANGRITICO_ARTWORKS,
-            tileWidth: 260,
-            tileHeight: 310,
-            lensStrength: 0.38,
-            theme: "dark",
-            inertia: 0.94,
-            onItemClick: (item, index) => {
-                openLightboxModal(item);
-            }
-        });
 
         // Initialize 2D Canvas Drifting Field
         const driftingContainer = document.getElementById("driftingViewport");
@@ -322,51 +291,13 @@
             }
         });
 
-        // Mode Switcher
-        function switchMode(mode) {
-            currentMode = mode;
-            const btnFisheye = document.getElementById("btnModeFisheye");
-            const btnDrifting = document.getElementById("btnModeDrifting");
-            const curvatureWrap = document.getElementById("curvatureControlWrap");
-            const guidance = document.getElementById("guidanceText");
-
-            if (mode === "fisheye") {
-                btnFisheye.classList.add("active");
-                btnDrifting.classList.remove("active");
-                fisheyeContainer.classList.remove("hidden");
-                driftingContainer.classList.add("hidden");
-                curvatureWrap.classList.remove("hidden");
-                guidance.textContent = "Drag with momentum in any direction • Trackpad / Wheel scroll to explore • Click tile for high-res plaque";
-                fisheyeGrid.resize();
-            } else {
-                btnDrifting.classList.add("active");
-                btnFisheye.classList.remove("active");
-                driftingContainer.classList.remove("hidden");
-                fisheyeContainer.classList.add("hidden");
-                curvatureWrap.classList.add("hidden");
-                guidance.textContent = "Glide your cursor across screen to steer drifting velocity • Click floating artwork to view";
-            }
-            playChime(528);
-        }
-
-        // Curvature and Speed Controls
-        function updateCurvature(val) {
-            document.getElementById("curvatureVal").textContent = Number(val).toFixed(2);
-            if (fisheyeGrid) fisheyeGrid.setCurvature(val);
-        }
-
+        // Drift Speed Control
         function updateSpeed(val) {
             document.getElementById("speedVal").textContent = Number(val).toFixed(2);
-            if (fisheyeGrid) fisheyeGrid.setInertia(val);
             if (driftingField) driftingField.setMaxSpeed(val * 8);
         }
 
         function resetPosition() {
-            if (fisheyeGrid) {
-                fisheyeGrid.pos = { x: 0, y: 0 };
-                fisheyeGrid.vel = { x: 0, y: 0 };
-                fisheyeGrid.requestRender();
-            }
             if (driftingField) {
                 driftingField.cam = { x: 0, y: 0 };
                 driftingField.vel = { x: 0, y: 0 };
@@ -388,7 +319,6 @@
                 document.documentElement.style.setProperty("--text-color", "#F7E7B4");
             }
 
-            if (fisheyeGrid) fisheyeGrid.setTheme(currentTheme);
             if (driftingField) driftingField.setTheme(currentTheme);
         }
 
